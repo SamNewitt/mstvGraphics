@@ -91,6 +91,7 @@ function clockReset(){
 
 var period=1, finalizeds;
 
+
 function nextPeriod(){
 period+=0.5;
 updatePeriod();
