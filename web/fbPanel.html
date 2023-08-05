@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+<script src="fbPanelScripts.js"></script>
+<link rel="stylesheet" href="fbPanel.css">
+    </head>
+    <body>
+  <div id="container">
+<div class="flex" style="height: 350px;">
+<div class="vflex section" style="width: 300px;">
+<h1 id="clock">12:00</h1>
+<div class="flex">
+    <button id=clock-start onclick="clockStart()">Start</button>
+    <button id=clock-stop class="active" onclick="clockStop()">Stop</button>
+</div>
+<div class="flex">
+    <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
+    <button onclick="clockUpdate()">Update</button>
+</div>
+<div class="flex">
+    <h2>Q1</h2>
+    <div class="vflex">
+        <div class="flex">
+    <button onclick="nextPeriod()">Next</button>
+    <button onclick="nextPeriod()">Prev</button>
+</div>
+
+    <button onclick="nextPeriod()">Final</button>
+</div>
+
+</div>
+</div>
+<div class="section" style="width: 150px;"></div>
+<div class="section" style="width: 215px;"></div>
+<div class="section" style="width: 215px;"></div>
+<div class="section" style="width: 533px; background-color: #0f0"></div>
+
+</div>
+<div class="flex" style="height: 490px;"></div>
+
+  </div>
+  <div id="wait-cover" class="flex">
+    <h1>Attempting to connect to server...</h1>
+  </div>
+        
+    </body>
+</html>
