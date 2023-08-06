@@ -6,6 +6,14 @@ function e(param){
     return document.getElementById(param);
 }
 
+function active(param){
+    e(param).classList.add("active");
+}
+
+function inactive(param){
+    e(param).classList.remove("active");
+}
+
 var socket;
 
 function serverConnect(){
@@ -35,6 +43,7 @@ serverConnect();
 
 function send(param){
     socket.send(param);
+    console.log(param);
 }
 
 // ------------------------ TIMER CODE ----------------------------------------------
@@ -43,8 +52,8 @@ var clockRemain=720, clock="12:00", input;
 
 function clockStart(){
     send("clock-start");
-    e("clock-start").classList.add("active");
-    e("clock-stop").classList.remove("active");
+    active("clock-start");
+    inactive("clock-stop")
     clockInterval = setInterval(function(){
         clockRemain--;
         if(clockRemain%60<10){
@@ -66,8 +75,8 @@ function clockStop(){
     clearInterval(clockInterval);
     send("clock-stop");
     send("clockVal="+clockRemain);
-    e("clock-start").classList.remove("active");
-    e("clock-stop").classList.add("active");
+    inactive("clock-start");
+    active("clock-stop");
 }
 
 function clockSet(param){
@@ -166,7 +175,7 @@ function prevPeriod(){
    {
     finalized=false;
     updatePeriod();
-    e("final").classList.remove("active");
+    inactive("final")
    }
     else if(period!=1){
     period-=0.5;
@@ -178,8 +187,111 @@ function final(){
     if (!finalized){
         e("period").innerHTML="Final";
         send ("final");
-        e("final").classList.add("active");
+        active("final")
         finalized=true;
     }
     
 }
+
+// ------------------------------------------------------DOWN AND DISTANCE----------------------------
+var downQue=1, downLive=1, downText, ddVisibilityEnabled=false; 
+
+function down(param){
+    downQue=param;
+    inactive("d1");
+    inactive("d2");
+    inactive("d3");
+    inactive("d4");
+
+
+
+    active("d"+param);
+if(param==1){
+    e("dist-input").value=10;
+}
+    
+        
+        active("dd-update");
+    
+}
+
+function distChanged(){
+    active("dd-update");
+}
+
+
+function ddUpdate(){
+    inactive("dd-update");
+    downLive=downQue
+
+    switch(downLive){
+        case 1:
+        downText="1st";
+        break;
+        case 2:
+        downText="2nd";
+        break;
+        case 3:
+        downText="3rd";
+        break;
+        case 4:
+        downText="4th";
+        break;
+    }
+    if(e("dist-input").value==""){}
+    else if(parseInt(e("dist-input").value)==NaN){
+        e("dist-input").value="g";
+        downText=downText+" & Goal";
+    }
+    else if(parseInt(e("dist-input").value)==0){
+        downText=downText+" & in";
+    }
+    else{
+      
+        downText=downText+" & "+e("dist-input").value;
+
+    }
+
+    send("dd="+downText);
+    e("dd").innerHTML=downText;
+
+}
+
+function ddNext(){
+    if(downLive==4){
+        down(1);
+        ddUpdate();
+    }
+    else{
+        downLive++;
+       down(downLive);
+       switch(downLive){
+        case 2:
+        send("dd=2nd Down");
+        e("dd").innerHTML="2nd Down";
+        break;
+        case 3:
+        send("dd=3rd Down");
+        e("dd").innerHTML="3rd Down";
+        break;
+        case 4:
+        send("dd=4th Down");
+        e("dd").innerHTML="4th Down";
+        break;
+       }
+    }
+}
+
+function ddVisibility(){
+    ddVisibilityEnabled=!ddVisibilityEnabled;
+    if(ddVisibilityEnabled){
+        active("dd-visibility");
+        send("ddVisible");
+    }
+    else{
+        inactive("dd-visibility");
+        send("ddInvisible"); 
+    }
+}
+
+

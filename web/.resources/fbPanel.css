@@ -11,6 +11,7 @@
 display: flex;
 justify-content: space-evenly;
 align-items: center;
+flex-wrap: wrap;
 }
 
 .vflex{
@@ -22,12 +23,24 @@ align-items: center;
 
 
 
-.tall{
+.taller{
     height: 100%;
 }
 
-.thick{
+.tall{
+    height: 90%;
+}
+
+.wider{
     width: 100%;
+}
+
+.wide{
+    width: 90%;
+}
+
+.nomargin{
+    margin:0 !important;
 }
 
 #container{
@@ -49,6 +62,7 @@ border: 1px solid #fff;
     border-color: #fff;
     border-width: 1px;
 }
+
 
  button{
     padding: 0px 10px 0px 10px !important;
@@ -79,7 +93,7 @@ border: 1px solid #fff;
  input{
     height: 30px;
     font-size: 25px;
-    background-color: #000;
+    background-color: #333;
     color: #fff;
  }
 
@@ -91,4 +105,14 @@ h1{
 h2{
     font-size: 45px;
     text-align: center;
+}
+
+h4{
+    font-size: 28px;
+    text-align: center;
+}
+
+h5{
+    font-size: 20px;
+
 }

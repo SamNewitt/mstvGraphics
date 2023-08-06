@@ -2,12 +2,13 @@
 
 <html>
     <head>
-<script src=".resources/fbPanelScripts.js"></script>
 <link rel="stylesheet" href=".resources/fbPanel.css">
+<script src=".resources/fbPanelScripts.js"></script>
     </head>
     <body>
   <div id="container">
 <div class="flex" style="height: 350px;">
+    <!-- --------------------------------------TIMING----------------------------------------- -->
 <div class="vflex section" style="width: 300px;">
 <h1 id="clock">12:00</h1>
 <div class="flex">
@@ -19,19 +20,32 @@
     <button onclick="clockUpdate()">Update</button>
 </div>
 <div class="flex"  style="border-top-style:solid;"> 
-    <h2 id="period" style="width:100px;">Q1</h2>
-    <div class="vflex">
-        <div class="flex">
+    <h2 id="period">Q1</h2>
+    <div class="flex">
     <button onclick="nextPeriod()">Next</button>
     <button onclick="prevPeriod()">Prev</button>
-</div>
+
 
     <button id=final onclick="final()">Final</button>
 </div>
 
 </div>
 </div>
-<div class="section" style="width: 150px;"></div>
+<!-- ---------------------------------------------DOWN AND DISTANCE----------------- ----------------->
+
+<div class="section vflex" style="width: 150px;">
+<h4 id="dd" class="wide" style="border-bottom-style: solid;">1st & 10</h4>
+<button id=dd-update onclick="ddUpdate()">Update</button>
+<button onclick="ddNext()">Next Down</button>
+<div class="flex nomargin">
+    <button id=d1 class=active onclick="down(1)">1st</button>
+    <button id=d2 onclick="down(2)">2nd</button>
+    <button id=d3 onclick="down(3)">3rd</button>
+    <button id=d4 onclick="down(4)">4th</button>
+</div>
+<input type="text" id="dist-input" style="width:125px; text-align: center;" placeholder="Distance" value="10" oninput="distChanged()">
+<button id=dd-visibility onclick="ddVisibility()">Visibility 👀</button>
+</div>
 <div class="section" style="width: 215px;"></div>
 <div class="section" style="width: 215px;"></div>
 <div class="section" style="width: 533px; background-color: #0f0"></div>
@@ -43,6 +57,6 @@
   <div id="wait-cover" class="flex">
     <h1>Attempting to connect to server...</h1>
   </div>
-        
     </body>
+
 </html>
