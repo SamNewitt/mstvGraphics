@@ -18,15 +18,15 @@
     <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
     <button onclick="clockUpdate()">Update</button>
 </div>
-<div class="flex">
-    <h2>Q1</h2>
+<div class="flex"  style="border-top-style:solid;"> 
+    <h2 id="period" style="width:100px;">Q1</h2>
     <div class="vflex">
         <div class="flex">
     <button onclick="nextPeriod()">Next</button>
-    <button onclick="nextPeriod()">Prev</button>
+    <button onclick="prevPeriod()">Prev</button>
 </div>
 
-    <button onclick="nextPeriod()">Final</button>
+    <button id=final onclick="final()">Final</button>
 </div>
 
 </div>

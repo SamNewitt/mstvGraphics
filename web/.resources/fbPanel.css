@@ -46,6 +46,8 @@ border: 1px solid #fff;
 
 .section *{
     margin: 5px;
+    border-color: #fff;
+    border-width: 1px;
 }
 
  button{
@@ -83,8 +85,10 @@ border: 1px solid #fff;
 
 h1{
     font-size: 85px;
+    text-align: center;
 }
 
 h2{
-    font-size: 60px;
+    font-size: 45px;
+    text-align: center;
 }
