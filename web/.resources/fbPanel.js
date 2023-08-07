@@ -1,56 +1,9 @@
-// window.onbeforeunload = function(event) {
-//     event.returnValue = "Whoa there! Leaving so soon??? O:";
-//   };
-
-function e(param){
-    return document.getElementById(param);
-}
-
-function active(param){
-    e(param).classList.add("active");
-}
-
-function inactive(param){
-    e(param).classList.remove("active");
-}
-
-var socket;
-
-function serverConnect(){
-    
- socket = new WebSocket("ws://localhost:6788");
-
-
-            
-socket.addEventListener("open", function (event) {
-console.log("Websocket Connected!"); 
-e("wait-cover").style.display="none";
-
-});
-
-
-socket.addEventListener("close", function (event) {
-console.log("Websocket Disconnected :(");
-e("wait-cover").style.display="none";
-setTimeout(function() {
-    serverConnect();
-  }, 1000);
-});
-
-}
-
-serverConnect();
-
-function send(param){
-    socket.send(param);
-    console.log(param);
-}
 
 // ------------------------ TIMER CODE ----------------------------------------------
-
 var clockRemain=720, clock="12:00", input;
 
 function clockStart(){
+
     send("clock-start");
     active("clock-start");
     inactive("clock-stop")
@@ -186,7 +139,7 @@ function prevPeriod(){
 function final(){
     if (!finalized){
         e("period").innerHTML="Final";
-        send ("final");
+        send ("period=final");
         active("final")
         finalized=true;
     }
