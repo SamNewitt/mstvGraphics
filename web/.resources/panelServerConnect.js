@@ -29,6 +29,19 @@ c("home").forEach(function(elem){
     elem.style.backgroundColor=jsonData.home.bgColor;
 });
 
+c("away-name").forEach(function(elem){
+    elem.innerHTML=jsonData.away.name;
+});
+c("home-name").forEach(function(elem){
+    elem.innerHTML=jsonData.home.name;
+});
+
+c("away-logo").forEach(function(elem){
+    elem.setAttribute("src",jsonData.away.logo);
+});
+c("home-logo").forEach(function(elem){
+    elem.setAttribute("src",jsonData.home.logo);
+});
 
 }
 

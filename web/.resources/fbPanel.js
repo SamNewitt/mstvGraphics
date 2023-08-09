@@ -56,7 +56,8 @@ e("clock-input").value="Error";
 }
 
 function clockReset(){
-    setClock(720);
+    clockSet(720);
+    send("clockVal="+clockRemain);
 }
 
 //----------------------------------------------------QUARTER CODE------------------------------------
@@ -73,6 +74,7 @@ switch (period){
     break;
     case 1.5:
         e("period").innerHTML="End 1st";
+        clockReset();
     break;
 
     case 2:
@@ -80,6 +82,19 @@ switch (period){
     break;
     case 2.5:
         e("period").innerHTML="Half";
+        clockReset();
+        homeTO=3;
+        awayTO=3;
+        send("homeTO=3");
+        send("awayTO=3");
+        down(1);
+        poss="n";
+        send("poss=n");
+        inactive("away-poss");
+        inactive("home-poss");
+        ddVisibilityEnabled=false;
+        inactive("dd-visibility");
+        send("ddInvisible"); 
     break;
 
     case 3:
@@ -87,6 +102,7 @@ switch (period){
     break;
     case 3.5:
         e("period").innerHTML="End 3rd";
+        clockReset();
     break;
 
     case 4:
@@ -247,4 +263,104 @@ function ddVisibility(){
     }
 }
 
+//-------------------------------------------------------------SCORE---------------------------------------
+var homeScore=0, awayScore=0;
 
+function addAwayScore(param){
+    if(awayScore+param>-1){
+    awayScore+=param;
+    e("away-score").innerHTML=awayScore;
+    send("awayScore="+awayScore);
+    }
+}
+
+function awayTD(){
+    awayScore+=6;
+    e("away-score").innerHTML=awayScore;
+    send("awayTouchdown");
+}
+
+function addHomeScore(param){
+    homeScore+=param;
+    e("home-score").innerHTML=homeScore;
+    send("homeScore="+homeScore);
+}
+
+function homeTD(){
+    homeScore+=6;
+    e("home-score").innerHTML=homeScore;
+    send("homeTouchdown");
+}
+
+//-----------------------------------------------TIMEOUTS-------------------------------------
+var awayTO=3, homeTO=3;
+
+function addAwayTO(param){
+    if(awayTO+param>-1 && awayTO+param<4){
+    awayTO+=param;
+    e("away-to").innerHTML="Timeouts: "+awayTO;
+    send("awayTO="+awayTO)
+    }
+}
+
+function takeAwayTO(){
+    if(awayTO>0){
+        awayTO--;
+        e("away-to").innerHTML="Timeouts: "+awayTO;
+        send("takeAwayTO")
+    }
+}
+
+function addHomeTO(param){
+    if(homeTO+param>-1 && homeTO+param<4){
+        homeTO+=param;
+    e("home-to").innerHTML="Timeouts: "+homeTO;
+    send("homeTO="+homeTO)
+    }
+}
+
+function takeHomeTO(){
+    if(homeTO>0){
+        homeTO--;
+        e("home-to").innerHTML="Timeouts: "+homeTO;
+        send("takeHomeTO")
+    }
+}
+
+
+//---------------------------------------------------POSSESION-----------------------------------------------
+var poss="n";
+
+function awayPoss(){
+    if(poss=="a"){
+        poss="n";
+        inactive("away-poss");
+        ddVisibilityEnabled=false;
+        inactive("dd-visibility");
+        send("ddInvisible"); 
+        down(1);
+    }
+    else{
+        poss="a";
+        active("away-poss");
+        inactive("home-poss");
+    }
+    send("poss="+poss);
+}
+
+function homePoss(){
+    if(poss=="h"){
+        poss="n";
+        inactive("home-poss");
+        ddVisibilityEnabled=false;
+        inactive("dd-visibility");
+        send("ddInvisible"); 
+        down(1);
+    }
+    else{
+        poss="h";
+        active("home-poss");
+        inactive("away-poss");
+    }
+    send("poss="+poss);
+}
