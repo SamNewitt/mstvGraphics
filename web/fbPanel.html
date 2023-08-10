@@ -10,25 +10,25 @@
   <div id="container">
 <div class="flex" style="height: 350px;">
     <!-- --------------------------------------TIMING----------------------------------------- -->
-<div class="vflex section" style="width: 300px;">
+<div class="vflex section" style="width: 297px;">
 <h1 id="clock">12:00</h1>
 <div class="flex">
     <button id=clock-start onclick="clockStart()">Start</button>
     <button id=clock-stop class="active" onclick="clockStop()">Stop</button>
 </div>
-<div class="flex">
+<div class="flex" style="border-bottom-style:solid;">
     <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
     <button onclick="clockUpdate()">Update</button>
 </div>
-<div class="flex"  style="border-top-style:solid;"> 
-    <h2 id="period">Q1</h2>
-    <div class="flex">
+<h2 id="period">Q1</h2>
+<div class="flex"  > 
+    
+
     <button onclick="nextPeriod()">Next</button>
     <button onclick="prevPeriod()">Prev</button>
 
 
     <button id=final onclick="final()">Final</button>
-</div>
 
 </div>
 </div>
@@ -45,32 +45,33 @@
     <button id=d4 onclick="down(4)">4th</button>
 </div>
 <input type="text" id="dist-input" style="width:125px; text-align: center;" placeholder="Distance" value="10" oninput="distChanged()">
-<button id=dd-visibility onclick="ddVisibility()">Visibility 👀</button>
+<button id=dd-visibility onclick="ddVisibility()">Visibility</button>
 </div>
 <!-- -------------------------------------AWAY-------------------------------- -->
 <div class="section vflex away" style="width: 215px;">
 <h5 class="away-name"></h5>
-    <h2 id="away-score">0</h2>
-<div class="flex">
+    <h3 id="away-score">0</h3>
+<div class="flex" style=" border-bottom-style: solid; padding:3px;">
     <button  onclick="addAwayScore(-1)">-1</button>
     <button  onclick="addAwayScore(1)">+1</button>
     <button  onclick="addAwayScore(2)">+2</button>
     <button  onclick="addAwayScore(3)">+3</button>
     <button  onclick="awayTD()">Touchdown</button>
 </div> 
-<h4 id="away-to">Timeouts: 3</h4>
-<div class="flex">
-    <button  onclick="addAwayTO(1)">+</button>
-    <button  onclick="addAwayTO(-1)">-</button>
+<h4 id="away-to" s>Timeouts: 3</h4>
+<div class="flex" style="border-bottom-style: solid; padding: 3px;">
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(1)"> + </button>
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(-1)" > - </button>
     <button  onclick="takeAwayTO()">Take TO</button>
 </div>
-<button id="away-poss" onclick="awayPoss()">Possesion</button>
+<button id="away-poss"  onclick="awayPoss()">Possesion</button>
 </div>
 <!-- ---------------------------------------HOME------------------------------------- -->
 <div class="section vflex home" style="width: 215px;">
     <h5 class="home-name"></h5>
-    <h2 id="home-score">0</h2>
-<div class="flex">
+    <h3 id="home-score">0</h3>
+    <div class="flex" style=" border-bottom-style: solid; padding:3px;">
+
     <button  onclick="addHomeScore(-1)">-1</button>
     <button  onclick="addHomeScore(1)">+1</button>
     <button  onclick="addHomeScore(2)">+2</button>
@@ -78,9 +79,10 @@
     <button  onclick="homeTD()">Touchdown</button>
 </div> 
 <h4 id="home-to">Timeouts: 3</h4>
-<div class="flex">
-    <button  onclick="addHomeTO(1)">+</button>
-    <button  onclick="addHomeTO(-1)">-</button>
+<div class="flex" style="border-bottom-style: solid; padding: 3px;">
+
+    <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(1)">+</button>
+    <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(-1)">-</button>
     <button  onclick="takeHomeTO()">Take TO</button>
 </div>
 <button id="home-poss" onclick="homePoss()">Possesion</button>
@@ -88,7 +90,33 @@
 <div class="section" style="width: 533px; background-color: #0f0"></div>
 
 </div>
-<div class="flex" style="height: 490px;"></div>
+<div class="flex" style="height: 407px; margin-top:4px">
+<div class= "vflex" >
+    <div class="section vflex"style="width:200px; height:59px;border-top-style:none;" >
+    <button  id=flag onclick="flag()">Flag On Play</button>
+    </div>
+    <div class="section vflex"style="width:200px">
+<h5>Score Graphics</h5>
+<div class="flex" style="border-bottom-style:solid;">
+    <button  onclick="bugAnimate()">Animate Bug In</button>
+    <button  id=bug-in onclick="bugIn()">Bug In</button>
+    <button  class=active id=bug-out onclick="bugOut()">Bug Out</button>
+</div>
+<button  id=breakbox onclick="breakbox()">Breakbox</button>
+<button  id=corner-score onclick="cornerScore()">CornerScore</button>
+<button  id=team-corners onclick="teamCorners()">Team Corners</button>
+<button  id=transition onclick="transition()">Roll Transition</button>
+</div>
+</div>
+<div class="section" style="width:305px"></div>
+<div class="section" style="width:305px"></div>
+<div class="section" style="width:350px"></div>
+<div class="section" style="width:250px"></div>
+
+
+</div>
+<div class="flex" style="height: 75px; margin-top:4px">
+
 
   </div>
   <div id="wait-cover" class="flex">

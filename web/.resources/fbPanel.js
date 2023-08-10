@@ -364,3 +364,65 @@ function homePoss(){
     }
     send("poss="+poss);
 }
+
+//--------------------------------------------------FLAG CODE----------------------------------------------
+var flagIn;
+
+function flag(){
+    flagIn=!flagIn
+    if(flagIn){
+        active("flag");
+        send("flagIn");
+    }
+    else{
+        inactive("flag");
+        send("flagOut");
+    }
+}
+
+//----------------------------------------------------BUG CODE-------------------------------------------------
+var bug=false;
+
+function clearAllGraphics(){
+    inactive("bug-in");
+    active("bug-out");
+    inactive("breakbox");
+    inactive("corner-score");
+    inactive("team-corners");
+    inactive("transition");
+    inactive("flag");
+
+
+
+}
+
+function bugIn(){
+    if(!bug){
+        bug=true;
+        clearAllGraphics();
+        active("bug-in");
+        inactive("bug-out");
+        send("bugIn");
+    }
+}
+
+function bugOut(){
+    if(bug){
+        bug=false;
+        active("bug-out");
+        inactive("bug-in");
+        inactive("flag");
+        //ADD CODE FOR REMOVING POPUPS
+        send("bugOut");
+    }
+}
+
+function bugAnimate(){
+    if(!bug){
+        bug=true;
+        clearAllGraphics();
+        active("bug-in");
+        inactive("bug-out");
+        send("bugAnimate");
+    }
+}

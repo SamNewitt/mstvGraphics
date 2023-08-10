@@ -54,7 +54,7 @@ flex-wrap: wrap;
 
 .section{
 height: 100%;
-border: 1px solid #fff;
+border: 2px solid #fff;
 }
 
 .section *{
@@ -65,7 +65,6 @@ border: 1px solid #fff;
 
 
  button{
-    padding: 0px 10px 0px 10px !important;
     border: 3px solid #fff;
     color: #fff;
     height: 40px;
@@ -107,8 +106,12 @@ h2{
     text-align: center;
 }
 
+h3{
+    font-size: 36px;
+}
+
 h4{
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
 }
 
