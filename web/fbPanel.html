@@ -49,7 +49,7 @@
 </div>
 <!-- -------------------------------------AWAY-------------------------------- -->
 <div class="section vflex away" style="width: 215px;">
-<h5 class="away-name"></h5>
+<h5 class="away-name">Away Team</h5>
     <h3 id="away-score">0</h3>
 <div class="flex" style=" border-bottom-style: solid; padding:3px;">
     <button  onclick="addAwayScore(-1)">-1</button>
@@ -68,7 +68,7 @@
 </div>
 <!-- ---------------------------------------HOME------------------------------------- -->
 <div class="section vflex home" style="width: 215px;">
-    <h5 class="home-name"></h5>
+    <h5 class="home-name">Home Team</h5>
     <h3 id="home-score">0</h3>
     <div class="flex" style=" border-bottom-style: solid; padding:3px;">
 
@@ -255,8 +255,8 @@
 <h5 style="margin:0;">Custom Lower 3rd</h5>
 <div class="flex" style="margin:0;">
     <button  id="l3rd-n"  class="l3rd-selector active" onclick="customL3rdType('n', this)">Neutral</button>
-    <button  id="l3rd-a"  class="away-name l3rd-selector" onclick="customL3rdType('a', this)"></button>
-    <button  id="l3rd-h"  class="home-name l3rd-selector" onclick="customL3rdType('h', this)"></button>
+    <button  id="l3rd-a"  class="away-name l3rd-selector" onclick="customL3rdType('a', this)">Away</button>
+    <button  id="l3rd-h"  class="home-name l3rd-selector" onclick="customL3rdType('h', this)">Home</button>
     <button  id="l3rd-s"   class="l3rd-selector" onclick="customL3rdType('s', this)">SilverSTAR</button>
 
     <input type="text" id="l3rd-title" style="width:220px; text-align: center;" placeholder="TITLE">
