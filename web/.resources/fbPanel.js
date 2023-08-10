@@ -606,3 +606,57 @@ function sponsor(param,elem){
         send("sponsorCorner="+param);
     }
 }
+
+//---------------------------------------CUSTOM IMAGE CODE-----------------------------------------------
+
+function addCustomImage(){
+    if(isActive("image")){
+        inactive("image");
+        send("clear");
+    }
+    else{
+        clearAllGraphics();
+        active("image");
+        send("customImage="+e("image-input").value);
+    }
+}
+
+//------------------------------------------CUSTOM L3rd CODE---------------------------------------------
+var l3rdType="n";
+
+function customL3rdType(param, elem){
+    inactiveC("l3rd-selector");
+    elem.classList.add("active");
+    l3rdType=param
+}
+
+function showCustomL3rd(){
+    if(isActive("custom-l3rd")){
+        inactive("custom-l3rd");
+        send("clear");
+    }
+    else{
+        clearAllGraphics();
+        active("custom-l3rd");
+        send("customL3rdTitle="+e("l3rd-title").value);
+        send("customL3rdText="+e("l3rd-text").value);
+        send("addCustomL3rd="+l3rdType);
+    }
+}
+
+//----------------------------------------MENU--------------------------
+
+
+function returnToMenu(){
+    e("menu").style.display="flex";
+    e("reset").style.display="none";
+}
+function resetCheck(){
+    e("menu").style.display="none";
+    e("reset").style.display="flex";
+}
+
+function reset(){
+    send("reset");
+    location.reload();
+}

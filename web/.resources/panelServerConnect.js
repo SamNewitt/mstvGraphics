@@ -74,12 +74,16 @@ function serverConnect(){
 socket.addEventListener("open", function (event) {
 console.log("Websocket Connected!"); 
 e("wait-cover").style.display="none";
+e("connection").innerHTML="CONNECTED :)"
+e("connection").style.backgroundColor="#008000";
 });
 
 
 socket.addEventListener("close", function (event) {
 console.log("Websocket Disconnected :(");
 e("wait-cover").style.display="none";
+e("connection").innerHTML="DISCONNECTED :("
+e("connection").style.backgroundColor="#f00";
 setTimeout(function() {
     serverConnect();
   }, 1000);
