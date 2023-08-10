@@ -387,10 +387,7 @@ function clearAllGraphics(){
     inactive("bug-in");
     active("bug-out");
     bug=false;
-    inactive("breakbox");
-    inactive("corner-score");
-    inactive("team-corners");
-    inactive("transition");
+    inactiveC("graphic");
     inactive("flag");
     inactiveC("away-popup");
     inactiveC("home-popup");
@@ -431,7 +428,7 @@ function bugAnimate(){
     }
 }
 
-//---------------------------------------SCORE GRAPHICS CODE------------------------------------------
+//---------------------------------------OTHER GRAPHICS CODE------------------------------------------
 
 var transTimout;
 
@@ -496,7 +493,9 @@ function awayPopup(param,elem){
             send("awayPopupOut");
         }
         else{
-            inactiveC("away-popup")
+            inactiveC("away-popup");
+        inactiveC("graphic");
+
             elem.classList.add("active");
             send("awayPopup="+param);
         }
@@ -514,7 +513,9 @@ function homePopup(param,elem){
             send("homePopupOut");
         }
         else{
-            inactiveC("home-popup")
+            inactiveC("home-popup");
+        inactiveC("graphic");
+
             elem.classList.add("active");
             send("homePopup="+param);
         }
@@ -532,7 +533,9 @@ function awayFlag(param,elem){
             send("awayPopupOut");
         }
         else{
-            inactiveC("away-popup")
+            inactiveC("away-popup");
+        inactiveC("graphic");
+
             elem.classList.add("active");
             send("awayFlag="+param);
         }
@@ -550,7 +553,8 @@ function homeFlag(param,elem){
             send("homePopupOut");
         }
         else{
-            inactiveC("home-popup")
+            inactiveC("home-popup");
+        inactiveC("graphic");
             elem.classList.add("active");
             send("homeFlag="+param);
         }
@@ -559,4 +563,46 @@ function homeFlag(param,elem){
 
 function homeCustFlag(elem){
     homeFlag(e("home-flag-input").value.toUpperCase(),elem);
+}
+
+// --------------------------------- OTHER GRAPHICS GODE----------------------------------------
+
+function addGraphic(param, elem){
+    if(elem.classList.contains("active")){
+        elem.classList.remove("active");
+     send("clear");
+    }
+    else{
+        clearAllGraphics();
+        elem.classList.add("active");
+        send(param);
+    }
+}
+
+function starters(param,elem){
+    if(bug){
+    if(elem.classList.contains("active")){
+        elem.classList.remove("active");
+        send("clearStarters");
+    }
+    else{
+        inactiveC("away-popup");
+        inactiveC("home-popup");
+        inactiveC("graphic");
+        elem.classList.add("active");
+        send("starters="+param);
+    }
+}
+}
+
+function sponsor(param,elem){
+    if(elem.classList.contains("active")){
+        elem.classList.remove("active");
+     send("clear");
+    }
+    else{
+        clearAllGraphics();
+        elem.classList.add("active");
+        send("sponsorCorner="+param);
+    }
 }

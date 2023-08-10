@@ -46,6 +46,13 @@ c("home-name").forEach(function(elem){
     elem.innerHTML=jsonData.home.name;
 });
 
+c("away-starters").forEach(function(elem){
+    elem.innerHTML=jsonData.away.name+" Starters";
+});
+c("home-starters").forEach(function(elem){
+    elem.innerHTML=jsonData.home.name+" Starters";
+});
+
 // c("away-logo").forEach(function(elem){
 //     elem.setAttribute("src",jsonData.away.logo);
 // });

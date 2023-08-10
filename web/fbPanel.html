@@ -102,10 +102,10 @@
     <button  id=bug-in onclick="bugIn()">Bug In</button>
     <button  class=active id=bug-out onclick="bugOut()">Bug Out</button>
 </div>
-<button  id=breakbox onclick="breakbox()">Breakbox</button>
-<button  id=corner-score onclick="cornerScore()">Corner Score</button>
-<button  id=team-corners onclick="teamCorners()">Team Corners</button>
-<button  id=transition onclick="transition()">Roll Transition</button>
+<button  id=breakbox class=graphic onclick="breakbox()">Breakbox</button>
+<button  id=corner-score class=graphic onclick="cornerScore()">Corner Score</button>
+<button  id=team-corners class=graphic onclick="teamCorners()">Team Corners</button>
+<button  id=transition class=graphic onclick="transition()">Roll Transition</button>
 </div>
 </div>
 <!-- --------------------------------------------AWAY POPUPS------------------------------------- -->
@@ -116,12 +116,12 @@
 <button  class="away-popup" onclick="awayPopup('2 PT ATTEMPT', this)">2 Point</button>
 <button  class="away-popup" onclick="awayPopup('START 2ND HALF WITH BALL', this)">H2 Ball</button>
 </div>
-<h5>Custom Popup:</h5>
+<h5>Custom Popup</h5>
 <div class="flex" style="border-bottom-style: solid; margin:0;">
     <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
 <input type="text" id="away-popup-input" style="width:175px; text-align: center;" placeholder="Custom Text">
 </div>
-<h5>Flag Popups:</h5>
+<h5>Flag Popups</h5>
 <div class="flex">
 <button  class="away-popup" onclick="awayFlag('FALSE START', this)">False St</button>
 <button  class="away-popup" onclick="awayFlag('DELAY OF GAME', this)">Delay</button>
@@ -130,7 +130,7 @@
 <button  class="away-popup" onclick="awayFlag('PASS INTERFERENCE', this)">PI</button>
 <button  class="away-popup" onclick="awayFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
 <button  class="away-popup" onclick="awayFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
-<h5>Custom Flag Popup:</h5>
+<h5>Custom Flag Popup</h5>
 <div class="flex" style="margin:0;">
     <button  class="away-popup" onclick="awayCustFlag(this)">Show</button>
 <input type="text" id="away-flag-input" style="width:175px; text-align: center;" placeholder="Custom Text">
@@ -147,12 +147,12 @@
     <button  class="home-popup" onclick="homePopup('2 PT ATTEMPT', this)">2 Point</button>
     <button  class="home-popup" onclick="homePopup('START 2ND HALF WITH BALL', this)">H2 Ball</button>
     </div>
-    <h5>Custom Popup:</h5>
+    <h5>Custom Popup</h5>
     <div class="flex" style="border-bottom-style: solid; margin:0;">
         <button  class="home-popup" onclick="homeCustPopup(this)">Show</button>
     <input type="text" id="home-popup-input" style="width:175px; text-align: center;" placeholder="Custom Text">
     </div>
-    <h5>Flag Popups:</h5>
+    <h5>Flag Popups</h5>
     <div class="flex">
     <button  class="home-popup" onclick="homeFlag('FALSE START', this)">False St</button>
     <button  class="home-popup" onclick="homeFlag('DELAY OF GAME', this)">Delay</button>
@@ -161,7 +161,7 @@
     <button  class="home-popup" onclick="homeFlag('PASS INTERFERENCE', this)">PI</button>
     <button  class="home-popup" onclick="homeFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
     <button  class="home-popup" onclick="homeFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
-    <h5>Custom Flag Popup:</h5>
+    <h5>Custom Flag Popup</h5>
     <div class="flex" style="margin:0;">
         <button  class="home-popup" onclick="homeCustFlag(this)">Show</button>
     <input type="text" id="home-flag-input" style="width:175px; text-align: center;" placeholder="Custom Text">
@@ -169,12 +169,70 @@
     
     </div>
 </div>
-<div class="section" style="width:350px"></div>
-<div class="section" style="width:250px"></div>
-
+<div class="section vflex" style="width:300px">
+<h5>Pre-Game Graphics</h5>
+<div class="flex"style="border-bottom-style: solid; margin:0;">
+<button  class="graphic" onclick="addGraphic('timer', this)">FS Timer</button>
+<button  class="graphic" onclick="addGraphic('gameIntro', this)">Intro</button>
+<button  class="graphic" onclick="addGraphic('awayProfile', this)">Away Profile</button>
+<button  class="graphic" onclick="addGraphic('homeProfile', this)">Home Profile</button>
+<button  class="graphic" onclick="addGraphic('keys', this)">Keys</button>
+<button  class="graphic" onclick="addGraphic('awayPTW', this)">Away PTW</button>
+<button  class="graphic" onclick="addGraphic('homePTW', this)">Home PTW</button>
 
 </div>
-<div class="flex" style="height: 75px; margin-top:4px">
+<h5 class="away-starters"></h5>
+<div class="flex"style="border-bottom-style: solid; margin:0;">
+<button  class="graphic" onclick="starters('awayDef1', this)">Def 1</button>
+<button  class="graphic" onclick="starters('awayDef2', this)">Def 2</button>
+<button  class="graphic" onclick="starters('awayOff1', this)">Off 1</button>
+<button  class="graphic" onclick="starters('awayOff2', this)">Off 2</button>
+</div>
+<h5 class="home-starters"></h5>
+<div class="flex"style="margin:0;">
+<button  class="graphic" onclick="starters('homeDef1', this)">Def 1</button>
+<button  class="graphic" onclick="starters('homeDef2', this)">Def 2</button>
+<button  class="graphic" onclick="starters('homeOff1', this)">Off 1</button>
+<button  class="graphic" onclick="starters('homeOff2', this)">Off 2</button>
+</div>
+</div>
+<div class="section vflex" style="width:300px">
+<h5>Sponsored Segments</h5>
+<div class="flex"style="border-bottom-style: solid; margin:0;">
+    <button  class="graphic" onclick="addGraphic('pregame', this)">Pregame</button>
+    <button  class="graphic" onclick="addGraphic('halftime', this)">Half</button>
+    <button  class="graphic" onclick="addGraphic('postgame', this)">Postgame</button>
+</div>
+<h5>Sponsor Corners</h5>
+<div class="flex" id=sponsor-corners style="border-bottom-style: solid; margin:0;">
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('AmFam', this)">AmFam</button>
+    <button  class="graphic" onclick="sponsor('CB', this)">Central Bank</button>
+    <button  class="graphic" onclick="sponsor('DNN', this)">DNN</button>
+    <button  class="graphic" onclick="sponsor('greatShots', this)">Great Shots</button>
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+
+</div>
+<h5>Lower 3rds</h5>
+<div class="flex"style="margin:0;">
+    <button  class="graphic" onclick="addGraphic('announcers', this)">Announcers</button>
+    <button  class="graphic" onclick="addGraphic('nextBroadcast', this)">Next Game</button>
+    <button  class="graphic" onclick="addGraphic('crew', this)">Crew</button>
+    <button  class="graphic" onclick="addGraphic('copyright', this)">Copyright</button>
+</div>
+</div>
+<div class="flex" style="height: 75px;">
+<div class="vflex section" style="width:610px;">
+<h5>Custom Image</h5>
+<div class="flex">
+
+</div>
+</div>
+<div class="flex section" style="width:812px;"></div>
 
 
   </div>
