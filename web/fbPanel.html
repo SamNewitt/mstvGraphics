@@ -103,13 +103,72 @@
     <button  class=active id=bug-out onclick="bugOut()">Bug Out</button>
 </div>
 <button  id=breakbox onclick="breakbox()">Breakbox</button>
-<button  id=corner-score onclick="cornerScore()">CornerScore</button>
+<button  id=corner-score onclick="cornerScore()">Corner Score</button>
 <button  id=team-corners onclick="teamCorners()">Team Corners</button>
 <button  id=transition onclick="transition()">Roll Transition</button>
 </div>
 </div>
-<div class="section" style="width:305px"></div>
-<div class="section" style="width:305px"></div>
+<!-- --------------------------------------------AWAY POPUPS------------------------------------- -->
+<div class="section vflex away" style="width:305px">
+<h5>Away Popups</h5>
+<div class="flex">
+    <button  class="away-popup" onclick="awayPopup('FG ATTEMPT', this)">FG Att</button>
+<button  class="away-popup" onclick="awayPopup('2 PT ATTEMPT', this)">2 Point</button>
+<button  class="away-popup" onclick="awayPopup('START 2ND HALF WITH BALL', this)">H2 Ball</button>
+</div>
+<h5>Custom Popup:</h5>
+<div class="flex" style="border-bottom-style: solid; margin:0;">
+    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+<input type="text" id="away-popup-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+</div>
+<h5>Flag Popups:</h5>
+<div class="flex">
+<button  class="away-popup" onclick="awayFlag('FALSE START', this)">False St</button>
+<button  class="away-popup" onclick="awayFlag('DELAY OF GAME', this)">Delay</button>
+<button  class="away-popup" onclick="awayFlag('OFFSIDE', this)">Offside</button>
+<button  class="away-popup" onclick="awayFlag('HOLDING', this)">Hold</button>
+<button  class="away-popup" onclick="awayFlag('PASS INTERFERENCE', this)">PI</button>
+<button  class="away-popup" onclick="awayFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
+<button  class="away-popup" onclick="awayFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
+<h5>Custom Flag Popup:</h5>
+<div class="flex" style="margin:0;">
+    <button  class="away-popup" onclick="awayCustFlag(this)">Show</button>
+<input type="text" id="away-flag-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+</div>
+
+</div>
+
+</div>
+<!-- ------------------------------------------------------HOME POPUPS------------------------------------ -->
+<div class="section home vflex" style="width:305px">
+    <h5>Home Popups</h5>
+    <div class="flex">
+        <button  class="home-popup" onclick="homePopup('FG ATTEMPT', this)">FG Att</button>
+    <button  class="home-popup" onclick="homePopup('2 PT ATTEMPT', this)">2 Point</button>
+    <button  class="home-popup" onclick="homePopup('START 2ND HALF WITH BALL', this)">H2 Ball</button>
+    </div>
+    <h5>Custom Popup:</h5>
+    <div class="flex" style="border-bottom-style: solid; margin:0;">
+        <button  class="home-popup" onclick="homeCustPopup(this)">Show</button>
+    <input type="text" id="home-popup-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+    </div>
+    <h5>Flag Popups:</h5>
+    <div class="flex">
+    <button  class="home-popup" onclick="homeFlag('FALSE START', this)">False St</button>
+    <button  class="home-popup" onclick="homeFlag('DELAY OF GAME', this)">Delay</button>
+    <button  class="home-popup" onclick="homeFlag('OFFSIDE', this)">Offside</button>
+    <button  class="home-popup" onclick="homeFlag('HOLDING', this)">Hold</button>
+    <button  class="home-popup" onclick="homeFlag('PASS INTERFERENCE', this)">PI</button>
+    <button  class="home-popup" onclick="homeFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
+    <button  class="home-popup" onclick="homeFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
+    <h5>Custom Flag Popup:</h5>
+    <div class="flex" style="margin:0;">
+        <button  class="home-popup" onclick="homeCustFlag(this)">Show</button>
+    <input type="text" id="home-flag-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+    </div>
+    
+    </div>
+</div>
 <div class="section" style="width:350px"></div>
 <div class="section" style="width:250px"></div>
 

@@ -386,11 +386,14 @@ var bug=false;
 function clearAllGraphics(){
     inactive("bug-in");
     active("bug-out");
+    bug=false;
     inactive("breakbox");
     inactive("corner-score");
     inactive("team-corners");
     inactive("transition");
     inactive("flag");
+    inactiveC("away-popup");
+    inactiveC("home-popup");
 
 
 
@@ -398,8 +401,8 @@ function clearAllGraphics(){
 
 function bugIn(){
     if(!bug){
-        bug=true;
         clearAllGraphics();
+        bug=true;
         active("bug-in");
         inactive("bug-out");
         send("bugIn");
@@ -412,17 +415,148 @@ function bugOut(){
         active("bug-out");
         inactive("bug-in");
         inactive("flag");
-        //ADD CODE FOR REMOVING POPUPS
-        send("bugOut");
+        inactiveC("away-popup");
+        inactiveC("home-popup");
+        send("clear")
     }
 }
 
 function bugAnimate(){
     if(!bug){
-        bug=true;
         clearAllGraphics();
+        bug=true;
         active("bug-in");
         inactive("bug-out");
         send("bugAnimate");
     }
+}
+
+//---------------------------------------SCORE GRAPHICS CODE------------------------------------------
+
+var transTimout;
+
+function breakbox(){
+    if(isActive("breakbox")){
+        clearAllGraphics();
+        send("clear");
+    }
+    else{
+        clearAllGraphics();
+        active("breakbox")
+        send("breakboxIn");
+    }
+}
+
+function cornerScore(){
+    if(isActive("corner-score")){
+        clearAllGraphics();
+        send("clear");
+    }
+    else{
+        clearAllGraphics();
+        active("corner-score")
+        send("cornerScoreIn");
+    }
+}
+
+function teamCorners(){
+    if(isActive("team-corners")){
+        clearAllGraphics();
+        send("clear");
+    }
+    else{
+        clearAllGraphics();
+        active("team-corners")
+        send("teamCornersIn");
+    }
+}
+
+function transition(){
+    if(isActive("transition")){
+        clearAllGraphics();
+        send("clear");
+        clearTimeout(transTimout);
+    }
+    else{
+        clearAllGraphics();
+        active("transition")
+        send("transition");
+        transTimout=setTimeout(function(){
+            clearAllGraphics(); 
+        },10000);
+    }
+}
+
+//-------------------------------------------------POPUP CODE-------------------------
+
+function awayPopup(param,elem){
+    if(bug){
+        if(elem.classList.contains("active")){
+            elem.classList.remove("active");
+            send("awayPopupOut");
+        }
+        else{
+            inactiveC("away-popup")
+            elem.classList.add("active");
+            send("awayPopup="+param);
+        }
+    }
+}
+
+function awayCustPopup(elem){
+    awayPopup(e("away-popup-input").value.toUpperCase(),elem);
+}
+
+function homePopup(param,elem){
+    if(bug){
+        if(elem.classList.contains("active")){
+            elem.classList.remove("active");
+            send("homePopupOut");
+        }
+        else{
+            inactiveC("home-popup")
+            elem.classList.add("active");
+            send("homePopup="+param);
+        }
+    }
+}
+
+function homeCustPopup(elem){
+    homePopup(e("home-popup-input").value.toUpperCase(),elem);
+}
+
+function awayFlag(param,elem){
+    if(bug){
+        if(elem.classList.contains("active")){
+            elem.classList.remove("active");
+            send("awayPopupOut");
+        }
+        else{
+            inactiveC("away-popup")
+            elem.classList.add("active");
+            send("awayFlag="+param);
+        }
+    }
+}
+
+function awayCustFlag(elem){
+    awayFlag(e("away-flag-input").value.toUpperCase(),elem);
+}
+
+function homeFlag(param,elem){
+    if(bug){
+        if(elem.classList.contains("active")){
+            elem.classList.remove("active");
+            send("homePopupOut");
+        }
+        else{
+            inactiveC("home-popup")
+            elem.classList.add("active");
+            send("homeFlag="+param);
+        }
+    }
+}
+
+function homeCustFlag(elem){
+    homeFlag(e("home-flag-input").value.toUpperCase(),elem);
 }

@@ -7,8 +7,7 @@ function e(param){
 }
 
 function c(param){
-    return document.querySelectorAll("."+param);
-
+    return Array.from(document.querySelectorAll("."+param));
 }
 
 function active(param){
@@ -17,6 +16,17 @@ function active(param){
 
 function inactive(param){
     e(param).classList.remove("active");
+}
+
+function inactiveC(param){
+   var elems=c(param)
+    for(var i=0; i<elems.length; i++){
+        elems[i].classList.remove("active");
+    }
+}
+
+function isActive(param){
+    return e(param).classList.contains("active");
 }
 
 function init(){
@@ -36,12 +46,12 @@ c("home-name").forEach(function(elem){
     elem.innerHTML=jsonData.home.name;
 });
 
-c("away-logo").forEach(function(elem){
-    elem.setAttribute("src",jsonData.away.logo);
-});
-c("home-logo").forEach(function(elem){
-    elem.setAttribute("src",jsonData.home.logo);
-});
+// c("away-logo").forEach(function(elem){
+//     elem.setAttribute("src",jsonData.away.logo);
+// });
+// c("home-logo").forEach(function(elem){
+//     elem.setAttribute("src",jsonData.home.logo);
+// });
 
 }
 
