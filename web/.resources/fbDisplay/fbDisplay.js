@@ -61,6 +61,18 @@ function message(type, data){
             clear();
             setTimeout(bugAnimate,waitTime);
         break;
+        case "ddInvisible":
+            downOut();
+        break;
+        case"ddVisible":
+            downIn();
+        break;
+        case "flagIn":
+            flagIn();
+        break;
+        case "flagOut":
+            flagOut();
+        break;
         //---------------------------------------OTHER GFX------------------------------
     }
 }

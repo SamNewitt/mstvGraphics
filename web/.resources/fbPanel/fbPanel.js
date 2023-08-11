@@ -252,12 +252,15 @@ function ddNext(){
 }
 
 function ddVisibility(){
+    if(!ddVisibilityEnabled){
+       if(poss!="n"){
     ddVisibilityEnabled=!ddVisibilityEnabled;
-    if(ddVisibilityEnabled){
         active("dd-visibility");
         send("ddVisible");
+       }
     }
     else{
+    ddVisibilityEnabled=!ddVisibilityEnabled;
         inactive("dd-visibility");
         send("ddInvisible"); 
     }
@@ -275,9 +278,20 @@ function addAwayScore(param){
 }
 
 function awayTD(){
+    if(poss=="a"){
     awayScore+=6;
     e("away-score").innerHTML=awayScore;
     send("awayTouchdown");
+    poss="n";
+    inactive("away-poss");
+    ddVisibilityEnabled=false;
+    inactive("dd-visibility");
+    setTimeout(function(){
+        down(1);
+        ddUpdate();
+        send("ddInvisible");
+    },1000);
+}
 }
 
 function addHomeScore(param){
@@ -287,9 +301,21 @@ function addHomeScore(param){
 }
 
 function homeTD(){
+    if(poss=="h"){
     homeScore+=6;
     e("home-score").innerHTML=homeScore;
     send("homeTouchdown");
+    poss="n";
+    inactive("home-poss");
+    ddVisibilityEnabled=false;
+    inactive("dd-visibility");
+    setTimeout(function(){
+        down(1);
+        ddUpdate();
+        send("ddInvisible");
+    },1000);
+}
+     
 }
 
 //-----------------------------------------------TIMEOUTS-------------------------------------
@@ -338,7 +364,11 @@ function awayPoss(){
         ddVisibilityEnabled=false;
         inactive("dd-visibility");
         send("ddInvisible"); 
+        setTimeout(
+            function(){
         down(1);
+            ddUpdate();
+            },500);
     }
     else{
         poss="a";
@@ -355,7 +385,11 @@ function homePoss(){
         ddVisibilityEnabled=false;
         inactive("dd-visibility");
         send("ddInvisible"); 
+        setTimeout(
+            function(){
         down(1);
+                ddUpdate();
+            },500);
     }
     else{
         poss="h";
@@ -366,15 +400,19 @@ function homePoss(){
 }
 
 //--------------------------------------------------FLAG CODE----------------------------------------------
-var flagIn;
+var flagIn=false;
 
 function flag(){
+    if(!flagIn){
+        if(bug)
+        {
     flagIn=!flagIn
-    if(flagIn){
         active("flag");
         send("flagIn");
+        }
     }
     else{
+    flagIn=!flagIn
         inactive("flag");
         send("flagOut");
     }
@@ -399,10 +437,14 @@ function clearAllGraphics(){
 function bugIn(){
     if(!bug){
         clearAllGraphics();
-        bug=true;
         active("bug-in");
         inactive("bug-out");
         send("bugIn");
+        setTimeout(
+            function(){
+        bug=true;
+            }
+        ,500);
     }
 }
 
@@ -414,17 +456,25 @@ function bugOut(){
         inactive("flag");
         inactiveC("away-popup");
         inactiveC("home-popup");
-        send("clear")
+        send("clear");
+        setTimeout({
+            function(){send("flagOut");}
+        },500)
     }
 }
 
 function bugAnimate(){
     if(!bug){
         clearAllGraphics();
-        bug=true;
         active("bug-in");
         inactive("bug-out");
         send("bugAnimate");
+
+        setTimeout(
+            function(){
+        bug=true;
+            }
+        ,1000);
     }
 }
 
@@ -527,9 +577,10 @@ function homeCustPopup(elem){
 }
 
 function awayFlag(param,elem){
-    inactive("flag");
-flagIn=false;
     if(bug){
+        inactive("flag");
+        flagIn=false;
+        send("flagOut");
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
             send("awayPopupOut");
@@ -552,6 +603,7 @@ function homeFlag(param,elem){
     if(bug){
         inactive("flag");
         flagIn=false;
+        send("flagOut");
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
             send("homePopupOut");

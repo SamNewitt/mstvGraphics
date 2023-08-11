@@ -327,10 +327,11 @@
   
   #bug-flag {
     font-family: "Roboto", sans-serif;
-    margin-top: 619px;
+    margin-top: 617px;
     margin-left: 708px;
-    height: 61px;
+    height: 60px;
     width: 0px;
+    border-top:3px solid #fff;
     display: flex;
     align-items: center;
     font-size: 40px;
