@@ -40,6 +40,7 @@ function enlargeImage() {
 
   var waitTime=0;
 function message(type, data){
+    console.log(type);
     if(graphicIsLive){
         waitTime=500;
     }
@@ -47,14 +48,18 @@ function message(type, data){
         waitTime=0;
     }
     switch(type){
+        case "clear":
+        clear();
+        break;
         //-------------------------------------GAME DATA--------------------------------
         //-------------------------------------SCOREBUG---------------------------------
         case "bugIn":
             clear();
             setTimeout(bugIn,waitTime);
         break;
-        case "bugOut":
-        bugOut();
+        case "bugAnimate":
+            clear();
+            setTimeout(bugAnimate,waitTime);
         break;
         //---------------------------------------OTHER GFX------------------------------
     }

@@ -9,6 +9,10 @@
     --mstv-blue: #16478e;
   }
 
+body{
+    margin:0;
+}
+
 #wait-cover{
     position:absolute;
     width: 100%;

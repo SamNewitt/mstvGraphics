@@ -527,6 +527,8 @@ function homeCustPopup(elem){
 }
 
 function awayFlag(param,elem){
+    inactive("flag");
+flagIn=false;
     if(bug){
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
@@ -548,6 +550,8 @@ function awayCustFlag(elem){
 
 function homeFlag(param,elem){
     if(bug){
+        inactive("flag");
+        flagIn=false;
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
             send("homePopupOut");

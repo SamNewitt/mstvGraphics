@@ -4,6 +4,8 @@ window.onload = bugOut();
 
 
 function bugAnimate() {
+    graphicIsLive=true;
+    graphicLive="bug";
     document.getElementById("bug-animate-cover").style.maxWidth = "0px";
     document.getElementById("bug-container").style.maxWidth = "0px";
     document.getElementById("bug-animate-cover").style.animation =
