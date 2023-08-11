@@ -2,10 +2,109 @@
 
 <html>
     <head>
-<script src="fbDisplayScripts.js"></script>
+        <link rel="stylesheet" href=".resources/fbDisplay/fbDisplay.css">
+        <link rel="stylesheet" href=".resources/fbDisplay/bug.css">
+
+
+
+
     </head>
     <body>
-        <h1 id="title">Websocket Test</h1>
-        
+  <div id="container">
+<!-- ========================================================SCOREBUG======================================== -->
+<div id=away-popup></div>
+    <div id=away-popup-container class=flex>
+      <b id=away-popup-text></b>
+    </div>
+    <div id=home-popup></div>
+    <div id=home-popup-container class=flex>
+      <b id=home-popup-text></b>
+    </div>
+
+    <div id=bug-animate-cover class="blue">
+      <h1 id=bug-animate-text>METRO SPORTS TV</h1>
+    </div>
+    <div id=bug-container>
+      <div id=bug class="flex">
+        <div class="away bug-team">
+          <img class=away-logo src="">
+          <div id=bug-away-info>
+            <c class="bug-seed away-seed"></c>
+            <b class="bug-name away-name"></b>
+
+          </div>
+          <div class="bug-misc flex">
+            <div class=bug-record>
+              <c class=away-record></c>
+            </div>
+
+            <div class="bug-to bug-away-to flex">
+              <span class="away-to remain"></span>
+              <span class="away-to remain"></span>
+              <span class="away-to remain"></span>
+
+            </div>
+          </div>
+          <div id=away-triangle></div>
+        </div>
+        <div class="charcoal bug-score flex">
+          <p class=away-score>0</p>
+        </div>
+        <div class="home bug-team">
+          <img class=home-logo src="">
+          <div id=bug-home-info>
+            <c class="bug-seed home-seed"></c>
+            <b class="bug-name home-name"></b>
+          </div>
+          <div class="bug-misc flex">
+            <div class=bug-record>
+              <c class=home-record></c>
+            </div>
+
+            <div class="bug-to bug-home-to flex">
+              <span class="home-to remain"></span>
+              <span class="home-to remain"></span>
+              <span class="home-to remain"></span>
+
+            </div>
+          </div>
+                    <div id=home-triangle></div>
+        </div>
+        <div class="charcoal bug-score flex">
+          <p class=home-score>0</p>
+        </div>
+        <div id=bug-time class="gray flex">
+          <c class=period id=bug-period>1st</c>
+          <c class=clock id=bug-clock>12:00</c>
+        </div>
+        <div id=bug-down class="away flex">
+          <b id=bug-down-text>1st & 10</b>
+        </div>
+        <div id=bug-sponsor class="white flex">
+          <img id=sponsor-rotator class=flex src="">
+        </div>
+
+      </div>
+      <div id=ticker>
+        <iframe id=ticker-embed src="https://ticker.scorefeed.net/ticker/4022651903/SD/FB/gamebygame-oneline" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div id=bug-flag class=flag>
+      <b>FLAG</b>
+    </div>
+    <div id=bug-team-cover class=away>
+      <h1 id=bug-td-text class=away>TOUCHDOWN</h1>
+    </div>
+    <div id=bug-td-logo>
+      <img class="image" src="">
+
+    </div>
+    </div>
+    <div id="wait-cover" class="flex">
+        <h1 style="color: #000; font-family:sans-serif;">Attempting to connect to server...</h1>
+      </div>
+      <script src=".resources/displayServerConnect.js"></script>
+<script src=".resources/fbDisplay/fbDisplay.js"></script>
+<script src=".resources/fbDisplay/bug.js"></script>
     </body>
 </html>

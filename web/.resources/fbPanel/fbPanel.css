@@ -1,3 +1,14 @@
+:root {
+    --home-primary: #ccc;
+    --home-accent: #000;
+    --home-bg: #000;
+    --away-primary: #000;
+    --away-accent: #fff;
+    --away-bg: #000;
+    --mstv-gray: #8a8c8e;
+    --mstv-blue: #16478e;
+  }
+
 #wait-cover{
     position:absolute;
     width: 100%;
@@ -124,4 +135,12 @@ h5{
 #sponsor-corners button{
     height: 30px;
     margin: 2px;
+}
+
+.home{
+    background-color: var(--home-bg);
+}
+
+.away{
+    background-color: var(--away-bg);
 }

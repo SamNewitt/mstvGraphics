@@ -2,19 +2,19 @@
   "away": {
     "name": "Jefferson",
     "seed": "2",
-    "record": "8-1",
+    "record": "(8-1)",
     "logo": "logos/jhs.png",
     "primaryColor": "#ccc",
-    "secondaryColor": "1a4f27",
+    "accentColor": "#1a4f27",
     "bgColor": "#1a4f27"
   },
   "home": {
-    "name": "Roosevelt",
+    "name": "ROOSEVELT",
     "seed": "1",
-    "record": "9-0",
+    "record": "(9-0)",
     "logo": "logos/rhs.png",
     "primaryColor": "#a7001b",
-    "secondaryColor": "fff",
+    "accentColor": "#fff",
     "bgColor": "#a7001b"
   }
 }
