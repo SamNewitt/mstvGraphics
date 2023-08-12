@@ -537,7 +537,7 @@ function transition(){
 //-------------------------------------------------POPUP CODE-------------------------
 
 function awayPopup(param,elem){
-    if(bug){
+    if(bug && param!=""){
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
             send("awayPopupOut");
@@ -557,7 +557,7 @@ function awayCustPopup(elem){
 }
 
 function homePopup(param,elem){
-    if(bug){
+    if(bug && param!=""){
         if(elem.classList.contains("active")){
             elem.classList.remove("active");
             send("homePopupOut");
@@ -577,7 +577,7 @@ function homeCustPopup(elem){
 }
 
 function awayFlag(param,elem){
-    if(bug){
+    if(bug &&param!=""){
         inactive("flag");
         flagIn=false;
         send("flagOut");
@@ -600,7 +600,7 @@ function awayCustFlag(elem){
 }
 
 function homeFlag(param,elem){
-    if(bug){
+    if(bug && param!=""){
         inactive("flag");
         flagIn=false;
         send("flagOut");

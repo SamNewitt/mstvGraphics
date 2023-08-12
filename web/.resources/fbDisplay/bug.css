@@ -10,17 +10,17 @@
   
   @keyframes bugAnimateText {
     from {
-      margin-left: 275px;
+      margin-left: 175px;
     }
     to {
-      margin-left: 415px;
+      margin-left: 515px;
     }
   }
   
   @keyframes bugOut {
-    from {
+    /* from {
       margin-top: 617px;
-    }
+    } */
     to {
       margin-top: 720px;
     }
@@ -36,7 +36,7 @@
   }
   
   #bug-animate-cover,
-  #bug-team-cover {
+  #bug-td-cover {
     max-width: 0px;
     margin-top: 617px;
     height: 100px;
@@ -282,7 +282,7 @@
     height: 0;
     width: 304px;
   
-    margin-top: 577px;
+    margin-top: 617px;
     animation: popupOut 0.1s linear 0s;
   }
   
@@ -290,7 +290,7 @@
     color: var(--away-primary);
     font-family: roboto, sans-serif;
     font-size: 35px;
-    margin-top: 577px;
+    margin-top: 617px;
     margin-left: 25px;
     width: 304px;
     height: 40px;

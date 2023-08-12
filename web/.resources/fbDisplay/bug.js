@@ -38,9 +38,9 @@ function bugAnimate() {
       "bugOut 0.5s ease-in 0s";
     document.getElementById("home-popup").style.animation =
       "bugOut 0.5s ease-in 0s";
-    document.getElementById("away-popup-text").style.animation =
+    document.getElementById("away-popup-container").style.animation =
       "bugOut 0.5s ease-in 0s";
-    document.getElementById("home-popup-text").style.animation =
+    document.getElementById("home-popup-container").style.animation =
       "bugOut 0.5s ease-in 0s";
     document.getElementById("bug-flag").style.animation =
       "bugOut 0.5s ease-in 0s";
@@ -54,7 +54,17 @@ function bugAnimate() {
       "bugIn 0.5s ease-out 0s";
   }
   
-  function homePopupIn() {
+  function homePopupIn(param, flag) {
+    e("home-popup-text").innerHTML=param;
+    if(flag){
+        e("home-popup").classList.add("flag-bug-popup");
+        e("home-popup-text").classList.add("flag");
+    }
+    else{
+        e("home-popup").classList.remove("flag-bug-popup");
+        e("home-popup-text").classList.remove("flag");
+    }
+    adjustTextH(e("home-popup-text"),e("home-popup-container"));
     document.getElementById("home-popup").style.animation =
       "popupIn 0.2s linear 0s";
     document.getElementById("home-popup-container").style.animation =
@@ -68,7 +78,17 @@ function bugAnimate() {
       "popupOut 0.2s linear 0s";
   }
   
-  function awayPopupIn() {
+  function awayPopupIn(param, flag) {
+    e("away-popup-text").innerHTML=param;
+    if(flag){
+        e("away-popup").classList.add("flag-bug-popup");
+        e("away-popup-text").classList.add("flag");
+    }
+    else{
+        e("away-popup").classList.remove("flag-bug-popup");
+        e("away-popup-text").classList.remove("flag");
+    }
+    adjustTextH(e("away-popup-text"),e("away-popup-container"));
     document.getElementById("away-popup").style.animation =
       "popupIn 0.2s linear 0s";
     document.getElementById("away-popup-container").style.animation =
@@ -110,8 +130,26 @@ function bugAnimate() {
     document.getElementById("bug-flag").style.width = "0px";
   }
   
-  function bugTDAnimate() {
-    document.getElementById("bug-team-cover").style.animation =
+var tdTeam;
+
+  function bugTDAnimate(team) {
+    if(graphicLive=="bug" && graphicIsLive)
+    {
+    if(team=="a"){
+        tdTeam=jsonData.away.name.toUpperCase();
+        away("bug-td-cover");
+        away("bug-td-text");
+        e("bug-td-logo-image").setAttribute("src",jsonData.away.logo);
+    }
+    else{
+        tdTeam=jsonData.home.name.toUpperCase();
+        home("bug-td-cover");
+        home("bug-td-text");
+        e("bug-td-logo-image").setAttribute("src",jsonData.home.logo);
+    }
+    enlargeImage(e("bug-td-logo-image"));
+    document.getElementById("bug-td-text").innerHTML = "TOUCHDOWN";
+    document.getElementById("bug-td-cover").style.animation =
       "bugWipe 0.5s ease-out 0s";
   
     document.getElementById("bug-td-text").style.animation =
@@ -129,18 +167,21 @@ function bugAnimate() {
   
     setTimeout(function () {
       document.getElementById("bug-td-text").style.animation = "";
-      document.getElementById("bug-td-text").innerHTML = "ROOSEVELT";
+      document.getElementById("bug-td-text").innerHTML = tdTeam;
     }, 2500);
   
     setTimeout(function () {
       document.getElementById("bug-td-text").style.animation =
         "bugTDText 2.5s linear 0s";
-    }, 2520);
+    }, 2600);
   
     setTimeout(function () {
-      document.getElementById("bug-team-cover").style.animation =
+      document.getElementById("bug-td-cover").style.animation =
         "bugTDOut 0.6s ease-out 0s";
       document.getElementById("bug-td-logo").style.animation =
         "bugTDLogoOut 0.7s ease 0s";
+      document.getElementById("bug-td-text").style.animation = "";
+
     }, 5010);
+}
   }

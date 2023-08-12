@@ -1,31 +1,4 @@
-var graphicIsLive=false, graphicLive;
 
-window.onload = enlargeImage();
-
-//start bug rotator
-
-function enlargeImage() {
-    var imageObject = new Image();
-    var images = document.getElementsByClassName("image");
-  
-    for (var i = 0; i < images.length; i++) {
-      imageObject.src = images[i].src;
-      if (imageObject.width > imageObject.height) {
-        images[i].style.width = "100%";
-      } else {
-        images[i].style.height = "100%";
-      }
-    }
-  }
-  
-  function adjustTextH(param, container) {
-    var fontSize = 32;
-    param.style.fontSize = fontSize + "px";
-    while (param.offsetWidth >= container.offsetWidth && fontSize > 20) {
-      fontSize--;
-      param.style.fontSize = fontSize + "px";
-    }
-  }
 
   function clear(){
     if(graphicIsLive)
@@ -72,6 +45,31 @@ function message(type, data){
         break;
         case "flagOut":
             flagOut();
+        break;
+        case "awayPopup":
+            awayPopupIn(data, false);
+        break;
+        case "awayFlag":
+            awayPopupIn(data, true);
+        break;
+        case "awayPopupOut":
+            awayPopupOut();
+        break;
+        case "homePopup":
+            homePopupIn(data, false);
+        break;
+        case "homeFlag":
+            homePopupIn(data, true);
+        break;
+        case "homePopupOut":
+            homePopupOut();
+        break;
+        case "awayTouchdown":
+            bugTDAnimate("a");
+            //TODO: Add +6 score
+        break;
+        case "homeTouchdown":
+            bugTDAnimate("h");
         break;
         //---------------------------------------OTHER GFX------------------------------
     }

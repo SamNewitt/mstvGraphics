@@ -6,6 +6,16 @@ function c(param){
     return Array.from(document.querySelectorAll("."+param));
 }
 
+function away(param){
+    e(param).classList.remove("home");
+    e(param).classList.add("away");
+}
+
+function home(param){
+    e(param).classList.add("home");
+    e(param).classList.remove("away");  
+}
+
 function init(){
     document.querySelector(':root').style.setProperty("--away-primary", jsonData.away.primaryColor);
     document.querySelector(':root').style.setProperty("--home-primary", jsonData.home.primaryColor);
@@ -88,19 +98,53 @@ msgData=event.data.split("=");
 });
 
 }
-
-
 serverConnect();
-
-
-
-
-
-
 function send(param){
     socket.send(param);
     console.log(param);
 }
+
+var graphicIsLive=false, graphicLive;
+
+window.onload = enlargeAllImages();
+
+//start bug rotator
+
+function enlargeAllImages() {
+    var imageObject = new Image();
+    var images = document.getElementsByClassName("image");
+  
+    for (var i = 0; i < images.length; i++) {
+      imageObject.src = images[i].src;
+      if (imageObject.width > imageObject.height) {
+        images[i].style.width = "100%";
+      } else {
+        images[i].style.height = "100%";
+      }
+    }
+  }
+
+  function enlargeImage(param) {
+    var imageObject = new Image();        
+      imageObject.src = param.src;
+      if (imageObject.width > imageObject.height) {
+        param.style.width = "100%";
+        param.style.height = "auto";
+      } else {
+        param.style.height = "100%";
+        param.style.width = "auto";
+
+      }
+  }
+  
+  function adjustTextH(param, container) {
+    var fontSize = 32;
+    param.style.fontSize = fontSize + "px";
+    while (param.offsetWidth >= container.offsetWidth && fontSize > 20) {
+      fontSize--;
+      param.style.fontSize = fontSize + "px";
+    }
+  }
 
 
 
