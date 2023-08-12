@@ -3,10 +3,11 @@
 var clockRemain=720, clock="12:00", input;
 
 function clockStart(){
+    send("clockVal="+clockRemain);
 
-    send("clock-start");
+    send("clockStart");
     active("clock-start");
-    inactive("clock-stop")
+    inactive("clock-stop");
     clockInterval = setInterval(function(){
         clockRemain--;
         if(clockRemain%60<10){
@@ -26,7 +27,7 @@ if(clockRemain==0)
 
 function clockStop(){
     clearInterval(clockInterval);
-    send("clock-stop");
+    send("clockStop");
     send("clockVal="+clockRemain);
     inactive("clock-start");
     active("clock-stop");
@@ -41,6 +42,8 @@ else{
 clock=Math.trunc(clockRemain/60)+":"+clockRemain%60;
 }
 e("clock").innerHTML=clock;
+send("clockVal="+clockRemain);
+
 }
 
 function clockUpdate(){

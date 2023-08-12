@@ -25,6 +25,15 @@ function message(type, data){
         clear();
         break;
         //-------------------------------------GAME DATA--------------------------------
+        case "clockStart":
+            clockStart();
+        break;
+        case "clockStop":
+            clockStop();
+        break;
+        case "clockVal":
+            clockSet(data);
+        break;
         //-------------------------------------SCOREBUG---------------------------------
         case "bugIn":
             clear();
