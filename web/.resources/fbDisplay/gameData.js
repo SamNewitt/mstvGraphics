@@ -35,3 +35,25 @@ setHTML("clock",clock);
 }
 
 //----------------------------------------------------------QUARTER-------------------------------------------------
+
+var clockObjects=c("clock");
+
+function period(param){
+if(param.includes("End")||param == "Halftime" || param=="Final"){
+    for(var i=0; i<clockObjects.length; i++){
+        clockObjects[i].style.display="none";
+    }
+}
+else{
+    for(var i=0; i<clockObjects.length; i++){
+        clockObjects[i].style.display="block";
+    }
+}
+setHTML("period",param);
+}
+
+//-------------------------------------------------------------DOWN AND DISTANCE, POSS-----------------------------------------
+
+function poss(param){
+    
+}

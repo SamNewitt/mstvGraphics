@@ -34,6 +34,12 @@ function message(type, data){
         case "clockVal":
             clockSet(data);
         break;
+        case "period":
+            period(data);
+        break;
+        case "poss":
+            poss(data);
+        break;
         //-------------------------------------SCOREBUG---------------------------------
         case "bugIn":
             clear();

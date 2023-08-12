@@ -209,14 +209,14 @@
   }
   
   #bug-period {
-    width: 85px;
-    border-right-style: solid;
-    border-width: 3px;
-    border-color: #fff;
+    min-width: 85px;
   }
   
   #bug-clock {
     width: 110px;
+    border-left-style: solid;
+    border-width: 3px;
+    border-color: #fff;
   }
   
   #bug-down {

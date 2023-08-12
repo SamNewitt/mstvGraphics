@@ -68,23 +68,28 @@ function clockReset(){
 var period=1, finalized;
 
 function updatePeriod(){
-send("period="+period);
 switch (period){
     case 0:
         break;
     case 1:
         e("period").innerHTML="1st";
+send("period=1st");
+
     break;
     case 1.5:
         e("period").innerHTML="End 1st";
+send("period=End 1st");
         clockReset();
     break;
 
     case 2:
         e("period").innerHTML="2nd";
+send("period=2nd");
+
     break;
     case 2.5:
         e("period").innerHTML="Half";
+send("period=Halftime");
         clockReset();
         homeTO=3;
         awayTO=3;
@@ -102,33 +107,41 @@ switch (period){
 
     case 3:
         e("period").innerHTML="3rd";
+send("period=3rd");
+
     break;
     case 3.5:
         e("period").innerHTML="End 3rd";
+send("period=End 3rd");
         clockReset();
     break;
 
     case 4:
         e("period").innerHTML="4th";
+        send("period=4th");
     break;
     case 4.5:
         e("period").innerHTML="End Reg";
+        send("period=End Reg");
     break;
 
     case 5:
         e("period").innerHTML="OT";
+        send("period=OT");
     break;
     case 5.5:
         e("period").innerHTML="End 1OT";
+        send("period=End 1OT");
     break;
 
     default:
     if(period%1==0){
         e("period").innerHTML=period-4+"OT";
+        send("period="+(period-4)+"OT");
     }
     else{
         e("period").innerHTML="End "+(Math.trunc(period)-4)+"OT";
-        
+        send("period=End "+(Math.trunc(period)-4)+"OT");
     }
     break;
     
@@ -158,7 +171,7 @@ function prevPeriod(){
 function final(){
     if (!finalized){
         e("period").innerHTML="Final";
-        send ("period=final");
+        send ("period=Final");
         active("final")
         finalized=true;
     }
