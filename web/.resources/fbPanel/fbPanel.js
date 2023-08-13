@@ -94,7 +94,11 @@ send("period=Halftime");
         homeTO=3;
         awayTO=3;
         send("homeTO=3");
+        homeTO=3;
+    e("home-to").innerHTML="Timeouts: 3";
         send("awayTO=3");
+        awayTO=3;
+    e("away-to").innerHTML="Timeouts: 3";
         down(1);
         poss="n";
         send("poss=n");
@@ -306,6 +310,7 @@ function awayTD(){
         down(1);
         ddUpdate();
         send("ddInvisible");
+        send("poss=n");
     },1000);
 }
 }
@@ -329,6 +334,8 @@ function homeTD(){
         down(1);
         ddUpdate();
         send("ddInvisible");
+        send("poss=n");
+
     },1000);
 }
      
@@ -377,14 +384,7 @@ function awayPoss(){
     if(poss=="a"){
         poss="n";
         inactive("away-poss");
-        ddVisibilityEnabled=false;
-        inactive("dd-visibility");
-        send("ddInvisible"); 
-        setTimeout(
-            function(){
-        down(1);
-            ddUpdate();
-            },500);
+
     }
     else{
         poss="a";
@@ -392,20 +392,20 @@ function awayPoss(){
         inactive("home-poss");
     }
     send("poss="+poss);
+    ddVisibilityEnabled=false;
+    inactive("dd-visibility");
+    send("ddInvisible"); 
+    setTimeout(
+        function(){
+    down(1);
+        ddUpdate();
+        },500);
 }
 
 function homePoss(){
     if(poss=="h"){
         poss="n";
         inactive("home-poss");
-        ddVisibilityEnabled=false;
-        inactive("dd-visibility");
-        send("ddInvisible"); 
-        setTimeout(
-            function(){
-        down(1);
-                ddUpdate();
-            },500);
     }
     else{
         poss="h";
@@ -413,6 +413,14 @@ function homePoss(){
         inactive("away-poss");
     }
     send("poss="+poss);
+    ddVisibilityEnabled=false;
+    inactive("dd-visibility");
+    send("ddInvisible"); 
+    setTimeout(
+        function(){
+    down(1);
+        ddUpdate();
+        },500);
 }
 
 //--------------------------------------------------FLAG CODE----------------------------------------------

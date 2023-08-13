@@ -40,6 +40,27 @@ function message(type, data){
         case "poss":
             poss(data);
         break;
+        case "dd":
+            ddUpdate(data);
+        break;
+        case "awayScore":
+            awayScore(data);
+        break;
+        case "homeScore":
+            homeScore(data);
+        break;
+        case "takeAwayTO":
+            awayTakeTO();
+        break;
+        case "awayTO":
+            awayTO(data);
+        break;
+        case "takeHomeTO":
+            homeTakeTO();
+        break;
+        case "homeTO":
+            homeTO(data);
+        break;
         //-------------------------------------SCOREBUG---------------------------------
         case "bugIn":
             clear();
@@ -81,10 +102,11 @@ function message(type, data){
         break;
         case "awayTouchdown":
             bugTDAnimate("a");
-            //TODO: Add +6 score
+            awayScore(parseInt(prevAwayScore)+6);
         break;
         case "homeTouchdown":
             bugTDAnimate("h");
+            homeScore(parseInt(prevHomeScore)+6);
         break;
         //---------------------------------------OTHER GFX------------------------------
     }

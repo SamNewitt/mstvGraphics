@@ -55,6 +55,7 @@ function bugAnimate() {
   }
   
   function homePopupIn(param, flag) {
+    clearTimeout(homePopupTimeout);
     e("home-popup-text").innerHTML=param;
     if(flag){
         e("home-popup").classList.add("flag-bug-popup");
@@ -79,6 +80,7 @@ function bugAnimate() {
   }
   
   function awayPopupIn(param, flag) {
+    clearTimeout(awayPopupTimeout);
     e("away-popup-text").innerHTML=param;
     if(flag){
         e("away-popup").classList.add("flag-bug-popup");
@@ -114,11 +116,16 @@ function bugAnimate() {
     document.getElementById("sponsor-rotator").style.maxWidth = "368px";
   }
   function downIn() {
+    document.getElementById("bug-down-text").style.animation =
+    "opacityOut 0s linear 0s";
     document.getElementById("bug-down").style.width = "150px";
     document.getElementById("bug-sponsor").style.width = "222px";
     document.getElementById("sponsor-rotator").style.maxWidth = "218px";
+    setTimeout(function(){
     document.getElementById("bug-down-text").style.animation =
-      "opacityIn 0.2s linear 0.5s";
+      "opacityIn 0.2s linear 0s";
+    },500);
+    
   }
   
   function flagIn() {
@@ -185,3 +192,14 @@ var tdTeam;
     }, 5010);
 }
   }
+
+  var sponsorsInterval, currSponsor=0;
+
+  var sponsors=["avera", "dnn", "ss"]
+
+  function bugSponsors(){
+    sponsorsInterval = setInterval(function(){
+      e("sponsor-rotator").setAttribute("src","sponsors/"+sponsors[currSponsor]+".png")
+    },15000)
+  }
+ 
