@@ -23,9 +23,11 @@ function bugAnimate() {
     document.getElementById("bug-animate-cover").style.maxWidth = "1280px";
     document.getElementById("bug-container").style.maxWidth = "1280px";
     document.getElementById("bug-animate-text").style.animation = "";
+    bugSponsors();
   }
   
   function bugOut() {
+    clearInterval( sponsorsInterval);
     graphicIsLive=false;
     awayPopupOut();
     homePopupOut();
@@ -52,6 +54,7 @@ function bugAnimate() {
     graphicLive="bug";
     document.getElementById("bug-container").style.animation =
       "bugIn 0.5s ease-out 0s";
+      bugSponsors();
   }
   
   function homePopupIn(param, flag) {
@@ -195,10 +198,16 @@ var tdTeam;
 
   var sponsorsInterval, currSponsor=0;
 
-  var sponsors=["avera", "dnn", "ss"]
+  var sponsors=["avera", "luetke", "silverstar","shenanigans"];
+  e("sponsor-rotator").setAttribute("src","sponsors/"+sponsors[0]+".png")
+
 
   function bugSponsors(){
     sponsorsInterval = setInterval(function(){
+      currSponsor++;
+      if(currSponsor==sponsors.length){
+        currSponsor=0;
+      }
       e("sponsor-rotator").setAttribute("src","sponsors/"+sponsors[currSponsor]+".png")
     },15000)
   }
