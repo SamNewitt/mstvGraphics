@@ -67,7 +67,7 @@ function poss(param){
             setTimeout(function(){
                 e("bug-down").classList.add("away");
                 e("bug-down").classList.remove("home");
-            },300);
+            },500);
         break;
         case "h":
             e("away-triangle").style.animation="opacityOut 0.2s linear 0s";
@@ -75,7 +75,7 @@ function poss(param){
             setTimeout(function(){
                 e("bug-down").classList.add("home");
                 e("bug-down").classList.remove("away");
-            },300);
+            },500);
         break;
         case "n":
             e("home-triangle").style.animation="opacityOut 0.2s linear 0s";
@@ -127,12 +127,12 @@ prevHomeScore=param;
 
 //-----------------------------------------------------TIMEOUT CODE---------------------------------------------
 
-var awayPopupTimeout, homePopupTimout, awayTORemaining=3, homeTORemaining=3, awayTOBubbles=c("away-to"), homeTOBubbles=c("home-to");
+var awayPopupTimeout, homePopupTimeout, awayTORemaining=3, homeTORemaining=3, awayTOBubbles=c("away-to"), homeTOBubbles=c("home-to");
 
 function awayTakeTO(){
     if(graphicIsLive && graphicLive=="bug"){
   awayPopupIn("TIMEOUT", false);
-  awayTOBubbles[awayTORemaining-1].style.animation="flashTO 0.75s linear 0s 6";
+  awayTOBubbles[awayTORemaining-1].style.animation="awayFlashTO 0.75s linear 0s 6";
 
   awayPopupTimeout= setTimeout(function(){
     awayPopupOut();
@@ -168,7 +168,7 @@ function awayTO(param){
 function homeTakeTO(){
     if(graphicIsLive && graphicLive=="bug"){
         homePopupIn("TIMEOUT", false);
-  homeTOBubbles[homeTORemaining-1].style.animation="flashTO 0.75s linear 0s 6";
+  homeTOBubbles[homeTORemaining-1].style.animation="homeFlashTO 0.75s linear 0s 6";
 
   homePopupTimeout= setTimeout(function(){
     homePopupOut();

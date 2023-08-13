@@ -167,7 +167,7 @@
     border-width: 2px;
   }
 
-  @keyframes flashTO{
+  @keyframes awayFlashTO{
     0%{
       background-color: var(--away-accent);
     }
@@ -176,6 +176,18 @@
     }
     100%{
       background-color: var(--away-accent);
+    }
+  }
+
+  @keyframes homeFlashTO{
+    0%{
+      background-color: var(--home-accent);
+    }
+    50%{
+      background-color: var(--home-primary);
+    }
+    100%{
+      background-color: var(--home-accent);
     }
   }
   
@@ -315,7 +327,7 @@
     border-right: 25px solid transparent;
     height: 0;
     width: 304px;
-    margin-top: 577px;
+    margin-top: 617px;
     margin-left: 354px;
     animation: popupOut 0.1s linear 0s;
   }
@@ -323,7 +335,7 @@
   #home-popup-container {
     color: var(--home-primary);
     font-family: roboto, sans-serif;
-    margin-top: 577px;
+    margin-top: 617px;
     margin-left: 379px;
     width: 304px;
     height: 40px;

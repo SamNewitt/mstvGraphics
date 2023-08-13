@@ -316,9 +316,11 @@ function awayTD(){
 }
 
 function addHomeScore(param){
+    if(homeScore+param>-1){
     homeScore+=param;
     e("home-score").innerHTML=homeScore;
     send("homeScore="+homeScore);
+    }
 }
 
 function homeTD(){
@@ -739,4 +741,21 @@ function resetCheck(){
 function reset(){
     send("reset");
     location.reload();
+}
+
+function forceUpdate(){
+    send("clear");
+    inactiveC("away-popup");
+    inactiveC("home-popup");
+    clearAllGraphics();
+    send("clockVal="+clockRemain);
+    updatePeriod();
+    ddUpdate();
+    send("awayScore="+awayScore);
+    send("homeScore="+homeScore);
+    addHomeTO(0);
+    addAwayTO(0);
+    send("poss="+poss);
+
+
 }
