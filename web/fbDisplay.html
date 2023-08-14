@@ -4,6 +4,8 @@
     <head>
         <link rel="stylesheet" href=".resources/fbDisplay/fbDisplay.css">
         <link rel="stylesheet" href=".resources/fbDisplay/bug.css">
+        <link rel="stylesheet" href=".resources/fbDisplay/breakbox.css">
+        <link rel="stylesheet" href=".resources/fbDisplay/teamCorners.css">
 
 
 
@@ -99,6 +101,51 @@
       <img id=bug-td-logo-image src="">
 
     </div>
+    <!-- -------------------------------BREAKBOX-------------------------------------------- ------------------>
+    <div id=breakbox class=flex>
+      <div id=breakbox-away-triangle>
+      </div>
+      <div class="breakbox-team flex">
+        <p class="away-score breakbox-score">0</p>
+      </div>
+      <div id=breakbox-center>
+        <div id=breakbox-time class="flex gray">
+          <b class=period id=breakbox-period>1st</b>
+          <b class=clock id=breakbox-clock>12:00</b>
+        </div>
+        <img id=breakbox-logo class=mstv-m src=".resources/mstv.png">
+      </div>
+      <div class="breakbox-team flex">
+        <p class="home-score breakbox-score">0</p>
+      </div>
+      <div id=breakbox-home-triangle>
+
+      </div>
+    </div>
+    <div id=breakbox-away-logo class=flex>
+      <img class="away-logo corner-logo image" src="">
+    </div>
+    <div id=breakbox-home-logo class=flex>
+      <img class="home-logo corner-logo image" src="">
+    </div>
+    <!-- ---------------------------------------------TEAM CORNERS------------------------------ ------------------>
+    <div id=away-corner>
+      <div id=away-corner-2></div>
+      <div id=away-corner-1></div>
+    </div>
+    <div id=away-corner-logo class=flex>
+      <img class="away-logo corner-logo image" src="">
+    </div>
+    <div id=home-corner>
+      <div id=home-corner-2></div>
+      <div id=home-corner-1></div>
+    </div>
+    <div id=home-corner-logo class=flex>
+      <img class="home-logo corner-logo image" src="">
+
+    </div>
+    <!-- --------------------------------------------------------------------------- ------------------>
+
     </div>
     <div id="wait-cover" class="flex">
         <h1 style="color: #000; font-family:sans-serif;">Attempting to connect to server...</h1>
@@ -107,5 +154,8 @@
 <script src=".resources/fbDisplay/fbDisplay.js"></script>
 <script src=".resources/fbDisplay/gameData.js"></script>
 <script src=".resources/fbDisplay/bug.js"></script>
+<script src=".resources/fbDisplay/breakbox.js"></script>
+<script src=".resources/fbDisplay/teamCorners.js"></script>
+
     </body>
 </html>

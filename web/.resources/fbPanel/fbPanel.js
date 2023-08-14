@@ -756,6 +756,4 @@ function forceUpdate(){
     addHomeTO(0);
     addAwayTO(0);
     send("poss="+poss);
-
-
 }

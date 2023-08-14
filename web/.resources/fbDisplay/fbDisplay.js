@@ -3,9 +3,13 @@
   function clear(){
     if(graphicIsLive)
     {
+        graphicIsLive=false;
     switch(graphicLive){
         case "bug":
         bugOut();
+        break;
+        case "breakbox":
+        breakboxOut();
         break;
     }
 }
@@ -108,6 +112,10 @@ function message(type, data){
             bugTDAnimate("h");
             homeScore(parseInt(prevHomeScore)+6);
         break;
-        //---------------------------------------OTHER GFX------------------------------
+        //---------------------------------------SCORE GFX------------------------------
+        case "breakboxIn":
+        clear();   
+        setTimeout(breakboxIn,waitTime);
+        break;
     }
 }
