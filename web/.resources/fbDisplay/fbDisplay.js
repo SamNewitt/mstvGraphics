@@ -11,6 +11,9 @@
         case "breakbox":
         breakboxOut();
         break;
+        case "tc":
+        teamCornersOut();
+        break;
     }
 }
   }
@@ -116,6 +119,10 @@ function message(type, data){
         case "breakboxIn":
         clear();   
         setTimeout(breakboxIn,waitTime);
+        break;
+        case "teamCornersIn":
+         clear();
+         setTimeout(teamCornersIn,waitTime);
         break;
     }
 }

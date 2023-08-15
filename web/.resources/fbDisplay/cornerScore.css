@@ -1,0 +1,78 @@
+#corner-score{
+    margin-top: 570px;
+    margin-left: -130px;
+    border: solid #fff 3px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#cs-time{
+    height: 25px;
+    font-size: 20px;
+}
+
+#cs-period{
+    min-width:48px;
+    text-align: center;
+}
+
+#cs-clock{
+    width: 72px;
+    border-left: solid #fff 2px; 
+    text-align: center;
+}
+
+.cs-team{
+    height:35.5px;
+    width: 125px;
+}
+
+#cs-away{
+    border-top: solid #fff 2px;
+    border-bottom: solid #fff 2px;
+}
+
+.cs-logo-container{
+    height: 100%;
+    width: 35px;
+}
+
+.cs-logo-container img{
+    max-width: 35px;
+    max-height: 35px;
+}
+
+.cs-team b{
+    width:55px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.cs-score{
+    background-image: linear-gradient(#333, #444, #333);
+    width:35px;
+    height: 100%;
+}
+
+.cs-score c{
+    font-size: 25px
+}
+
+@keyframes cornerScoreIn {
+    from{
+        margin-left:-130px
+    }
+    to{
+        margin-left: 50px;
+    }
+}
+
+@keyframes cornerScoreOut {
+    from{
+        margin-top:570px;
+        margin-left: 50px;
+    }
+    to{
+        margin-top: 720px;
+        margin-left: 50px;
+    }
+}

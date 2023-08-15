@@ -25,6 +25,13 @@
     align-items: center;
     justify-content: center;
   }
+
+  .vflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .gray {
     background-color: var(--mstv-gray);
     color: #fff;

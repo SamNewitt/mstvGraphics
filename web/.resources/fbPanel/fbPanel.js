@@ -295,10 +295,14 @@ function addAwayScore(param){
     e("away-score").innerHTML=awayScore;
     send("awayScore="+awayScore);
     }
+    if(param>0){
+        clockStop();
+        }
 }
 
 function awayTD(){
     if(poss=="a"){
+    clockStop();
     awayScore+=6;
     e("away-score").innerHTML=awayScore;
     send("awayTouchdown");
@@ -321,10 +325,14 @@ function addHomeScore(param){
     e("home-score").innerHTML=homeScore;
     send("homeScore="+homeScore);
     }
+    if(param>0){
+    clockStop();
+    }
 }
 
 function homeTD(){
     if(poss=="h"){
+    clockStop();
     homeScore+=6;
     e("home-score").innerHTML=homeScore;
     send("homeTouchdown");
@@ -358,7 +366,8 @@ function takeAwayTO(){
     if(awayTO>0){
         awayTO--;
         e("away-to").innerHTML="Timeouts: "+awayTO;
-        send("takeAwayTO")
+        send("takeAwayTO");
+        clockStop();
     }
 }
 
@@ -374,7 +383,9 @@ function takeHomeTO(){
     if(homeTO>0){
         homeTO--;
         e("home-to").innerHTML="Timeouts: "+homeTO;
-        send("takeHomeTO")
+        send("takeHomeTO");
+        clockStop();
+
     }
 }
 

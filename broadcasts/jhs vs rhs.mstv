@@ -1,6 +1,7 @@
 {
   "away": {
     "name": "Jefferson",
+    "abbriviation": "JHS",
     "seed": "2",
     "record": "(8-1)",
     "logo": "logos/jhs.png",
@@ -10,6 +11,7 @@
   },
   "home": {
     "name": "Roosevelt",
+    "abbriviation": "RHS",
     "seed": "1",
     "record": "(9-0)",
     "logo": "logos/rhs.png",

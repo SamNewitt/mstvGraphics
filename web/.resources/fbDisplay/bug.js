@@ -167,12 +167,12 @@ var tdTeam;
   
     setTimeout(function () {
       document.getElementById("bug-td-logo").style.animation =
-        "leftCornerLogoIn 0.9s ease 0s";
+        "bugLeftCornerLogoIn 0.9s ease 0s";
     }, 200);
   
     setTimeout(function () {
       document.getElementById("bug-td-logo").style.animation =
-        "leftCornerScale 0.4s ease 0s";
+        "bugLeftCornerScale 0.4s ease 0s";
     }, 1300);
   
     setTimeout(function () {
