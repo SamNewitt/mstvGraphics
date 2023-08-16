@@ -567,7 +567,7 @@ function transition(){
         send("transition");
         transTimout=setTimeout(function(){
             clearAllGraphics(); 
-        },10000);
+        },5000);
     }
 }
 

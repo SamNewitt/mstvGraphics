@@ -6,6 +6,8 @@
         <link rel="stylesheet" href=".resources/fbDisplay/bug.css">
         <link rel="stylesheet" href=".resources/fbDisplay/breakbox.css">
         <link rel="stylesheet" href=".resources/fbDisplay/teamCorners.css">
+        <link rel="stylesheet" href=".resources/fbDisplay/cornerScore.css">
+
         
     </head>
     <body>
@@ -166,8 +168,32 @@
           </div>
       </div>
       </div>
+    <!-- --------------------------------------------------------------------------- TRANSITION LAYER------------------>
+    <div id="trans-away" class="away">
+      <div class="trans-content-container">
+      <div id="trans-away-content" class="taller">
+          <div class="trans-logo-container">
+            <img class="away-logo image" src="logos/jhs.png">
+          </div>
+          <div class="flex taller" id="trans-away-text-container">
+              <h1 class="trans-text away-name">Jefferson</h1>
+          </div>
+      </div>
+      </div>
+  </div>
+  <div id="trans-home" class="home">
+      <div class="trans-content-container" id="trans-home-content-container">
+      <div id="trans-home-content" class="taller">
+          <div class="flex taller" id="trans-home-text-container">
+              <h1 class="trans-text home-name">Roosevelt</h1>
+          </div>
+          <div class="trans-logo-container">
+              <img class="home-logo image" src="logos/rhs.png">
+            </div>
+      </div>
+      </div>
+  </div>
     <!-- --------------------------------------------------------------------------- ------------------>
-
     </div>
     <div id="wait-cover" class="flex">
         <h1 style="color: #000; font-family:sans-serif;">Attempting to connect to server...</h1>
@@ -178,6 +204,8 @@
 <script src=".resources/fbDisplay/bug.js"></script>
 <script src=".resources/fbDisplay/breakbox.js"></script>
 <script src=".resources/fbDisplay/teamCorners.js"></script>
+<script src=".resources/fbDisplay/cornerScore.js"></script>
+
 
     </body>
 </html>
