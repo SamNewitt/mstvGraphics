@@ -68,7 +68,7 @@ function bugAnimate() {
         e("home-popup").classList.remove("flag-bug-popup");
         e("home-popup-text").classList.remove("flag");
     }
-    adjustTextH(e("home-popup-text"),e("home-popup-container"));
+    adjustTextH(e("home-popup-text"),e("home-popup-container"),32);
     document.getElementById("home-popup").style.animation =
       "popupIn 0.2s linear 0s";
     document.getElementById("home-popup-container").style.animation =
@@ -93,7 +93,7 @@ function bugAnimate() {
         e("away-popup").classList.remove("flag-bug-popup");
         e("away-popup-text").classList.remove("flag");
     }
-    adjustTextH(e("away-popup-text"),e("away-popup-container"));
+    adjustTextH(e("away-popup-text"),e("away-popup-container"),32);
     document.getElementById("away-popup").style.animation =
       "popupIn 0.2s linear 0s";
     document.getElementById("away-popup-container").style.animation =

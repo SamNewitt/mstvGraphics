@@ -58,8 +58,8 @@ function enlargeAllImages() {
       }
   }
   
-  function adjustTextH(param, container) {
-    var fontSize = 32;
+  function adjustTextH(param, container, fontSize) {
+   
     param.style.fontSize = fontSize + "px";
     while (param.offsetWidth >= container.offsetWidth && fontSize > 20) {
       fontSize--;

@@ -1,97 +1,77 @@
-#trans-away{
-    height: 340px;
-    border-bottom: solid var(--mstv-gray) 20px;
-    width: 0px;
-    overflow: hidden;
+:root{
+    --l3rd-bg: var(--mstv-gray);
 }
 
-#trans-home{
-    margin-top: 360px;
-    margin-left: 1280px;
-    height: 340px;
-    border-top: solid var(--mstv-gray) 20px;
-    width: 0px;
-    overflow: hidden;
+#l3rd{
+    margin-top: 591px;
+    margin-left: 305.5px;
+} 
+ 
+ #l3rd-bg::after{
+    content: "";
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -29px;
+    border-bottom: 125px solid var(--l3rd-bg);
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    height: 0;
+    width: 600px; 
+}
+#l3rd-bg{
+    border-bottom: 129px solid #fff;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    height: 0;
+    width: 605px;
 }
 
-.trans-content-container{
-    width: 1280px;
-    height: 340px;
+.l3rd-content{
+    color: #fff;
+    margin-top: 591px;
+    margin-left: 305.5px;
+    width:669px;
+    max-height: 125px;
 }
 
-#trans-home-content-container{
-    float:right;
+#l3rd-general{
+    min-height: 110px;
 }
 
-#trans-away-content{
-    margin-left:100px;
-    display: flex;
-}
-
-#trans-home-content{
-    margin-right:100px;
-    display: flex;
-    float:right;
-}
-
-
-.trans-logo-container{
-    height: 250px;
-    max-width: 250px;
-    margin-top: 45px;
-}
-
-#trans-away-text-container{
-margin-left: 50px;
-}
-
-#trans-home-text-container{
-    margin-right: 50px;
-    }
-
-.trans-text{
-    font-family: "Oswald", sans-serif;
+.l3rd-content h1{
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    font-size: 100px;
-    max-width: 540px;
-    text-align: center;
-    line-height: 110px;
+    font-size:44px;
+    margin: 0;
 }
 
-@keyframes transAwayIn {
-    from{
-        width:0px;
-    }
-    to{
-        width:1280px;
-    }
+.l3rd-content p{
+    font-family: "Roboto", sans-serif;
+font-size:27px;
+margin:0;
 }
 
-@keyframes transHomeIn {
-    from{
-        width:0px;
-        margin-left: 1280px;
-    }
-    to{
-        width:1280px;
-        margin-left: 0px;
-    }
+
+#l3rd-general-text-container, #l3rd-general-title-container{
+    width: 650px;
+text-align: center;
+
 }
 
-@keyframes transAwayContent{
+@keyframes l3rdIn {
     from{
-        margin-left:100px;
+        margin-top:720px;
     }
     to{
-        margin-left:380px;
+        margin-top: 591px;
     }
 }
 
-@keyframes transHomeContent{
-    from{
-        margin-right:100px;
-    }
+@keyframes l3rdOut {
     to{
-        margin-right:380px;
+        margin-top: 720px;
     }
 }
+
+
+

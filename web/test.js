@@ -1,16 +1,29 @@
-function transitionIn(){
-    e("trans-away").style.animation="transAwayIn 0.75s ease 0s";
-    e("trans-home").style.animation="transHomeIn 0.75s linear 0s";
-    e("trans-away-content").style.animation="transAwayContent 3s linear 0s";
-    e("trans-home-content").style.animation="transHomeContent 3s linear 0s";
+function l3rdIn(title,text,color){
+    switch(color){
+        case "a":
+            document.querySelector(':root').style.setProperty("--l3rd-bg", jsonData.away.bgColor);
+        break;
+        case "h":
+            document.querySelector(':root').style.setProperty("--l3rd-bg", jsonData.home.bgColor);
+        break;
+        case "n":
+            document.querySelector(':root').style.setProperty("--l3rd-bg", "#8a8c8e");
+        break;
+    }
+    e("l3rd-general-title").innerHTML=title;
+    e("l3rd-general-text").innerHTML=text;
+    e("l3rd").style.animation="l3rdIn 0.5s ease-out 0s";
+    e("l3rd-general").style.animation="l3rdIn 0.5s ease-out 0s";
 
-    setTimeout(transitionOut,5000)
 
 }
 
-function transitionOut(){
-    e("trans-away").style.animation="";
-    e("trans-home").style.animation="";
-    e("trans-away-content").style.animation="";
-    e("trans-home-content").style.animation="";
+l3rdOut();
+
+function l3rdOut(){
+    // e("l3rd").style.animation="l3rdOut 0.5s ease-in 0s";
+    e("l3rd-general").style.animation="l3rdOut 0.5s ease-in 0s";
+    // e("l3rd-annc").style.animation="l3rdOut 0.5s ease-in 0s";
+
+
 }
