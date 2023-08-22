@@ -27,8 +27,6 @@ function home(param){
 
 var graphicIsLive=false, graphicLive;
 
-window.onload = enlargeAllImages();
-
 //start bug rotator
 
 function enlargeAllImages() {
@@ -37,10 +35,10 @@ function enlargeAllImages() {
   
     for (var i = 0; i < images.length; i++) {
       imageObject.src = images[i].src;
-      if (imageObject.width > imageObject.height) {
-        images[i].style.width = "100%";
-      } else {
+      if (imageObject.width < imageObject.height) {
         images[i].style.height = "100%";
+      } else {
+        images[i].style.width = "100%";
       }
     }
   }
@@ -58,13 +56,40 @@ function enlargeAllImages() {
       }
   }
   
-  function adjustTextH(param, container, fontSize) {
-   
+  function adjustText(param, container, fontSize, limit) {
     param.style.fontSize = fontSize + "px";
-    while (param.offsetWidth >= container.offsetWidth && fontSize > 20) {
+    while (param.offsetWidth >= container.offsetWidth && fontSize > limit) {
       fontSize--;
       param.style.fontSize = fontSize + "px";
     }
+  }
+
+  function adjustTextV(param,container,fontSize,limit){
+    param.style.fontSize = fontSize + "px";
+    while (param.offsetHeight > container.offsetHeight && fontSize > limit) {
+      console.log(param.offsetHeight+"    "+container.offsetHeight);
+      fontSize--;
+      param.style.fontSize = fontSize + "px";
+    }
+  }
+
+  var textFits=false
+
+  function adjustTextAll(param, container, fontSize, limit){
+    for(var i=0; i<param.length; i++){
+    param[i].style.fontSize=fontSize+"px";
+    }
+    textFits=false;
+    while(!textFits && fontSize>limit){
+      textFits=true;
+      for(var i=0; i<param.length; i++){
+        if(param[i].offsetWidth >= container[i].offsetWidth){
+          textFits=false;
+        }
+        
+      }
+    }
+
   }
 
 
@@ -113,6 +138,7 @@ c("home-logo").forEach(function(elem){
     elem.setAttribute("src",jsonData.home.logo);
 });
 
+setTimeout(enlargeAllImages,1000);
 }
 
 

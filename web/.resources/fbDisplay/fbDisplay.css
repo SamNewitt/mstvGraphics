@@ -104,7 +104,7 @@
   div,
 p,
 c,
-b {
+b, h1 {
   overflow: hidden;
   animation-fill-mode: forwards !important;
 }
