@@ -673,7 +673,7 @@ function addGraphic(param, elem){
 }
 
 function starters(param,elem){
-    if(bug){
+    
     if(elem.classList.contains("active")){
         elem.classList.remove("active");
         send("clearStarters");
@@ -685,7 +685,7 @@ function starters(param,elem){
         elem.classList.add("active");
         send("starters="+param);
     }
-}
+
 }
 
 function sponsor(param,elem){

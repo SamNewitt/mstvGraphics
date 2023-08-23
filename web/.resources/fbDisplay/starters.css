@@ -18,17 +18,17 @@
     line-height: 42px;
     text-align: center;
     margin-top: 4px;
+    text-transform: uppercase;
 }
 
 #starters-content-container{
-    /* TEMP */
-    background-color: #a7001b;
 
     height: 100px;
     width: 1280px;
 }
 
 #starters-content{
+    transition: 0.3s;
     width:1280px;
     font-family: 'Roboto',sans-serif;
     font-size:32px;

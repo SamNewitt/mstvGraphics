@@ -25,6 +25,9 @@
         break;
     }
 }
+if(startersAreIn){
+    startersOut();
+}
   }
 
   var waitTime=0;
@@ -152,6 +155,12 @@ function message(type, data){
         break;
         case "customL3rdText":
             l3rdSetText(data);
+        break;
+        case "starters":
+            startersIn(data);
+        break;
+        case "clearStarters":
+            startersOut();
         break;
     }
 }

@@ -1,29 +1,277 @@
 {
-  "away": {
-    "name": "Jefferson",
-    "abbriviation": "JHS",
-    "seed": "2",
-    "record": "(8-1)",
-    "logo": "logos/jhs.png",
-    "primaryColor": "#ccc",
-    "accentColor": "#1a4f27",
-    "bgColor": "#1a4f27"
-  },
-  "home": {
-    "name": "Roosevelt",
-    "abbriviation": "RHS",
-    "seed": "1",
-    "record": "(9-0)",
-    "logo": "logos/rhs.png",
-    "primaryColor": "#a7001b",
-    "accentColor": "#fff",
-    "bgColor": "#a7001b"
-  },
-  "announcer1": "John Gaskins",
-  "announcerHandle1": "@johnkgaskins",
-  "announcer2": "Brad Newitt",
-  "announcerHandle2": "@bnewitt",
-  "nextBroadcast": "#1 Roosevelt at #2 Harrisburg | September 1 - 6:45 PM",
-  "crew":"Sam Newitt, Miles Wigg, Kailey Campbell, Ross Perot, Thomas Butzer"
+	"away": {
+		"name": "Jefferson",
+		"abbriviation": "JHS",
+		"seed": "2",
+		"record": "(8-1)",
+		"logo": "logos/jhs.png",
+		"primaryColor": "#ccc",
+		"accentColor": "#1a4f27",
+		"bgColor": "#1a4f27",
+		"d1Players": [{
+				"number": "35",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+    "d2Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+  "o1Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+    "o2Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		]
+	},
+	"home": {
+		"name": "Roosevelt",
+		"abbriviation": "RHS",
+		"seed": "1",
+		"record": "(9-0)",
+		"logo": "logos/rhs.png",
+		"primaryColor": "#a7001b",
+		"accentColor": "#fff",
+		"bgColor": "#a7001b",
+    "d1Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+    "d2Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+  "o1Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		],
+    "o2Players": [{
+				"number": "33",
+				"name": "Joe Smith",
+				"position": "QB"
+			},
+			{
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			},
+      {
+				"number": "32",
+				"name": "Joe f",
+				"position": "RB"
+			}
+		]
+	},
+	"announcer1": "John Gaskins",
+	"announcerHandle1": "@johnkgaskins",
+	"announcer2": "Brad Newitt",
+	"announcerHandle2": "@bnewitt",
+	"nextBroadcast": "#1 Roosevelt at #2 Harrisburg | September 1 - 6:45 PM",
+	"crew": "Sam Newitt, Miles Wigg, Kailey Campbell, Ross Perot, Thomas Butzer"
 
 }
