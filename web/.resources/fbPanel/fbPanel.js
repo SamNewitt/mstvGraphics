@@ -493,6 +493,7 @@ function homePoss(){
 var flagIn=false;
 
 function flag(){
+    undoTree.add("flag");
     if(!flagIn){
         if(bug)
         {
@@ -519,13 +520,11 @@ function clearAllGraphics(){
     inactive("flag");
     inactiveC("away-popup");
     inactiveC("home-popup");
-
-
-
 }
 
 function bugIn(){
     if(!bug){
+        undoTree.push("graphic");
         clearAllGraphics();
         active("bug-in");
         inactive("bug-out");
@@ -540,6 +539,7 @@ function bugIn(){
 
 function bugOut(){
     if(bug){
+        undoTree.push("bugOut");
         bug=false;
         active("bug-out");
         inactive("bug-in");
@@ -555,6 +555,8 @@ function bugOut(){
 
 function bugAnimate(){
     if(!bug){
+        undoTree.push("graphic");
+
         clearAllGraphics();
         active("bug-in");
         inactive("bug-out");
@@ -581,6 +583,7 @@ function breakbox(){
         clearAllGraphics();
         active("breakbox")
         send("breakboxIn");
+        undoTree.push("graphic");
     }
 }
 
@@ -593,6 +596,8 @@ function cornerScore(){
         clearAllGraphics();
         active("corner-score")
         send("cornerScoreIn");
+        undoTree.push("graphic");
+
     }
 }
 
@@ -605,6 +610,8 @@ function teamCorners(){
         clearAllGraphics();
         active("team-corners")
         send("teamCornersIn");
+        undoTree.push("graphic");
+
     }
 }
 
@@ -638,6 +645,7 @@ function awayPopup(param,elem){
 
             elem.classList.add("active");
             send("awayPopup="+param);
+            undoTree.push("awayPopup");
         }
     }
 }
@@ -658,6 +666,8 @@ function homePopup(param,elem){
 
             elem.classList.add("active");
             send("homePopup="+param);
+            undoTree.push("homePopup");
+
         }
     }
 }
@@ -681,6 +691,7 @@ function awayFlag(param,elem){
 
             elem.classList.add("active");
             send("awayFlag="+param);
+            undoTree.push("awayPopup");
         }
     }
 }
@@ -703,6 +714,8 @@ function homeFlag(param,elem){
         inactiveC("graphic");
             elem.classList.add("active");
             send("homeFlag="+param);
+            undoTree.push("homePopup");
+
         }
     }
 }
@@ -711,6 +724,15 @@ function homeCustFlag(elem){
     homeFlag(e("home-flag-input").value.toUpperCase(),elem);
 }
 
+function awayPopupOut(){
+    inactiveC("away-popup");
+    send("awayPopupOut");
+}
+
+function homePopupOut(){
+    inactiveC("home-popup");
+    send("homePopupOut");
+}
 // --------------------------------- OTHER GRAPHICS GODE----------------------------------------
 
 function addGraphic(param, elem){
@@ -722,6 +744,7 @@ function addGraphic(param, elem){
         clearAllGraphics();
         elem.classList.add("active");
         send(param);
+        undoTree.push("graphic");
     }
 }
 
@@ -732,11 +755,10 @@ function starters(param,elem){
         send("clearStarters");
     }
     else{
-        inactiveC("away-popup");
-        inactiveC("home-popup");
         inactiveC("graphic");
         elem.classList.add("active");
         send("starters="+param);
+        undoTree.push("graphic");
     }
 
 }
@@ -750,6 +772,8 @@ function sponsor(param,elem){
         clearAllGraphics();
         elem.classList.add("active");
         send("sponsorCorner="+param);
+        undoTree.push("graphic");
+
     }
 }
 
@@ -764,6 +788,8 @@ function addCustomImage(){
         clearAllGraphics();
         active("image");
         send("customImage="+e("image-input").value);
+        undoTree.push("graphic");
+
     }
 }
 
@@ -787,6 +813,7 @@ function showCustomL3rd(){
         send("customL3rdTitle="+e("l3rd-title").value);
         send("customL3rdText="+e("l3rd-text").value);
         send("l3rd="+l3rdType);
+        undoTree.push("graphic");
     }
 }
 
@@ -807,6 +834,11 @@ function reset(){
     location.reload();
 }
 
+function clear(){
+    send("clear");
+    clearAllGraphics();
+}
+
 function forceUpdate(){
     send("clear");
     inactiveC("away-popup");
@@ -825,6 +857,8 @@ function forceUpdate(){
 var undoLength, undoData;
 function undo(){
     undoLength=undoTree.length;
+    if(undoLength>0)
+    {
     undoData=undoTree[undoLength-1].split("=");
     switch(undoData[0])
     {
@@ -847,6 +881,12 @@ function undo(){
         case "homeScore":
             addHomeScore(undoData[1]);
         break;
+        case "addAwayTO":
+            addAwayTO(undoData[1]);
+        break;
+        case "addHomeTO":
+            addHomeTO(undoData[1]);
+        break;
         case "awayPoss":
             awayPoss();
         break;
@@ -856,9 +896,26 @@ function undo(){
         case "neutralPoss":
             neutralPoss();
         break;
+        case "flag":
+            flag();
+        break;
+        case "graphic":
+        clear();
+        break;
+        case "bugOut":
+            bugIn()
+        break;
+        case "awayPopup":
+            awayPopupOut()
+        break;
+        case "homePopup":
+            homePopupOut()
+        break;
+
     }
-    
+}
     
     undoTree.splice(undoLength-1,20);
+
 
 }
