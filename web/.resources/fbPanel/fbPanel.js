@@ -493,7 +493,7 @@ function homePoss(){
 var flagIn=false;
 
 function flag(){
-    undoTree.add("flag");
+    undoTree.push("flag");
     if(!flagIn){
         if(bug)
         {
@@ -770,6 +770,8 @@ function sponsor(param,elem){
     }
     else{
         clearAllGraphics();
+        inactiveC("graphic");
+
         elem.classList.add("active");
         send("sponsorCorner="+param);
         undoTree.push("graphic");

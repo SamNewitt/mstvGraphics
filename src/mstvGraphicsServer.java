@@ -9,10 +9,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.io.IOException;
+import javax.swing.JFrame;
 
-public class serverConnection extends WebSocketServer {
+public class mstvGraphicsServer extends WebSocketServer {
     private final Collection<WebSocket> clients = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    public serverConnection(InetSocketAddress param) {
+    public mstvGraphicsServer(InetSocketAddress param) {
         super(param);
     }
 
@@ -25,7 +26,7 @@ public class serverConnection extends WebSocketServer {
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         System.out.println("WebSocket connection opened");
       try{
-        conn.send("broadcastFile="+(new String(Files.readAllBytes(Paths.get("broadcasts/jhs vs rhs.mstv")), StandardCharsets.UTF_8)));
+        conn.send("broadcastFile="+(new String(Files.readAllBytes(Paths.get("broadcasts/currentBroadcast.mstv")), StandardCharsets.UTF_8)));
       }
       catch (IOException e) {
         e.printStackTrace();
@@ -60,13 +61,16 @@ public class serverConnection extends WebSocketServer {
 
     
     public static void main(String[] args) throws Exception {
+              JFrame window = new JFrame();
+        window.setSize(500,100);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setTitle("Graphics Server Running");
+        window.setVisible(true);
 
-        WebSocketServer server = new serverConnection(new InetSocketAddress("localhost", 6788));
-
-             System.out.println("\n ----------------------------\n");
-
-
+        WebSocketServer server = new mstvGraphicsServer(new InetSocketAddress("localhost", 6788));
         server.run();
-}
+
+    }
+  
 
 }
