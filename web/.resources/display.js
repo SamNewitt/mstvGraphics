@@ -46,7 +46,6 @@ function enlargeAllImages() {
   function enlargeImage(param) {
     var imageObject = new Image();        
       imageObject.src = param.src;
-      console.log(imageObject.width +"    "+imageObject.height);
       if (imageObject.width > imageObject.height) {
         param.style.width = "100%";
         param.style.height = "auto";

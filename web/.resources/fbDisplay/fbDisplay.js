@@ -26,6 +26,9 @@
         case "sponsor":
         sponsorOut();
         break;
+        case "show":
+        showOut();
+        break;
     }
 }
 if(startersAreIn){
@@ -171,6 +174,19 @@ function message(type, data){
                 sponsorIn(data);
             },waitTime)
         break;
+        case "pregame":
+            clear();
+         setTimeout(pregameIn,waitTime);
+        break;
+        case "halftime":
+            clear();
+         setTimeout(halftimeIn,waitTime);
+        break;
+        case "postgame":
+            clear();
+         setTimeout(postgameIn,waitTime);
+        break;
+        
         
     }
 }
