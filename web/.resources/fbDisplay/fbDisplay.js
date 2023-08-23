@@ -14,6 +14,12 @@
         case "tc":
         teamCornersOut();
         break;
+        case "cs":
+        csOut();
+        break;
+        case "transition":
+        transitionOut();
+        break;
     }
 }
   }
@@ -123,6 +129,13 @@ function message(type, data){
         case "teamCornersIn":
          clear();
          setTimeout(teamCornersIn,waitTime);
+        break;
+        case "cornerScoreIn":
+            clear();
+         setTimeout(csIn,waitTime);
+        break;
+        case "transition":
+        transitionIn();
         break;
     }
 }

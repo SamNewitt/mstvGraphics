@@ -20,7 +20,7 @@
     <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
     <button onclick="clockUpdate()">Update</button>
 </div>
-<h2 id="period">Q1</h2>
+<h2 id="period">1st</h2>
 <div class="flex"  > 
     
 
@@ -90,11 +90,13 @@
 <div class="vflex" style="width: 533px;">
 <div class="flex section" style="height: 50px; width: 100%;">
    <h5 id="connection"></h5>
-    <div id="menu" class="flex" style="margin:0; width:330px;">
+    <div id="menu" class="flex" style="margin:0;">
+        <button onclick="undo()">Undo</button>
+        <button onclick="clear()">Clear</button>
         <button onclick="forceUpdate()">Update</button>
-        <button onclick="sync()">Sync</button>
         <button onclick="resetCheck()">Reset</button>
-        <button onclick="undo()">Undo</button></div>
+        <button onclick="sync()">Sync</button>
+    </div>
         <div id="reset" class="flex" style="margin:0; width:330px; display: none;">
         <h5>Reset Game?</h5>
         <button onclick="reset()">Yes</button>

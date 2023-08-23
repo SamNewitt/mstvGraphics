@@ -124,6 +124,13 @@ c("home-record").forEach(function(elem){
     elem.innerHTML=jsonData.home.record;
 });
 
+c("away-abbr").forEach(function(elem){
+  elem.innerHTML=jsonData.away.abbriviation;
+});
+c("home-abbr").forEach(function(elem){
+  elem.innerHTML=jsonData.home.abbriviation;
+});
+
 // c("away-starters-title").forEach(function(elem){
 //     elem.innerHTML=jsonData.away.name+" Starters";
 // });

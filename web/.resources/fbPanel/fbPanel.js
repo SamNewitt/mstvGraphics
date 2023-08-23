@@ -1,6 +1,6 @@
 
 // ------------------------ TIMER CODE ----------------------------------------------
-var clockRemain=720, clock="12:00", input;
+var clockRemain=720, clock="12:00", input, clockInterval=null;
 
 function clockStart(){
     send("clockVal="+clockRemain);
