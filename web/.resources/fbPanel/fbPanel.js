@@ -794,7 +794,7 @@ function addCustomImage(){
 }
 
 //------------------------------------------CUSTOM L3rd CODE---------------------------------------------
-var l3rdType="n";
+var l3rdType="n", ssSelected=false;
 
 function customL3rdType(param, elem){
     inactiveC("l3rd-selector");
@@ -807,13 +807,36 @@ function showCustomL3rd(){
         inactive("custom-l3rd");
         send("clear");
     }
-    else{
+    else if(e("l3rd-text").value!=""){
+        if(ssSelected)
+        {
+            clearAllGraphics();
+            active("custom-l3rd");
+            send("customL3rdText="+e("l3rd-text").value);
+            send("pog="+l3rdType);
+
+        }
+        else if(e("l3rd-title").value!=""){
         clearAllGraphics();
         active("custom-l3rd");
         send("customL3rdTitle="+e("l3rd-title").value);
         send("customL3rdText="+e("l3rd-text").value);
         send("l3rd="+l3rdType);
+
+        }
         undoTree.push("graphic");
+    }
+}
+
+function ss(){
+    ssSelected=!ssSelected;
+    if(ssSelected){
+        active("l3rd-s");
+        e("l3rd-title").setAttribute("placeholder","");
+    }
+    else{
+        inactive("l3rd-s");
+        e("l3rd-title").setAttribute("placeholder","TITLE");
     }
 }
 
@@ -916,6 +939,4 @@ function undo(){
 }
     
     undoTree.splice(undoLength-1,20);
-
-
 }

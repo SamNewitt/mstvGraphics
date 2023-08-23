@@ -1,3 +1,7 @@
+:root{
+    --ss-bg: var(--mstv-gray);
+}
+
 #ss, #ss-content{
   margin-top: 591px;
   margin-left: 200px;
@@ -9,7 +13,7 @@
   position: absolute;
   margin-top: 4px;
   margin-left: -29px;
-  border-bottom: 125px solid var(--mstv-gray);
+  border-bottom: 125px solid var(--ss-bg);
   border-left: 32px solid transparent;
   border-right: 32px solid transparent;
   height: 0;

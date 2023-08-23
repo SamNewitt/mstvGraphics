@@ -29,6 +29,9 @@
         case "show":
         showOut();
         break;
+        case "pog":
+        pogOut();
+        break;
     }
 }
 if(startersAreIn){
@@ -151,7 +154,7 @@ function message(type, data){
         break;
         //------------------------------------OTHER GFX-------------------------------
         case "l3rd":
-            clear()
+            clear();
             setTimeout(function(){
                 l3rd(data);
             },waitTime)
@@ -186,7 +189,12 @@ function message(type, data){
             clear();
          setTimeout(postgameIn,waitTime);
         break;
-        
+        case "pog":
+            clear();
+            setTimeout(function(){
+                pogIn(data);
+            },waitTime);
+        break;
         
     }
 }

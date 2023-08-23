@@ -89,3 +89,32 @@ function l3rdInit(){
     adjustTextAll(c("l3rd-annc-text"),c("l3rd-annc-text-container"),27,18);
 }
 
+
+
+
+function pogIn(color){
+    graphicIsLive=true;
+    graphicLive="pog";
+    switch(color){
+        case "a":
+            document.querySelector(':root').style.setProperty("--ss-bg", jsonData.away.bgColor);
+        break;
+        case "h":
+            document.querySelector(':root').style.setProperty("--ss-bg", jsonData.home.bgColor);
+        break;
+        case "n":
+            document.querySelector(':root').style.setProperty("--ss-bg", "#8a8c8e");
+        break;
+    }
+    e("ss-text").innerHTML=l3rdText;
+    adjustTextV(e("ss-text"),e("ss-text-container"),27,15);
+    e("ss").style.animation="l3rdIn 0.5s ease-out 0s";
+    e("ss-content").style.animation="l3rdIn 0.5s ease-out 0s";
+}
+
+pogOut();
+
+function pogOut(){
+    e("ss").style.animation="l3rdOut 0.5s ease-in 0s";
+    e("ss-content").style.animation="l3rdOut 0.5s ease-in 0s";
+}
