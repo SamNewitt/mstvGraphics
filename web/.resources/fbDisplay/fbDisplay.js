@@ -32,6 +32,9 @@
         case "pog":
         pogOut();
         break;
+        case "custom":
+        customOut();
+        break;
     }
 }
 if(startersAreIn){
@@ -195,6 +198,11 @@ function message(type, data){
                 pogIn(data);
             },waitTime);
         break;
-        
+        case "customImage":
+            clear();
+            setTimeout(function(){
+                customIn(data);
+            },waitTime);
+        break;
     }
 }
