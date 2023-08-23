@@ -1,4 +1,4 @@
-
+var undoTree=[];
 // ------------------------ TIMER CODE ----------------------------------------------
 var clockRemain=720, clock="12:00", input, clockInterval=null;
 
@@ -154,6 +154,7 @@ send("period=End 3rd");
 
 function nextPeriod(){
 if(!finalized){
+    undoTree.push("nextPeriod")
     period+=0.5;
 updatePeriod();
 }
@@ -162,11 +163,13 @@ updatePeriod();
 function prevPeriod(){
    if(finalized)
    {
+    undoTree.push("prevPeriodFinal")
     finalized=false;
     updatePeriod();
     inactive("final")
    }
     else if(period!=1){
+        undoTree.push("prevPeriod")
     period-=0.5;
     updatePeriod();
     }
@@ -174,6 +177,7 @@ function prevPeriod(){
 
 function final(){
     if (!finalized){
+    undoTree.push("finalize")
         e("period").innerHTML="Final";
         send ("period=Final");
         active("final")
@@ -277,12 +281,16 @@ function ddVisibility(){
     ddVisibilityEnabled=!ddVisibilityEnabled;
         active("dd-visibility");
         send("ddVisible");
+    undoTree.push("ddVisibility");
+
        }
     }
     else{
     ddVisibilityEnabled=!ddVisibilityEnabled;
         inactive("dd-visibility");
         send("ddInvisible"); 
+    undoTree.push("ddVisibility");
+
     }
 }
 
@@ -290,8 +298,9 @@ function ddVisibility(){
 var homeScore=0, awayScore=0;
 
 function addAwayScore(param){
-    if(awayScore+param>-1){
-    awayScore+=param;
+    if(awayScore+parseInt(param)>-1){
+    undoTree.push("awayScore="+param*-1);
+    awayScore+=parseInt(param);
     e("away-score").innerHTML=awayScore;
     send("awayScore="+awayScore);
     }
@@ -302,6 +311,7 @@ function addAwayScore(param){
 
 function awayTD(){
     if(poss=="a"){
+    undoTree.push("awayScore=-6");
     clockStop();
     awayScore+=6;
     e("away-score").innerHTML=awayScore;
@@ -320,8 +330,9 @@ function awayTD(){
 }
 
 function addHomeScore(param){
-    if(homeScore+param>-1){
-    homeScore+=param;
+    if(homeScore+parseInt(param)>-1){
+    undoTree.push("homeScore="+param*-1);
+    homeScore+=parseInt(param);
     e("home-score").innerHTML=homeScore;
     send("homeScore="+homeScore);
     }
@@ -332,6 +343,7 @@ function addHomeScore(param){
 
 function homeTD(){
     if(poss=="h"){
+    undoTree.push("homeScore=-6");
     clockStop();
     homeScore+=6;
     e("home-score").innerHTML=homeScore;
@@ -355,8 +367,9 @@ function homeTD(){
 var awayTO=3, homeTO=3;
 
 function addAwayTO(param){
-    if(awayTO+param>-1 && awayTO+param<4){
-    awayTO+=param;
+    if(awayTO+parseInt(param)>-1 && awayTO+parseInt(param)<4){
+    undoTree.push("addAwayTO="+param*-1);
+    awayTO+=parseInt(param);
     e("away-to").innerHTML="Timeouts: "+awayTO;
     send("awayTO="+awayTO)
     }
@@ -364,6 +377,7 @@ function addAwayTO(param){
 
 function takeAwayTO(){
     if(awayTO>0){
+        undoTree.push("addAwayTO=1");
         awayTO--;
         e("away-to").innerHTML="Timeouts: "+awayTO;
         send("takeAwayTO");
@@ -372,8 +386,9 @@ function takeAwayTO(){
 }
 
 function addHomeTO(param){
-    if(homeTO+param>-1 && homeTO+param<4){
-        homeTO+=param;
+    if(homeTO+parseInt(param)>-1 && homeTO+parseInt(param)<4){
+    undoTree.push("addHomeTO="+param*-1);
+        homeTO+=parseInt(param);
     e("home-to").innerHTML="Timeouts: "+homeTO;
     send("homeTO="+homeTO)
     }
@@ -381,6 +396,7 @@ function addHomeTO(param){
 
 function takeHomeTO(){
     if(homeTO>0){
+        undoTree.push("addHomeTO=1");
         homeTO--;
         e("home-to").innerHTML="Timeouts: "+homeTO;
         send("takeHomeTO");
@@ -394,6 +410,17 @@ function takeHomeTO(){
 var poss="n";
 
 function awayPoss(){
+    switch(poss){
+        case "a":
+            undoTree.push("awayPoss");
+        break;
+        case "h":
+            undoTree.push("homePoss");
+        break;
+        case "n":
+            undoTree.push("neutralPoss");
+        break;
+    }
     if(poss=="a"){
         poss="n";
         inactive("away-poss");
@@ -415,7 +442,33 @@ function awayPoss(){
         },500);
 }
 
+function neutralPoss(){
+    inactive("home-poss");
+    inactive("away-poss");
+    poss="n";
+    send("poss="+poss);
+    ddVisibilityEnabled=false;
+    inactive("dd-visibility");
+    send("ddInvisible"); 
+    setTimeout(
+        function(){
+    down(1);
+        ddUpdate();
+        },500);
+}
+
 function homePoss(){
+    switch(poss){
+        case "a":
+            undoTree.push("awayPoss");
+        break;
+        case "h":
+            undoTree.push("homePoss");
+        break;
+        case "n":
+            undoTree.push("neutralPoss");
+        break;
+    }
     if(poss=="h"){
         poss="n";
         inactive("home-poss");
@@ -767,4 +820,45 @@ function forceUpdate(){
     addHomeTO(0);
     addAwayTO(0);
     send("poss="+poss);
+}
+
+var undoLength, undoData;
+function undo(){
+    undoLength=undoTree.length;
+    undoData=undoTree[undoLength-1].split("=");
+    switch(undoData[0])
+    {
+        case "nextPeriod":
+        case "finalize":
+            prevPeriod();
+        break;
+        case "prevPeriod":
+            nextPeriod();
+        break;
+        case "prevPeriodFinal":
+            final();
+        break;
+        case "ddVisibility":
+            ddVisibility();
+        break;
+        case "awayScore":
+            addAwayScore(undoData[1]);
+        break;
+        case "homeScore":
+            addHomeScore(undoData[1]);
+        break;
+        case "awayPoss":
+            awayPoss();
+        break;
+        case "homePoss":
+            homePoss();
+        break;
+        case "neutralPoss":
+            neutralPoss();
+        break;
+    }
+    
+    
+    undoTree.splice(undoLength-1,20);
+
 }
