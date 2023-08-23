@@ -18,5 +18,12 @@
     "primaryColor": "#a7001b",
     "accentColor": "#fff",
     "bgColor": "#a7001b"
-  }
+  },
+  "announcer1": "John Gaskins",
+  "announcerHandle1": "@johnkgaskins",
+  "announcer2": "Brad Newitt",
+  "announcerHandle2": "@bnewitt",
+  "nextBroadcast": "#1 Roosevelt at #2 Harrisburg | September 1 - 6:45 PM",
+  "crew":"Sam Newitt, Miles Wigg, Kailey Campbell, Ross Perot, Thomas Butzer"
+
 }

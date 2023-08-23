@@ -733,7 +733,7 @@ function showCustomL3rd(){
         active("custom-l3rd");
         send("customL3rdTitle="+e("l3rd-title").value);
         send("customL3rdText="+e("l3rd-text").value);
-        send("addCustomL3rd="+l3rdType);
+        send("l3rd="+l3rdType);
     }
 }
 

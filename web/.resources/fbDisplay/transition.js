@@ -1,6 +1,7 @@
-var transTimeout
+var transTimeout, graphicWasLive;
 
 function transitionIn(){
+    graphicWasLive=graphicLive;
     graphicIsLive=true;
     graphicLive="transition";
     e("trans-away").style.animation="transAwayIn 0.75s ease 0s";
@@ -13,6 +14,7 @@ function transitionIn(){
 }
 
 function transitionClear(){
+    graphicLive=graphicWasLive;
     clear();
     e("trans-away").style.animation="";
     e("trans-home").style.animation="";

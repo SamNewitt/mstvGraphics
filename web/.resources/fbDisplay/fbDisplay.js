@@ -20,6 +20,9 @@
         case "transition":
         transitionOut();
         break;
+        case "l3rd":
+        l3rdOut();
+        break;
     }
 }
   }
@@ -136,6 +139,19 @@ function message(type, data){
         break;
         case "transition":
         transitionIn();
+        break;
+        //------------------------------------OTHER GFX-------------------------------
+        case "l3rd":
+            clear()
+            setTimeout(function(){
+                l3rd(data);
+            },waitTime)
+        break;
+        case "customL3rdTitle":
+            l3rdSetTitle(data);
+        break;
+        case "customL3rdText":
+            l3rdSetText(data);
         break;
     }
 }

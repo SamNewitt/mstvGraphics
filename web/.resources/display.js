@@ -67,7 +67,6 @@ function enlargeAllImages() {
   function adjustTextV(param,container,fontSize,limit){
     param.style.fontSize = fontSize + "px";
     while (param.offsetHeight > container.offsetHeight && fontSize > limit) {
-      console.log(param.offsetHeight+"    "+container.offsetHeight);
       fontSize--;
       param.style.fontSize = fontSize + "px";
     }
@@ -88,6 +87,7 @@ function enlargeAllImages() {
         }
         
       }
+      fontSize--;
     }
 
   }
@@ -144,7 +144,7 @@ c("away-logo").forEach(function(elem){
 c("home-logo").forEach(function(elem){
     elem.setAttribute("src",jsonData.home.logo);
 });
-
+l3rdInit();
 setTimeout(enlargeAllImages,1000);
 }
 
@@ -174,8 +174,11 @@ socket.addEventListener("message", function(event){
 msgData=event.data.split("=");
     switch(msgData[0]){
     case "broadcastFile":
+      console.log("file received");
     jsonData=JSON.parse(msgData[1]);
+    console.log("file parsed");
     init();
+    console.log("init")
     break;
     default:
     message(msgData[0],msgData[1]);
