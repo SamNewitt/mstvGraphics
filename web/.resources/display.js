@@ -46,6 +46,7 @@ function enlargeAllImages() {
   function enlargeImage(param) {
     var imageObject = new Image();        
       imageObject.src = param.src;
+      console.log(imageObject.width +"    "+imageObject.height);
       if (imageObject.width > imageObject.height) {
         param.style.width = "100%";
         param.style.height = "auto";
@@ -174,11 +175,8 @@ socket.addEventListener("message", function(event){
 msgData=event.data.split("=");
     switch(msgData[0]){
     case "broadcastFile":
-      console.log("file received");
     jsonData=JSON.parse(msgData[1]);
-    console.log("file parsed");
     init();
-    console.log("init")
     break;
     default:
     message(msgData[0],msgData[1]);

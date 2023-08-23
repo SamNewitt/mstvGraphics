@@ -1,4 +1,12 @@
-function sponsorIn() {
+function sponsorIn(param) {
+graphicIsLive=true;
+graphicLive="sponsor";
+  e("sponsor-logo").setAttribute("src","sponsors/"+param+".png");
+  setTimeout(function(){
+    enlargeImage(e("sponsor-logo"));
+  },100);
+  
+
     document.getElementById("sponsor-corner").style.animation =
       "sponsorCornerIn 0.5s ease 0s";
   

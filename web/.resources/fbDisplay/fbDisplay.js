@@ -23,6 +23,9 @@
         case "l3rd":
         l3rdOut();
         break;
+        case "sponsor":
+        sponsorOut();
+        break;
     }
 }
 if(startersAreIn){
@@ -162,5 +165,12 @@ function message(type, data){
         case "clearStarters":
             startersOut();
         break;
+        case "sponsorCorner":
+         clear()
+            setTimeout(function(){
+                sponsorIn(data);
+            },waitTime)
+        break;
+        
     }
 }

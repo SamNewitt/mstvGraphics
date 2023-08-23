@@ -80,12 +80,9 @@ function l3rdOut(){
 }
 
 function l3rdInit(){
-    console.log("l3rd init");
     c("l3rd-annc-title")[0].innerHTML=jsonData.announcer1;
     c("l3rd-annc-title")[1].innerHTML=jsonData.announcer2;
-    console.log("annc titles done");
     adjustTextAll(c("l3rd-annc-title"),c("l3rd-annc-title-container"),44,30);
-    console.log("annc titles resized");
    
     c("l3rd-annc-text")[0].innerHTML="<i class='fa-brands fa-x-twitter' style='padding-right:3px;'></i>"+jsonData.announcerHandle1;
     c("l3rd-annc-text")[1].innerHTML="<i class='fa-brands fa-x-twitter' style='padding-right:3px;'></i>"+jsonData.announcerHandle2;
