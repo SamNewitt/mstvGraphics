@@ -1,29 +1,29 @@
 #corner-score{
-    margin-top: 570px;
-    margin-left: -135px;
+    margin-top: 520px;
+    margin-left: -220px;
     border: solid #fff 3px;
     font-family: 'Roboto', sans-serif;
 }
 
 #cs-time{
-    height: 25px;
-    font-size: 20px;
+    height: 37px;
+    font-size: 30px;
 }
 
 #cs-period{
-    min-width:48px;
+    min-width:72px;
     text-align: center;
 }
 
 #cs-clock{
-    width: 72px;
+    width: 108px;
     border-left: solid #fff 2px; 
     text-align: center;
 }
 
 .cs-team{
-    height:35.5px;
-    width: 125px;
+    height:54px;
+    width: 100%;
 }
 
 #cs-away{
@@ -33,28 +33,28 @@
 
 .cs-logo-container{
     height: 100%;
-    width: 35px;
+    width: 52px;
 }
 
 .cs-logo-container img{
-    max-width: 35px;
-    max-height: 35px;
+    max-width: 52px;
+    max-height: 52px;
 }
 
 .cs-team b{
-    width:55px;
+    width:82px;
     text-align: center;
-    font-size: 17px;
+    font-size: 25px;
 }
 
 .cs-score{
     background-image: linear-gradient(#333, #444, #333);
-    width:35px;
+    width:52px;
     height: 100%;
 }
 
 .cs-score c{
-    font-size: 25px
+    font-size: 37.5px
 }
 
 @keyframes cornerScoreIn {
@@ -68,7 +68,7 @@
 
 @keyframes cornerScoreOut {
     from{
-        margin-top:570px;
+        margin-top:520px;
         margin-left: 50px;
     }
     to{
