@@ -1,8 +1,12 @@
-#custom{
+#custom-container{
     width:1280px; 
     height:0;
-    opacity:0;
     overflow:hidden;
+}
+
+#custom{
+    width:1280px; 
+    height:720px;
 }
 
 @keyframes customIn{
