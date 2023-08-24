@@ -1,0 +1,24 @@
+#custom{
+    width:1280px; 
+    height:0;
+    opacity:0;
+    overflow:hidden;
+}
+
+@keyframes customIn{
+    from{
+        height:0;
+    }
+    to{
+        height: 720px;
+    }
+}
+
+@keyframes customOut{
+    from{
+        height:720px;
+    }
+    to{
+        height: 0;
+    }
+}

@@ -232,12 +232,8 @@ function ddUpdate(){
         break;
     }
     if(e("dist-input").value==""){}
-    else if(parseInt(e("dist-input").value)==NaN){
-        e("dist-input").value="g";
-        downText=downText+" & Goal";
-    }
     else if(parseInt(e("dist-input").value)==0){
-        downText=downText+" & in";
+        downText=downText+" & Goal";
     }
     else{
       
@@ -859,9 +855,11 @@ function reset(){
     location.reload();
 }
 
-function clear(){
+function clearPressed(){
     send("clear");
     clearAllGraphics();
+    inactiveC("away-popup");
+    inactiveC("home-popup");
 }
 
 function forceUpdate(){
@@ -925,7 +923,7 @@ function undo(){
             flag();
         break;
         case "graphic":
-        clear();
+        clearPressed();
         break;
         case "bugOut":
             bugIn()
