@@ -72,6 +72,21 @@ function enlargeAllImages() {
     }
   }
 
+  var fontSize;
+  function adjustTextC(param, container, fontSizeInput, limit) {
+    
+    for(var i=0; i<param.length; i++)
+    {
+      fontSize=fontSizeInput;
+    param[i].style.fontSize = fontSize + "px";
+    while (param[i].offsetWidth+5 >= container[i].offsetWidth && fontSize > limit) {
+      console.log("f");
+      fontSize--;
+      param[i].style.fontSize = fontSize + "px";
+    }
+  }
+  }
+
   var textFits=false
 
   function adjustTextAll(param, container, fontSize, limit){

@@ -42,14 +42,20 @@
     text-align: center;
 }
 
-.starter-player{
-    border-left: solid 1px #fff;
-    height: 50px;
+.starter-name-container{
     width: 285px;
+    height: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-left: solid 1px #fff;
+margin:0;
+}
+
+.starter-player{
     margin:0;
+    white-space: nowrap;
+    overflow:revert;
 }
 
 .starter-name{

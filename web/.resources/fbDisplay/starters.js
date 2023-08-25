@@ -53,16 +53,26 @@ function startersUpdate(param){
             e("starters-logo").setAttribute("src",jsonData.home.logo);
             e("starters-title").innerHTML="Starting Lineup - "+jsonData.home.name+" Offense";
         break;
+
     }
 
     enlargeImage(e("starters-logo"))
 
     for(var i=0; i<6; i++){
+        if(starterPlayers[i].number!=""){
         c("starter-number")[i].innerHTML="#"+starterPlayers[i].number;
         c("starter-name")[i].innerHTML=starterPlayers[i].name;
         c("starter-pos")[i].innerHTML="("+starterPlayers[i].position+")";
+        }
+        else{
+            c("starter-number")[i].innerHTML="";
+        c("starter-name")[i].innerHTML="";
+        c("starter-pos")[i].innerHTML="";
+        }
     }
 
+
+        adjustTextC(c("starter-player"),c("starter-name-container"),32,20);
     
 
 }
