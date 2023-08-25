@@ -80,7 +80,6 @@ function enlargeAllImages() {
       fontSize=fontSizeInput;
     param[i].style.fontSize = fontSize + "px";
     while (param[i].offsetWidth+5 >= container[i].offsetWidth && fontSize > limit) {
-      console.log("f");
       fontSize--;
       param[i].style.fontSize = fontSize + "px";
     }
@@ -173,13 +172,11 @@ function serverConnect(){
 
             
 socket.addEventListener("open", function (event) {
-console.log("Websocket Connected!"); 
 e("wait-cover").style.display="none";
 });
 
 
 socket.addEventListener("close", function (event) {
-console.log("Websocket Disconnected :(");
 setTimeout(function() {
     serverConnect();
   }, 1000);
@@ -202,7 +199,6 @@ msgData=event.data.split("=");
 serverConnect();
 function send(param){
     socket.send(param);
-    console.log(param);
 }
 
 

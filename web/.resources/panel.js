@@ -29,6 +29,16 @@ function isActive(param){
     return e(param).classList.contains("active");
 }
 
+function isActiveC(param){
+    var elems=c(param)
+for(var i=0; i<elems.length; i++){
+if(elems[i].classList.contains("active")){
+    return true
+}
+}
+return false;
+}
+
 function init(){
 
     document.querySelector(':root').style.setProperty("--away-bg", jsonData.away.bgColor);
@@ -72,7 +82,6 @@ function serverConnect(){
 
             
 socket.addEventListener("open", function (event) {
-console.log("Websocket Connected!"); 
 e("wait-cover").style.display="none";
 e("connection").innerHTML="CONNECTED"
 e("connection").style.backgroundColor="#008000";
@@ -80,7 +89,6 @@ e("connection").style.backgroundColor="#008000";
 
 
 socket.addEventListener("close", function (event) {
-console.log("Websocket Disconnected :(");
 e("wait-cover").style.display="none";
 e("connection").innerHTML="ERROR"
 e("connection").style.backgroundColor="#f00";
@@ -111,7 +119,6 @@ serverConnect();
 
 function send(param){
     socket.send(param);
-    console.log(param);
 }
 
 

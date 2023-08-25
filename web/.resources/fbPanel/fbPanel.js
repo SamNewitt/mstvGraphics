@@ -1,8 +1,9 @@
 var undoTree=[];
 // ------------------------ TIMER CODE ----------------------------------------------
-var clockRemain=720, clock="12:00", input, clockInterval=null;
+var clockRemain=720, clock="12:00", input, clockInterval=null, clockRunning=false;
 
 function clockStart(){
+    clockRunning=true;
     send("clockVal="+clockRemain);
 
     send("clockStart");
@@ -26,11 +27,21 @@ if(clockRemain==0)
 }
 
 function clockStop(){
+    clockRunning=false;
     clearInterval(clockInterval);
     send("clockStop");
     send("clockVal="+clockRemain);
     inactive("clock-start");
     active("clock-stop");
+}
+
+function clockToggle(){
+    if(clockRunning){
+        clockStop()
+    }
+    else{
+        clockStart();
+    }
 }
 
 function clockSet(param){
@@ -231,13 +242,13 @@ function ddUpdate(){
         downText="4th";
         break;
     }
-    if(e("dist-input").value==""){}
+    if(e("dist-input").value=="" && parseInt(e("dist-input").value).isInteger()){}
     else if(parseInt(e("dist-input").value)==0){
         downText=downText+" & Goal";
     }
     else{
       
-        downText=downText+" & "+e("dist-input").value;
+        downText=downText+" & "+parseInt(e("dist-input").value);
 
     }
 
@@ -628,7 +639,20 @@ function transition(){
 }
 
 //-------------------------------------------------POPUP CODE-------------------------
+var awayPopupIn=false, homePopupIn=false;
 
+function clearPopups(){
+    if(isActiveC("away-popup")){
+        inactiveC("away-popup");
+        send("awayPopupOut");
+    }
+    if(isActiveC("home-popup")){
+    inactiveC("home-popup");
+    send("homePopupOut");
+    }
+    
+
+}
 function awayPopup(param,elem){
     if(bug && param!=""){
         if(elem.classList.contains("active")){
@@ -782,6 +806,9 @@ function addCustomImage(){
         inactive("image");
         send("clear");
     }
+    else if(e("image-input").value==""){
+        e("image-input").focus();
+    }
     else{
         clearAllGraphics();
         active("image");
@@ -823,6 +850,9 @@ function showCustomL3rd(){
 
         }
         undoTree.push("graphic");
+    }
+    else{
+        e("l3rd-title").focus();
     }
 }
 

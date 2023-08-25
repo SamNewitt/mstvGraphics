@@ -20,13 +20,13 @@
 </div>
 <div class="flex" style="border-bottom-style:solid;">
     <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
-    <button onclick="clockUpdate()">Update</button>
+    <button onclick="clockUpdate()">Update (M)</button>
 </div>
 <h2 id="period">1st</h2>
 <div class="flex"  > 
     
 
-    <button onclick="nextPeriod()">Next</button>
+    <button onclick="nextPeriod()">Next (N)</button>
     <button onclick="prevPeriod()">Prev</button>
 
 
@@ -38,16 +38,16 @@
 
 <div class="section vflex" style="width: 150px;">
 <h4 id="dd" class="wide" style="border-bottom-style: solid;">1st & 10</h4>
-<button onclick="ddNext()">Next Down</button>
-<button id=dd-update onclick="ddUpdate()">Update</button>
+<button onclick="ddNext()">Next Down (Z)</button>
+<button id=dd-update onclick="ddUpdate()">Update (X)</button>
 <div class="flex nomargin">
-    <button id=d1 class=active onclick="down(1)">1st</button>
+    <button id=d1 class=active onclick="down(1)">1st (C)</button>
     <button id=d2 onclick="down(2)">2nd</button>
     <button id=d3 onclick="down(3)">3rd</button>
     <button id=d4 onclick="down(4)">4th</button>
 </div>
 <input type="text" id="dist-input" style="width:125px; text-align: center;" placeholder="Distance" value="10" oninput="distChanged()">
-<button id=dd-visibility onclick="ddVisibility()">Visibility</button>
+<button id=dd-visibility onclick="ddVisibility()">Visibility (V)</button>
 </div>
 <!-- -------------------------------------AWAY-------------------------------- -->
 <div class="section vflex away" style="width: 215px;">
@@ -55,18 +55,18 @@
     <h3 id="away-score">0</h3>
 <div class="flex" style=" border-bottom-style: solid; padding:3px;">
     <button  onclick="addAwayScore(-1)">-1</button>
-    <button  onclick="addAwayScore(1)">+1</button>
+    <button  onclick="addAwayScore(1)">+1 (Y)</button>
     <button  onclick="addAwayScore(2)">+2</button>
-    <button  onclick="addAwayScore(3)">+3</button>
-    <button  onclick="awayTD()">Touchdown</button>
+    <button  onclick="addAwayScore(3)">+3 (U)</button>
+    <button  onclick="awayTD()">Touchdown (I)</button>
 </div> 
 <h4 id="away-to" s>Timeouts: 3</h4>
 <div class="flex" style="border-bottom-style: solid; padding: 3px;">
     <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(1)"> + </button>
     <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(-1)" > - </button>
-    <button  onclick="takeAwayTO()">Take TO</button>
+    <button  onclick="takeAwayTO()">Take TO (T)</button>
 </div>
-<button id="away-poss"  onclick="awayPoss()">Possesion</button>
+<button id="away-poss"  onclick="awayPoss()">Possesion (O)</button>
 </div>
 <!-- ---------------------------------------HOME------------------------------------- -->
 <div class="section vflex home" style="width: 215px;">
@@ -75,26 +75,26 @@
     <div class="flex" style=" border-bottom-style: solid; padding:3px;">
 
     <button  onclick="addHomeScore(-1)">-1</button>
-    <button  onclick="addHomeScore(1)">+1</button>
+    <button  onclick="addHomeScore(1)">+1 (H)</button>
     <button  onclick="addHomeScore(2)">+2</button>
-    <button  onclick="addHomeScore(3)">+3</button>
-    <button  onclick="homeTD()">Touchdown</button>
+    <button  onclick="addHomeScore(3)">+3 (J)</button>
+    <button  onclick="homeTD()">Touchdown (K)</button>
 </div> 
 <h4 id="home-to">Timeouts: 3</h4>
 <div class="flex" style="border-bottom-style: solid; padding: 3px;">
 
     <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(1)">+</button>
     <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(-1)">-</button>
-    <button  onclick="takeHomeTO()">Take TO</button>
+    <button  onclick="takeHomeTO()">Take TO (G)</button>
 </div>
-<button id="home-poss" onclick="homePoss()">Possesion</button>
+<button id="home-poss" onclick="homePoss()">Possesion (L)</button>
 </div>
 <div class="vflex" style="width: 533px;">
 <div class="flex section" style="height: 50px; width: 100%;">
    <h5 id="connection"></h5>
     <div id="menu" class="flex" style="margin:0;">
-        <button onclick="undo()">Undo</button>
-        <button onclick="clearPressed()">Clear</button>
+        <button onclick="undo()">Undo (~)</button>
+        <button onclick="clearPressed()">Clear (BS)</button>
         <button onclick="forceUpdate()">Update</button>
         <button onclick="resetCheck()">Reset</button>
         <button onclick="sync()">Sync</button>
@@ -115,19 +115,19 @@
 <div class="flex" style="height: 407px; margin-top:4px">
 <div class= "vflex" >
     <div class="section vflex"style="width:200px; height:59px;border-top-style:none;" >
-    <button  id=flag onclick="flag()">Flag On Play</button>
+    <button  id=flag onclick="flag()">Flag On Play (B)</button>
     </div>
     <div class="section vflex"style="width:200px">
 <h5>Score Graphics</h5>
 <div class="flex" style="border-bottom-style:solid;">
-    <button  onclick="bugAnimate()">Animate Bug In</button>
-    <button  id=bug-in onclick="bugIn()">Bug In</button>
-    <button  class=active id=bug-out onclick="bugOut()">Bug Out</button>
+    <button  onclick="bugAnimate()">Animate Bug In (1)</button>
+    <button style="font-size:14px;" id=bug-in onclick="bugIn()">Bug In (2)</button>
+    <button style="font-size:14px;" class=active id=bug-out onclick="bugOut()">Bug Out (3)</button>
 </div>
-<button  id=breakbox class=graphic onclick="breakbox()">Breakbox</button>
-<button  id=corner-score class=graphic onclick="cornerScore()">Corner Score</button>
-<button  id=team-corners class=graphic onclick="teamCorners()">Team Corners</button>
-<button  id=transition class=graphic onclick="transition()">Roll Transition</button>
+<button  id=breakbox class=graphic onclick="breakbox()">Breakbox (4)</button>
+<button  id=corner-score class=graphic onclick="cornerScore()">Corner Score (5)</button>
+<button  id=team-corners class=graphic onclick="teamCorners()">Team Corners (6)</button>
+<button  id=transition class=graphic onclick="transition()">Roll Transition (0)</button>
 </div>
 </div>
 <!-- --------------------------------------------AWAY POPUPS------------------------------------- -->
@@ -145,13 +145,13 @@
 </div>
 <h5>Flag Popups</h5>
 <div class="flex">
-<button  class="away-popup" onclick="awayFlag('FALSE START', this)">False St</button>
-<button  class="away-popup" onclick="awayFlag('DELAY OF GAME', this)">Delay</button>
-<button  class="away-popup" onclick="awayFlag('OFFSIDE', this)">Offside</button>
-<button  class="away-popup" onclick="awayFlag('HOLDING', this)">Hold</button>
-<button  class="away-popup" onclick="awayFlag('PASS INTERFERENCE', this)">PI</button>
-<button  class="away-popup" onclick="awayFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
-<button  class="away-popup" onclick="awayFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
+<button id="awayFS" style="font-size:15px;" class="away-popup" onclick="awayFlag('FALSE START', this)">False St (Q)</button>
+<button id="awayOS" style="font-size:15px;" class="away-popup" onclick="awayFlag('OFFSIDE', this)">Offside (W)</button>
+<button id="awayHold" style="font-size:15px;" class="away-popup" onclick="awayFlag('HOLDING', this)">Hold (E)</button>
+<button id="awayPI" style="font-size:15px;" class="away-popup" onclick="awayFlag('PASS INTERFERENCE', this)">PI (R)</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('DELAY OF GAME', this)">Delay</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
 <h5>Custom Flag Popup</h5>
 <div class="flex" style="margin:0;">
     <button  class="away-popup" onclick="awayCustFlag(this)">Show</button>
@@ -176,11 +176,11 @@
     </div>
     <h5>Flag Popups</h5>
     <div class="flex">
-    <button  class="home-popup" onclick="homeFlag('FALSE START', this)">False St</button>
+    <button id="homeFS" class="home-popup" onclick="homeFlag('FALSE START', this)">False St (A)</button>
+    <button id="homeOS" class="home-popup" onclick="homeFlag('OFFSIDE', this)">Offside (S)</button>
+    <button id="homeHold" class="home-popup" onclick="homeFlag('HOLDING', this)">Hold (D)</button>
+    <button id="homePI" class="home-popup" onclick="homeFlag('PASS INTERFERENCE', this)">PI (F)</button>
     <button  class="home-popup" onclick="homeFlag('DELAY OF GAME', this)">Delay</button>
-    <button  class="home-popup" onclick="homeFlag('OFFSIDE', this)">Offside</button>
-    <button  class="home-popup" onclick="homeFlag('HOLDING', this)">Hold</button>
-    <button  class="home-popup" onclick="homeFlag('PASS INTERFERENCE', this)">PI</button>
     <button  class="home-popup" onclick="homeFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
     <button  class="home-popup" onclick="homeFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
     <h5>Custom Flag Popup</h5>
@@ -243,7 +243,7 @@
 </div>
 <h5>Lower 3rds</h5>
 <div class="flex"style="margin:0;">
-    <button  class="graphic" onclick="addGraphic('l3rd=announcers', this)">Announcers</button>
+    <button id="annc" class="graphic" onclick="addGraphic('l3rd=announcers', this)">Announcers (7)</button>
     <button  class="graphic" onclick="addGraphic('l3rd=nextBroadcast', this)">Next Game</button>
     <button  class="graphic" onclick="addGraphic('l3rd=crew', this)">Crew</button>
     <button  class="graphic" onclick="addGraphic('l3rd=copyright', this)">Copyright</button>
@@ -253,7 +253,7 @@
 <div class="vflex section" style="width:310px;">
 <h5 style="margin:0;">Custom Image</h5>
 <div class="flex" style="margin:0;">
-    <button  id="image" class="graphic" onclick="addCustomImage()">Show</button>
+    <button  id="image" class="graphic" onclick="addCustomImage()">Show (9)</button>
     <input type="text" id="image-input" style="width:200px; text-align: center;" placeholder="(images/___.png)">
 </div>
 </div>
@@ -267,7 +267,7 @@
 
     <input type="text" id="l3rd-title" style="width:220px; text-align: center;" placeholder="TITLE">
     <input type="text" id="l3rd-text" style="width:220px; text-align: center;" placeholder="DESCRIPTION">
-    <button  id="custom-l3rd" class="graphic" onclick="showCustomL3rd()">Show L3rd</button>
+    <button  id="custom-l3rd" class="graphic" onclick="showCustomL3rd()">Show L3rd (8)</button>
 
 </div>
 </div>
