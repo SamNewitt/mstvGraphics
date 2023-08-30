@@ -3,6 +3,7 @@ var undoTree=[];
 var clockRemain=720, clock="12:00", input, clockInterval=null, clockRunning=false;
 
 function clockStart(){
+    if(!clockRunning){
     clockRunning=true;
     send("clockVal="+clockRemain);
 
@@ -23,16 +24,18 @@ if(clockRemain==0)
     clockStop();
 }
     },1000);
-
+    }
 }
 
 function clockStop(){
+    if(clockRunning){
     clockRunning=false;
     clearInterval(clockInterval);
     send("clockStop");
     send("clockVal="+clockRemain);
     inactive("clock-start");
     active("clock-stop");
+    }
 }
 
 function clockToggle(){
