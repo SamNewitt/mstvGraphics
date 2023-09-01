@@ -20,6 +20,12 @@
         case "transition":
         transitionOut();
         break;
+        case "profile":
+        profileOut();
+        break;
+        case "keys":
+        keysOut();
+        break;
         case "l3rd":
         l3rdOut();
         break;
@@ -46,7 +52,7 @@ if(startersAreIn){
 function message(type, data){
     console.log(type);
     if(graphicIsLive){
-        waitTime=500;
+        waitTime=610;
     }
     else{
         waitTime=0;
@@ -156,6 +162,18 @@ function message(type, data){
         transitionIn();
         break;
         //------------------------------------OTHER GFX-------------------------------
+        case "awayProfile":
+            clear();
+            setTimeout(function(){
+                profileIn("a");
+            },waitTime);
+        break;
+        case "homeProfile":
+            clear();
+            setTimeout(function(){
+                profileIn("h");
+            },waitTime);
+        break;
         case "l3rd":
             clear();
             setTimeout(function(){

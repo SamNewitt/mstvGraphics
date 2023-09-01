@@ -2,12 +2,16 @@
 	"away": {
 		"name": "Jefferson",
 		"abbriviation": "JHS",
+		"mascot": "Rough Riders",
 		"seed": "4",
 		"record": "",
 		"logo": "logos/jhs.png",
 		"primaryColor": "#ccc",
 		"accentColor": "#1a4f27",
 		"bgColor": "#1a4f27",
+		"profile": "●",
+		"key":"",
+		"coach":"Vince Bennedetto",
 		"d1Players": [{
 				"number": "54",
 				"name": "Landon Duran",
@@ -136,12 +140,16 @@
 	"home": {
 		"name": "Harrisburg",
 		"abbriviation": "HHS",
+		"mascot": "Tigers",
 		"seed": "2",
 		"record": "",
 		"logo": "logos/hhs.png",
 		"primaryColor": "#6c1726",
 		"accentColor": "#fff",
 		"bgColor": "#6c1726",
+		"profile": "●",
+		"key":"",
+		"coach":"Kim Nelson",
 		"d1Players": [{
 				"number": "74",
 				"name": "Max Elrod",
