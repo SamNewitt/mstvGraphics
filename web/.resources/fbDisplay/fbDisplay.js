@@ -174,6 +174,12 @@ function message(type, data){
                 profileIn("h");
             },waitTime);
         break;
+        case "keys":
+            clear();
+            setTimeout(function(){
+                keysIn();
+            },waitTime);
+        break;
         case "l3rd":
             clear();
             setTimeout(function(){

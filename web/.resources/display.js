@@ -159,6 +159,7 @@ c("home-logo").forEach(function(elem){
     elem.setAttribute("src",jsonData.home.logo);
 });
 l3rdInit();
+keysInit();
 setTimeout(enlargeAllImages,1000);
 }
 
