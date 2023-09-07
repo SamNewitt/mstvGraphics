@@ -1,5 +1,4 @@
 document.addEventListener("keyup",function(event){
-    console.log(event.key);
     if(document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text") ){
         switch(event.key){
             case "`":
@@ -159,6 +158,12 @@ document.addEventListener("keyup",function(event){
         e("l3rd-text").focus();
     }
     else if(event.key=="Enter"){
+        document.activeElement.blur();
+    }
+});
+
+document.addEventListener("keyup",function(event){
+    if(event.key==" "){
         document.activeElement.blur();
     }
 });
