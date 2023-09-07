@@ -19,8 +19,8 @@
     <button id=clock-stop class="active" onclick="clockStop()">Stop</button>
 </div>
 <div class="flex" style="border-bottom-style:solid;">
-    <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS">
-    <button onclick="clockUpdate()">Update (M)</button>
+    <input type="text" id="clock-input" style="width:100px; text-align: center;" placeholder="MM:SS" oninput="clockType()">
+    <button id=clock-update onclick="clockUpdate()">Update (M)</button>
 </div>
 <h2 id="period">1st</h2>
 <div class="flex"  > 
@@ -39,14 +39,14 @@
 <div class="section vflex" style="width: 150px;">
 <h4 id="dd" class="wide" style="border-bottom-style: solid;">1st & 10</h4>
 <button onclick="ddNext()">Next Down (Z)</button>
-<button id=dd-update onclick="ddUpdate()">Update (X)</button>
+<button id=dd-update onclick="ddUpdate()" >Update (X)</button>
 <div class="flex nomargin">
     <button id=d1 class=active onclick="down(1)">1st (C)</button>
     <button id=d2 onclick="down(2)">2nd</button>
     <button id=d3 onclick="down(3)">3rd</button>
     <button id=d4 onclick="down(4)">4th</button>
 </div>
-<input type="text" id="dist-input" style="width:125px; text-align: center;" placeholder="Distance" value="10" oninput="distChanged()">
+<input type="text" id="dist-input" style="width:125px; text-align: center;" placeholder="Distance" value="10" oninput="distChanged()" onfocusin="ddEnterIn()" onfocusout="ddEnterOut()">
 <button id=dd-visibility onclick="ddVisibility()">Visibility (V)</button>
 </div>
 <!-- -------------------------------------AWAY-------------------------------- -->

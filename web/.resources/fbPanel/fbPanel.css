@@ -104,6 +104,16 @@ border: 2px solid #fff;
     background-color: #eee;
  }
 
+ .update{
+    color: #000;
+    background-color: #ffff00;
+ }
+
+ .update:hover{
+    color: #000;
+    background-color: #b3b304;
+ }
+
  input{
     height: 30px;
     font-size: 25px;

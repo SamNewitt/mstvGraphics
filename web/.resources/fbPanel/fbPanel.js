@@ -35,6 +35,12 @@ function clockStop(){
     send("clockVal="+clockRemain);
     inactive("clock-start");
     active("clock-stop");
+    if(clockRemain%60<10){
+        e("clock-input").value=Math.trunc(clockRemain/60)+":0"+clockRemain%60;
+    }
+    else{
+        e("clock-input").value=Math.trunc(clockRemain/60)+":"+clockRemain%60;
+    }
     }
 }
 
@@ -66,15 +72,33 @@ input=input.replace(";",":");
 if(input.includes(":")){
 input = input.split(":");
 clockSet(parseInt(input[0])*60+parseInt(input[1]));
+e("clock-update").classList.remove("update");
+e("clock-update").innerHTML="Update (M)";
 }
 else{
 e("clock-input").value="Error";
+setTimeout(function(){
+    if(clockRemain%60<10){
+        e("clock-input").value=Math.trunc(clockRemain/60)+":0"+clockRemain%60;
+    }
+    else{
+        e("clock-input").value=Math.trunc(clockRemain/60)+":"+clockRemain%60;
+    }
+    e("clock-input").focus();
+    e("clock-input").select();
+},500);
 }
+
 }
 
 function clockReset(){
     clockSet(720);
     send("clockVal="+clockRemain);
+}
+
+function clockType(){
+    e("clock-update").classList.add("update");
+    e("clock-update").innerHTML="Update (Enter)";
 }
 
 //----------------------------------------------------QUARTER CODE------------------------------------
@@ -218,17 +242,27 @@ if(param==1){
 }
     
         
-        active("dd-update");
+      e("dd-update").classList.add("update");
     
 }
 
 function distChanged(){
-    active("dd-update");
+    e("dd-update").classList.add("update");
+
+}
+
+function ddEnterIn(){
+    e("dd-update").innerHTML="Update (Enter)"
+}
+
+function ddEnterOut(){
+    e("dd-update").innerHTML="Update (X)"
+
 }
 
 
 function ddUpdate(){
-    inactive("dd-update");
+    e("dd-update").classList.remove("update");
     downLive=downQue
 
     switch(downLive){
