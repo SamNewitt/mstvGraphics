@@ -84,14 +84,17 @@ function poss(param){
     }
 }
 
-
+var prevDD="1st &amp; 10";
 
 function  ddUpdate(param){
+    if(param!=prevDD){
+        prevDD=param;
     e("bug-down-text").style.animation=opacityOut;
     setTimeout(function(){
         e("bug-down-text").innerHTML=param;
     e("bug-down-text").style.animation=opacityIn;
     },500);
+}
 }
 
 //------------------------------------------------------------SCORE-----------------------------------------

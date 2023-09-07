@@ -270,7 +270,7 @@ function ddEnterOut(){
 
 function ddUpdate(){
     e("dd-update").classList.remove("update");
-    downLive=downQue
+    downLive=downQue;
 
     switch(downLive){
         case 1:
@@ -295,7 +295,7 @@ function ddUpdate(){
         downText=downText+" & "+parseInt(e("dist-input").value);
 
     }
-
+    
     send("dd="+downText);
     e("dd").innerHTML=downText;
 
