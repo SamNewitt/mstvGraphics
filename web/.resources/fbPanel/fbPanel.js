@@ -3,7 +3,7 @@ var undoTree=[];
 var clockRemain=720, clock="12:00", input, clockInterval=null, clockRunning=false;
 
 function clockStart(){
-    if(!clockRunning){
+    if(!clockRunning && clockRemain>0){
     clockRunning=true;
     send("clockVal="+clockRemain);
 
@@ -19,7 +19,7 @@ function clockStart(){
         clock=Math.trunc(clockRemain/60)+":"+clockRemain%60;
         }
 e("clock").innerHTML=clock;
-if(clockRemain==0)
+if(clockRemain<1)
 {
     clockStop();
 }
