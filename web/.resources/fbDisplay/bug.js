@@ -198,7 +198,7 @@ var tdTeam;
 
   var sponsorsInterval, currSponsor=0;
 
-  var sponsors=["avera", "dnn", "gs", "amFam","cb", "ilcc","jtw","ls", "avera", "dnn", "gs", "mstvWide","sds","shenanigans","touchmark","vern"];
+  var sponsors=["avera", "dnn", "fox", "gs", "amFam","cb", "ilcc","jtw","ls", "avera", "dnn", "fox", "gs", "mstvWide","sds","shenanigans","touchmark","vern"];
   e("sponsor-rotator").setAttribute("src","sponsors/"+sponsors[0]+".png")
 
 

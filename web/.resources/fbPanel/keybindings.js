@@ -1,5 +1,5 @@
 document.addEventListener("keyup",function(event){
-    if(document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text") ){
+    if(document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text") ){
         switch(event.key){
             case "`":
             undo();
@@ -160,7 +160,10 @@ document.addEventListener("keyup",function(event){
 });
 
 document.addEventListener("keypress",function(event){
-    if((document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text"))&&(event.key==" " || event.key=="Enter")){
+    if((document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text"))&&( event.key==" ")){
+        document.activeElement.blur();
+    }
+    if((document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input")  && document.activeElement!=e("l3rd-title") )&&( event.key=="Enter")){
         document.activeElement.blur();
     }
 });

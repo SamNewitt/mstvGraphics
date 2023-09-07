@@ -544,6 +544,7 @@ function flag(){
     flagIn=!flagIn
         active("flag");
         send("flagIn");
+        clockStop();
         }
     }
     else{
