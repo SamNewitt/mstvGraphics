@@ -216,10 +216,17 @@ function prevPeriod(){
 function final(){
     if (!finalized){
     undoTree.push("finalize")
+    if(period>4.5){
+        e("period").innerHTML="Final/OT";
+        send ("period=Final/OT");
+    }
+    else{
         e("period").innerHTML="Final";
         send ("period=Final");
+    }
         active("final")
         finalized=true;
+        
     }
     
 }
