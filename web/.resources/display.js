@@ -132,10 +132,10 @@ c("home-seed").forEach(function(elem){
 });
 
 c("away-record").forEach(function(elem){
-    elem.innerHTML=jsonData.away.record;
+    elem.innerHTML="("+jsonData.away.record+")";
 });
 c("home-record").forEach(function(elem){
-    elem.innerHTML=jsonData.home.record;
+    elem.innerHTML="("+jsonData.home.record+")";
 });
 
 c("away-abbr").forEach(function(elem){
