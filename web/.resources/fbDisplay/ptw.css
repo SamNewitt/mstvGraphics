@@ -1,0 +1,126 @@
+
+#ptw-cover {
+    width: 0px;
+    margin-top: 195px;
+    height: 525px;
+    background-color: #fff;
+  }
+  
+  #ptw-cover img {
+    width: 350px;
+    margin-left: 12.5px;
+    margin-top: 150px;
+  }
+  
+  #ptw {
+    overflow: hidden;
+    width: 0px;
+    height: 720px;
+  }
+  #ptw-container {
+  position:absolute;
+    margin-top: 195px;
+    width: 375px;
+    height: 525px;
+    border-right: 4px solid #fff;
+    border-top: 4px solid #fff;
+  }
+  
+  #ptw-title-container {
+    height: 70px;
+    width: 375px;
+    border-bottom: 3px solid #fff;
+  }
+  
+  #ptw-title-container h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 45px;
+  }
+  
+  #ptw-bg {
+    height: 452px;
+    background-color: var(--home-accent);
+    width: 375px;
+  }
+  
+  #ptw-logo {
+    width: 80%;
+    opacity: 0.2;
+  }
+  
+  #ptw-content {
+    position: absolute;
+    width: 360px;
+    height: 450px;
+  }
+  
+  #ptw-player-container {
+    width: 360px;
+    height: 120px;
+    /*   background-color: #00f; */
+  }
+  
+  #ptw-text-container {
+    width: 360px;
+    height: 330px;
+    /*   background-color: #00f; */
+  }
+  
+  #ptw-player {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  #ptw-text {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  @keyframes ptwIn {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 379px;
+    }
+  }
+  
+  @keyframes ptwOut {
+    from {
+      width: 379px;
+    }
+    to {
+      width: 0px;
+    }
+  }
+  
+  #ptw-popup-bg {
+    position: absolute;
+    width: 210px;
+    border-bottom: 100px solid #fff;
+    border-right: 66px solid transparent;
+    margin-top: 195px;
+  }
+  
+  #ptw-sponsor-container{
+    position:absolute;
+    width: 230px;
+    margin-top: 195px;
+    height: 100px;
+  }
+  #ptw-sponsor-container img{
+    height: 95%;
+  }
+  
+  @keyframes ptwPopupIn{
+    from{
+      margin-top: 195px;
+    }
+    to{
+      margin-top: 95px;
+    }
+  }

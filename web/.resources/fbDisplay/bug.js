@@ -123,7 +123,7 @@ function bugAnimate() {
     "opacityOut 0s linear 0s";
     document.getElementById("bug-down").style.width = "150px";
     document.getElementById("bug-sponsor").style.width = "222px";
-    document.getElementById("sponsor-rotator").style.maxWidth = "218px";
+    document.getElementById("sponsor-rotator").style.maxWidth = "200px";
     setTimeout(function(){
     document.getElementById("bug-down-text").style.animation =
       "opacityIn 0.2s linear 0s";

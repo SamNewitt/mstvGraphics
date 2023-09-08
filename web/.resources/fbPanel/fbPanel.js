@@ -65,17 +65,25 @@ e("clock").innerHTML=clock;
 send("clockVal="+clockRemain);
 
 }
-
+var clockInputError=false;
 function clockUpdate(){
 input = e("clock-input").value;
 input=input.replace(";",":");
-if(input.includes(":")){
+if(!input.includes(":")){
+clockInputError=true;
+}
 input = input.split(":");
+if(Number.isInteger(parseInt(input[0])*60+parseInt(input[1])) && (parseInt(input[0])*60+parseInt(input[1]))>=0){
 clockSet(parseInt(input[0])*60+parseInt(input[1]));
+
 e("clock-update").classList.remove("update");
 e("clock-update").innerHTML="Update (M)";
 }
 else{
+    clockInputError=true;
+}
+if(clockInputError){
+    clockInputError=false;
 e("clock-input").value="Error";
 setTimeout(function(){
     if(clockRemain%60<10){

@@ -23,6 +23,9 @@
         case "profile":
         profileOut();
         break;
+        case "ptw":
+            ptwOut();
+        break;
         case "keys":
         keysOut();
         break;
@@ -178,6 +181,18 @@ function message(type, data){
             clear();
             setTimeout(function(){
                 keysIn();
+            },waitTime);
+        break;
+        case "awayPTW":
+            clear();
+            setTimeout(function(){
+                ptwIn("a");
+            },waitTime);
+        break;
+        case "homePTW":
+            clear();
+            setTimeout(function(){
+                ptwIn("h");
             },waitTime);
         break;
         case "l3rd":
