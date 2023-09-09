@@ -160,6 +160,7 @@ c("home-logo").forEach(function(elem){
 });
 l3rdInit();
 keysInit();
+giInit();
 setTimeout(enlargeAllImages,1000);
 }
 

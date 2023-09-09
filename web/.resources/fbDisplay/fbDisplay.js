@@ -20,6 +20,9 @@
         case "transition":
         transitionOut();
         break;
+        case "gi":
+            giOut();
+        break;
         case "profile":
         profileOut();
         break;
@@ -165,6 +168,12 @@ function message(type, data){
         transitionIn();
         break;
         //------------------------------------OTHER GFX-------------------------------
+        case "gameIntro":
+            clear();
+            setTimeout(function(){
+                giIn();
+            },waitTime);
+        break;
         case "awayProfile":
             clear();
             setTimeout(function(){
