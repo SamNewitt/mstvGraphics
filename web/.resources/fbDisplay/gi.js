@@ -41,5 +41,8 @@ function giIn() {
     else{
         e("home-desc").innerHTML="(#"+jsonData.home.seed+", "+jsonData.home.record+")";
     }
+    adjustText(e("gi-away-name"),e("gi-away-name-container"),45,35);
+    adjustText(e("gi-home-name"),e("gi-home-name-container"),45,35);
+
     giOut();
   }
