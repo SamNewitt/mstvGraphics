@@ -294,18 +294,25 @@ function ddUpdate(){
         downText="4th";
         break;
     }
-    if(e("dist-input").value=="" && parseInt(e("dist-input").value).isInteger()){}
+    if(e("dist-input").value=="" || !Number.isInteger(parseInt(e("dist-input").value))){
+            e("dist-input").value=="Error";
+            e("dist-input").focus();
+            e("dist-input").select();
+    }
     else if(parseInt(e("dist-input").value)==0){
         downText=downText+" & Goal";
+        send("dd="+downText);
+        e("dd").innerHTML=downText;
     }
     else{
       
         downText=downText+" & "+parseInt(e("dist-input").value);
+        send("dd="+downText);
+        e("dd").innerHTML=downText;
 
     }
     
-    send("dd="+downText);
-    e("dd").innerHTML=downText;
+
 
 }
 
