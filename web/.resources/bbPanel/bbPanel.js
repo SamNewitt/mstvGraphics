@@ -101,7 +101,6 @@ setTimeout(function(){
 
 function clockReset(){
     clockSet(480);
-    send("clockVal="+clockRemain);
 }
 
 function clockType(){
@@ -131,7 +130,7 @@ send("period=End 1st");
     case 2:
         e("period").innerHTML="2nd";
 send("period=2nd");
-possSwitch();
+switchPoss();
     break;
     case 2.5:
         e("period").innerHTML="Half";
@@ -142,7 +141,7 @@ send("period=Halftime");
     case 3:
         e("period").innerHTML="3rd";
 send("period=3rd");
-possSwitch();
+switchPoss();
 homeFouls=0;
 awayFouls=0;
 send("awayFouls=0");
@@ -161,7 +160,7 @@ send("period=End 3rd");
     case 4:
         e("period").innerHTML="4th";
         send("period=4th");
-possSwitch();
+switchPoss();
     break;
     case 4.5:
         e("period").innerHTML="End Reg";
@@ -342,14 +341,6 @@ function awayPoss(){
         inactive("home-poss");
     }
     send("poss="+poss);
-    ddVisibilityEnabled=false;
-    inactive("dd-visibility");
-    send("ddInvisible"); 
-    setTimeout(
-        function(){
-    down(1);
-        ddUpdate();
-        },500);
 }
 
 function neutralPoss(){
@@ -357,14 +348,6 @@ function neutralPoss(){
     inactive("away-poss");
     poss="n";
     send("poss="+poss);
-    ddVisibilityEnabled=false;
-    inactive("dd-visibility");
-    send("ddInvisible"); 
-    setTimeout(
-        function(){
-    down(1);
-        ddUpdate();
-        },500);
 }
 
 function homePoss(){
@@ -389,14 +372,25 @@ function homePoss(){
         inactive("away-poss");
     }
     send("poss="+poss);
-    ddVisibilityEnabled=false;
-    inactive("dd-visibility");
-    send("ddInvisible"); 
-    setTimeout(
-        function(){
-    down(1);
-        ddUpdate();
-        },500);
+}
+
+function switchPoss(){
+    inactive("home-poss");
+    inactive("away-poss");
+
+    switch(poss){
+        case "a":
+            undoTree.push("awayPoss");
+            poss="h";
+        active("home-poss");
+        break;
+        case "h":
+            undoTree.push("homePoss");
+            poss="a";
+        active("away-poss");
+        break;
+    }
+    send("poss="+poss);
 }
 
 //--------------------------------------------------FLAG CODE----------------------------------------------
