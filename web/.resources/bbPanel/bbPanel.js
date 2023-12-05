@@ -274,10 +274,10 @@ function addHomeFoul(param){
     }
 }
 //-----------------------------------------------TIMEOUTS-------------------------------------
-var awayTO=3, homeTO=3;
+var awayTO=5, homeTO=5;
 
 function addAwayTO(param){
-    if(awayTO+parseInt(param)>-1 && awayTO+parseInt(param)<4){
+    if(awayTO+parseInt(param)>-1 && awayTO+parseInt(param)<6){
     undoTree.push("addAwayTO="+param*-1);
     awayTO+=parseInt(param);
     e("away-to").innerHTML="Timeouts: "+awayTO;
@@ -296,7 +296,7 @@ function takeAwayTO(){
 }
 
 function addHomeTO(param){
-    if(homeTO+parseInt(param)>-1 && homeTO+parseInt(param)<4){
+    if(homeTO+parseInt(param)>-1 && homeTO+parseInt(param)<6){
     undoTree.push("addHomeTO="+param*-1);
         homeTO+=parseInt(param);
     e("home-to").innerHTML="Timeouts: "+homeTO;
