@@ -393,26 +393,7 @@ function switchPoss(){
     send("poss="+poss);
 }
 
-//--------------------------------------------------FLAG CODE----------------------------------------------
-var flagIn=false;
 
-function flag(){
-    undoTree.push("flag");
-    if(!flagIn){
-        if(bug)
-        {
-    flagIn=!flagIn
-        active("flag");
-        send("flagIn");
-        clockStop();
-        }
-    }
-    else{
-    flagIn=!flagIn
-        inactive("flag");
-        send("flagOut");
-    }
-}
 
 //----------------------------------------------------BUG CODE-------------------------------------------------
 var bug=false;
@@ -422,7 +403,6 @@ function clearAllGraphics(){
     active("bug-out");
     bug=false;
     inactiveC("graphic");
-    inactive("flag");
     inactiveC("away-popup");
     inactiveC("home-popup");
 }
@@ -448,25 +428,19 @@ function bugOut(){
         bug=false;
         active("bug-out");
         inactive("bug-in");
-        inactive("flag");
         inactiveC("away-popup");
         inactiveC("home-popup");
         send("clear");
-        setTimeout({
-            function(){send("flagOut");}
-        },500)
     }
 }
 
 function bugAnimate(){
     if(!bug){
         undoTree.push("graphic");
-
         clearAllGraphics();
         active("bug-in");
         inactive("bug-out");
         send("bugAnimate");
-
         setTimeout(
             function(){
         bug=true;
@@ -539,116 +513,80 @@ function transition(){
 //-------------------------------------------------POPUP CODE-------------------------
 var awayPopupIn=false, homePopupIn=false;
 
-function clearPopups(){
-    if(isActiveC("away-popup")){
-        inactiveC("away-popup");
-        send("awayPopupOut");
-    }
-    if(isActiveC("home-popup")){
-    inactiveC("home-popup");
-    send("homePopupOut");
-    }
+
+// function clearPopups(){
+//     if(isActiveC("away-popup")){
+//         inactiveC("away-popup");
+//         send("awayPopupOut");
+//     }
+//     if(isActiveC("home-popup")){
+//     inactiveC("home-popup");
+//     send("homePopupOut");
+//     }
     
 
+// }
+
+function clearBugGFX(){
+    if(isActive("away-popup")){
+        inactive("away-popup");
+        send("awaypopupOut");
+    }
+    if(isActive("home-popup")){
+        inactive("home-popup");
+        send("homepopupOut");
+    }
 }
-function awayPopup(param,elem){
-    if(bug && param!=""){
-        if(elem.classList.contains("active")){
-            elem.classList.remove("active");
+
+
+
+function awayPopup(){
+    if(e("away-popup-input").value==""){
+        e("away-popup-input").focus();
+    }
+    else if(bug){
+        if(e("away-popup").classList.contains("active")){
+            e("away-popup").classList.remove("active");
             send("awayPopupOut");
         }
         else{
             inactiveC("away-popup");
         inactiveC("graphic");
-
-            elem.classList.add("active");
-            send("awayPopup="+param);
+        e("away-popup").classList.add("active");
+            send("awayPopup="+e("away-popup-input").value.toUpperCase());
             undoTree.push("awayPopup");
         }
     }
+
 }
 
-function awayCustPopup(elem){
-    awayPopup(e("away-popup-input").value.toUpperCase(),elem);
-}
 
-function homePopup(param,elem){
-    if(bug && param!=""){
-        if(elem.classList.contains("active")){
-            elem.classList.remove("active");
+function homePopup(){
+    if(e("home-popup-input").value==""){
+        e("home-popup-input").focus();
+    }
+    else if(bug){
+        if(e("home-popup").classList.contains("active")){
+            e("home-popup").classList.remove("active");
             send("homePopupOut");
         }
         else{
             inactiveC("home-popup");
         inactiveC("graphic");
-
-            elem.classList.add("active");
-            send("homePopup="+param);
+        e("home-popup").classList.add("active");
+            send("homePopup="+e("home-popup-input").value.toUpperCase());
             undoTree.push("homePopup");
-
         }
     }
-}
-
-function homeCustPopup(elem){
-    homePopup(e("home-popup-input").value.toUpperCase(),elem);
-}
-
-function awayFlag(param,elem){
-    if(bug &&param!=""){
-        inactive("flag");
-        flagIn=false;
-        send("flagOut");
-        if(elem.classList.contains("active")){
-            elem.classList.remove("active");
-            send("awayPopupOut");
-        }
-        else{
-            inactiveC("away-popup");
-        inactiveC("graphic");
-
-            elem.classList.add("active");
-            send("awayFlag="+param);
-            undoTree.push("awayPopup");
-        }
-    }
-}
-
-function awayCustFlag(elem){
-    awayFlag(e("away-flag-input").value.toUpperCase(),elem);
-}
-
-function homeFlag(param,elem){
-    if(bug && param!=""){
-        inactive("flag");
-        flagIn=false;
-        send("flagOut");
-        if(elem.classList.contains("active")){
-            elem.classList.remove("active");
-            send("homePopupOut");
-        }
-        else{
-            inactiveC("home-popup");
-        inactiveC("graphic");
-            elem.classList.add("active");
-            send("homeFlag="+param);
-            undoTree.push("homePopup");
-
-        }
-    }
-}
-
-function homeCustFlag(elem){
-    homeFlag(e("home-flag-input").value.toUpperCase(),elem);
 }
 
 function awayPopupOut(){
-    inactiveC("away-popup");
+    inactive("away-popup");
     send("awayPopupOut");
 }
 
 function homePopupOut(){
-    inactiveC("home-popup");
+    inactive("home-popup");
     send("homePopupOut");
 }
 // --------------------------------- OTHER GRAPHICS GODE----------------------------------------
