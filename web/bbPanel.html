@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+<link rel="stylesheet" href=".resources/bbPanel/bbPanel.css">
+<script src=".resources/fbPanel/fbPanel.js"></script>
+<script src=".resources/panel.js"></script>
+<script src=".resources/fbPanel/keybindings.js"></script>
+
+    </head>
+    <body>
+  <div id="container">
+<div class="flex" style="height: 350px;">
+    <!-- --------------------------------------TIMING----------------------------------------- -->
+<div class="vflex section" style="width: 217px;">
+<h1 id="clock">8:00</h1>
+<div class="flex">
+    <button id=clock-start onclick="clockStart()">Start</button>
+    <button id=clock-stop class="active" onclick="clockStop()">Stop</button>
+</div>
+<div class="flex" style="border-bottom-style:solid;">
+    <input type="text" id="clock-input" style="width:80px; text-align: center;" placeholder="MM:SS" oninput="clockType()">
+    <button id=clock-update onclick="clockUpdate()">Update (M)</button>
+</div>
+<h2 id="period">1st</h2>
+<div class="flex"  > 
+    
+
+    <button onclick="nextPeriod()">Next (N)</button>
+    <button onclick="prevPeriod()">Prev</button>
+
+
+    <button id=final onclick="final()">Final</button>
+
+</div>
+</div>
+
+<!-- -------------------------------------AWAY-------------------------------- -->
+<div class="section vflex away" style="width: 240px;">
+<h5 class="away-name">Away Team</h5>
+    <h3 id="away-score" style="margin:0">0</h3>
+<div class="flex" style=" border-bottom-style: solid; padding:3px;">
+    <button  onclick="addAwayScore(-1)">-1</button>
+    <button  onclick="addAwayScore(1)">+1 (Y)</button>
+    <button  onclick="addAwayScore(2)">+2</button>
+    <button  onclick="addAwayScore(3)">+3 (U)</button>
+</div> 
+
+<div class="flex" style="border-bottom-style: solid; padding: 3px;">
+    <h4 id="away-fouls" s>Fouls: 10</h4>
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(1)"> + </button>
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(-1)" > - </button>
+</div>
+<h4 id="away-to" style="margin-top:10px; margin-bottom:0">Timeouts: 3</h4>
+<div class="flex" style="border-bottom-style: solid; padding: 3px;">
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(1)"> + </button>
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(-1)" > - </button>
+    <button  onclick="takeAwayTO()">Take TO (T)</button>
+</div>
+<button id="away-poss"  onclick="awayPoss()">Possesion (O)</button>
+</div>
+<!-- ---------------------------------------HOME------------------------------------- -->
+<div class="section vflex home" style="width: 240px;">
+    <h5 class="home-name">Home Team</h5>
+    <h3 id="home-score">0</h3>
+    <div class="flex" style=" border-bottom-style: solid; padding:3px;">
+
+    <button  onclick="addHomeScore(-1)">-1</button>
+    <button  onclick="addHomeScore(1)">+1 (H)</button>
+    <button  onclick="addHomeScore(2)">+2</button>
+    <button  onclick="addHomeScore(3)">+3 (J)</button>
+    <button  onclick="homeTD()">Touchdown (K)</button>
+</div> 
+<h4 id="home-to">Timeouts: 3</h4>
+<div class="flex" style="border-bottom-style: solid; padding: 3px;">
+
+    <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(1)">+</button>
+    <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(-1)">-</button>
+    <button  onclick="takeHomeTO()">Take TO (G)</button>
+</div>
+<button id="home-poss" onclick="homePoss()">Possesion (L)</button>
+</div>
+
+
+
+<div class="section vflex" style="width: 180px;">
+    <h5>Score Graphics</h5>
+    <div class="flex" style="border-bottom-style:solid; height:145px;">
+        <button  onclick="bugAnimate()">Animate Bug In (1)</button>
+        <button style="height:32px" id=bug-in onclick="bugIn()">Bug In (2)</button>
+        <button style="height:32px" class=active id=bug-out onclick="bugOut()">Bug Out (3)</button>
+    </div>
+    <button  id=breakbox class=graphic onclick="breakbox()">Breakbox (4)</button>
+    <button  id=corner-score class=graphic onclick="cornerScore()">Corner Score (5)</button>
+    <button  id=team-corners class=graphic onclick="teamCorners()">Team Corners (6)</button>
+    <button  id=transition class=graphic onclick="transition()">Roll Transition (0)</button>
+    </div>  
+
+
+
+<div class="vflex" style="width: 533px;">
+<div class="flex section" style="height: 50px; width: 100%;">
+   <h5 id="connection"></h5>
+    <div id="menu" class="flex" style="margin:0;">
+        <button onclick="undo()">Undo (~)</button>
+        <button onclick="clearPressed()">Clear (BS)</button>
+        <button onclick="forceUpdate()">Update</button>
+        <button onclick="resetCheck()">Reset</button>
+        <button onclick="sync()">Sync</button>
+    </div>
+        <div id="reset" class="flex" style="margin:0; width:330px; display: none;">
+        <h5>Reset Game?</h5>
+        <button onclick="reset()">Yes</button>
+        <button onclick="returnToMenu()">No</button>
+
+    </div>
+</div>
+<div style="width:533px; height: 300px;">
+    <iframe src="fbDisplay.html" scrolling="no" style="margin-left: -373.5px; margin-top: -210px; width: 1280px; height:720px; background-color: #0f0; transform: scale(0.416);" frameborder="0"></iframe>
+</div>
+</div>
+
+
+
+<!-- --------------------------------------------AWAY POPUPS------------------------------------- -->
+<div class="section vflex away" style="width:405px">
+<h5>Away Popups</h5>
+<div class="flex">
+    <button  class="away-popup" onclick="awayPopup('FG ATTEMPT', this)">FG Att</button>
+<button  class="away-popup" onclick="awayPopup('2 POINT ATTEMPT', this)">2 Point</button>
+<button  class="away-popup" onclick="awayPopup('STARTS 2ND HALF WITH BALL', this)">H2 Ball</button>
+</div>
+<h5>Custom Popup</h5>
+<div class="flex" style="border-bottom-style: solid; margin:0;">
+    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+<input type="text" id="away-popup-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+</div>
+<h5>Flag Popups</h5>
+<div class="flex">
+<button id="awayFS" style="font-size:15px;" class="away-popup" onclick="awayFlag('FALSE START', this)">False St (Q)</button>
+<button id="awayOS" style="font-size:15px;" class="away-popup" onclick="awayFlag('OFFSIDE', this)">Offside (W)</button>
+<button id="awayHold" style="font-size:15px;" class="away-popup" onclick="awayFlag('HOLDING', this)">Hold (E)</button>
+<button id="awayPI" style="font-size:15px;" class="away-popup" onclick="awayFlag('PASS INTERFERENCE', this)">PI (R)</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('DELAY OF GAME', this)">Delay</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('UNNECESSARY ROUGHNESS', this)">UR</button>
+<button style="font-size:15px;" class="away-popup" onclick="awayFlag('UNSPORTSMANLIKE CONDUCT', this)">UC</button>
+<h5>Custom Flag Popup</h5>
+<div class="flex" style="margin:0;">
+    <button  class="away-popup" onclick="awayCustFlag(this)">Show</button>
+<input type="text" id="away-flag-input" style="width:175px; text-align: center;" placeholder="Custom Text">
+</div>
+
+</div>
+
+</div>
+<!-- ------------------------------------------------------HOME POPUPS------------------------------------ -->
+<div class="section home vflex" style="width:480px; height:407px;">
+    <h5>Home Popups</h5>
+    <h5>Home Sidebars</h5>
+    <div style="width:480px;">
+
+
+    <div class="flex player" style="justify-content: flex-start;">
+        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+    <div class="flex light player" style="justify-content: flex-start;">
+        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+    <div class="flex player" style="justify-content: flex-start;">
+        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+    <div class="flex player light" style="justify-content: flex-start;">
+        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+    <div class="flex player" style="justify-content: flex-start;">
+        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+    <div class="flex player light" style="justify-content: flex-start;">
+        <select style="width:150px; overflow: hidden" name="home-name" id="home-name">
+            <option value="1">#30 J. Brouwer</option>
+            <option value="2">#30 J. Brouwer</option>
+            <option value="3">#30 J. Brouwer</option>
+            <option value="4">#30 J. Brouwer</option>
+            <option value="5">#30 J. Brouwer</option>
+            <option value="7">#30 J. Brouwer</option>
+            <option value="8">#30 J. Brouwer</option>
+            <option value="9">#30 J. Brouwer</option>
+            <option value="10">#30 J. Brouwer</option>
+            <option value="11">#30 J. Brouwer</option>
+            <option value="12">#30 J. Brouwer</option>
+        </select>
+        <button style="font-size:15px">Name</button>
+        <button style="font-size:15px">2</button>
+        <button style="font-size:15px">1/1</button>
+        <button style="font-size:15px">1</button>
+        <button style="font-size:15px">Out</button>
+        <button style="font-size:15px">Custom</button>
+    </div>
+
+<div class=flex>
+    <h5 style="width:185px">Custom name text:</h5>
+    <input type="text" id="home-player-input" style="width:250px; text-align: center; font-size:22px; height: 25px;" placeholder="Text under name">
+
+</div>
+</div>
+
+</div>
+
+
+
+<div class="section vflex" style="width:150px; height:407px;">
+<h5>Pre-Game</h5>
+<div class="flex"style="">
+<button  class="graphic" onclick="addGraphic('gameIntro', this)">Intro</button>
+<button  class="graphic" onclick="addGraphic('keys', this)">Keys</button>
+<button  class="graphic" onclick="addGraphic('awayProfile', this)">Away Profile</button>
+<button  class="graphic" onclick="addGraphic('homeProfile', this)">Home Profile</button>
+<button  class="graphic" onclick="addGraphic('awayPTW', this)">Away PTW</button>
+<button  class="graphic" onclick="addGraphic('homePTW', this)">Home PTW</button>
+<button  class="graphic" onclick="addGraphic('awayPTW', this)">Away Starters</button>
+<button  class="graphic" onclick="addGraphic('awayPTW', this)">Home Starters</button>
+
+
+</div>
+</div>
+
+
+
+
+
+<div class="section vflex" style="width:300px; height:407px;">
+<h5>Sponsored Segments</h5>
+<div class="flex"style="border-bottom-style: solid; margin:0;">
+    <button  class="graphic" onclick="addGraphic('pregame', this)">Pregame</button>
+    <button  class="graphic" onclick="addGraphic('halftime', this)">Half</button>
+    <button  class="graphic" onclick="addGraphic('postgame', this)">Postgame</button>
+</div>
+<h5>Sponsor Corners</h5>
+<div class="flex" id=sponsor-corners style="border-bottom-style: solid; margin:0;">
+    <button  class="graphic" onclick="sponsor('avera', this)">Avera</button>
+    <button  class="graphic" onclick="sponsor('amFam', this)">AmFam</button>
+    <button  class="graphic" onclick="sponsor('cbSquare', this)">Central Bank</button>
+    <button  class="graphic" onclick="sponsor('dnn', this)">DNN</button>
+    <button  class="graphic" onclick="sponsor('gsSquare', this)">Great Shots</button>
+    <button  class="graphic" onclick="sponsor('ilcc', this)">ILCC</button>
+    <button  class="graphic" onclick="sponsor('jtwSquare', this)">JTW</button>
+    <button  class="graphic" onclick="sponsor('ls', this)">LS Video</button>
+    <button  class="graphic" onclick="sponsor('sds', this)">SD Scores</button>
+    <button  class="graphic" onclick="sponsor('shenanigansWhite', this)">Shenanigans</button>
+    <button  class="graphic" onclick="sponsor('touchmarkWhite', this)">Touchmark</button>
+    <button  class="graphic" onclick="sponsor('vern', this)">Vern</button>
+</div>
+<h5>Lower 3rds</h5>
+<div class="flex"style="margin:0;">
+    <button id="annc" class="graphic" onclick="addGraphic('l3rd=announcers', this)">Announcers (7)</button>
+    <button  class="graphic" onclick="addGraphic('l3rd=nextBroadcast', this)">Next Game</button>
+    <button  class="graphic" onclick="addGraphic('l3rd=crew', this)">Crew</button>
+    <button  class="graphic" onclick="addGraphic('l3rd=copyright', this)">Copyright</button>
+</div>
+</div>
+<div class="flex" style="height: 75px;">
+<div class="vflex section" style="width:310px;">
+<h5 style="margin:0;">Custom Image</h5>
+<div class="flex" style="margin:0;">
+    <button  id="image" class="graphic" onclick="addCustomImage()">Show (9)</button>
+    <input type="text" id="image-input" style="width:200px; text-align: center;" placeholder="(images/___.png)">
+</div>
+</div>
+<div class="vflex section" style="width:1112px;">
+<h5 style="margin:0;">Custom Lower 3rd</h5>
+<div class="flex" style="margin:0;">
+    <button  id="l3rd-n"  class="l3rd-selector active" onclick="customL3rdType('n', this)">Neutral</button>
+    <button  id="l3rd-a"  class="away-name l3rd-selector" onclick="customL3rdType('a', this)">Away</button>
+    <button  id="l3rd-h"  class="home-name l3rd-selector" onclick="customL3rdType('h', this)">Home</button>
+    <button  id="l3rd-s"   onclick="ss()">SilverSTAR</button>
+
+    <input type="text" id="l3rd-title" style="width:220px; text-align: center;" placeholder="TITLE">
+    <input type="text" id="l3rd-text" style="width:220px; text-align: center;" placeholder="DESCRIPTION">
+    <button  id="custom-l3rd" class="graphic" onclick="showCustomL3rd()">Show L3rd (8)</button>
+
+</div>
+</div>
+  </div>
+  <div id="wait-cover" class="flex">
+    <h1 style="color: #000; font-family:sans-serif;">Attempting to connect to server...</h1>
+  </div>
+    </body>
+
+</html>
