@@ -550,7 +550,8 @@ function awayPopup(){
             send("awayPopupOut");
         }
         else{
-            inactiveC("away-popup");
+            inactive("away-popup");
+            inactive("away-run-popup");
         inactiveC("graphic");
         e("away-popup").classList.add("active");
             send("awayPopup="+e("away-popup-input").value.toUpperCase());
@@ -571,7 +572,7 @@ function homePopup(){
             send("homePopupOut");
         }
         else{
-            inactiveC("home-popup");
+            inactive("home-run-popup");
         inactiveC("graphic");
         e("home-popup").classList.add("active");
             send("homePopup="+e("home-popup-input").value.toUpperCase());
@@ -589,6 +590,16 @@ function homePopupOut(){
     inactive("home-popup");
     send("homePopupOut");
 }
+
+
+// --------------------------------- SIDEBAR CODE--------------------------------------------------
+
+function awaySidebar(name,type){
+    if(bug){
+
+    }
+}
+
 // --------------------------------- OTHER GRAPHICS GODE----------------------------------------
 
 function addGraphic(param, elem){

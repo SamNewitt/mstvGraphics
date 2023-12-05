@@ -5,7 +5,7 @@
 <link rel="stylesheet" href=".resources/bbPanel/bbPanel.css">
 <script src=".resources/bbPanel/bbPanel.js"></script>
 <script src=".resources/panel.js"></script>
-<script src=".resources/bbPanel/keybindings.js"></script>
+<!-- <script src=".resources/bbPanel/keybindings.js"></script> -->
 
     </head>
     <body>
@@ -130,12 +130,12 @@
     <div class="flex" >
         <h5>Scoring run:</h5>
         <h5 style="width:100px; text-align: center;">7-0 Run</h5>
-    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+    <button  id="away-run-popup" onclick="awayPopup()">Show</button>
     </div>
     <div class="flex" style="border-bottom-style: solid; margin:0; ">
         <h5>Custom popup:</h5>
     <input type="text" id="away-popup-input" style="width:175px; text-align: center;" placeholder="Popup Text">
-    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+    <button  id="away-popup" onclick="awayPopup()">Show</button>
     </div>
     <h5>Home Sidebars</h5>
     <div style="width:480px;">
@@ -221,12 +221,12 @@
     <div class="flex" >
         <h5>Scoring run:</h5>
         <h5 style="width:100px; text-align: center;">7-0 Run</h5>
-    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+    <button  id="home-run-popup" onclick="homePopup()">Show</button>
     </div>
     <div class="flex" style="border-bottom-style: solid; margin:0; ">
         <h5>Custom popup:</h5>
-    <input type="text" id="away-popup-input" style="width:175px; text-align: center;" placeholder="Popup Text">
-    <button  class="away-popup" onclick="awayCustPopup(this)">Show</button>
+    <input type="text" id="home-popup-input" style="width:175px; text-align: center;" placeholder="Popup Text">
+    <button  id="home-popup" onclick="homePopup()">Show</button>
     </div>
     <h5>Home Sidebars</h5>
     <div style="width:480px;">
