@@ -1,6 +1,6 @@
 var undoTree=[];
 // ------------------------ TIMER CODE ----------------------------------------------
-var clockRemain=720, clock="12:00", input, clockInterval=null, clockRunning=false;
+var clockRemain=480, clock="8:00", input, clockInterval=null, clockRunning=false;
 
 function clockStart(){
     if(!clockRunning && clockRemain>0){
@@ -100,7 +100,7 @@ setTimeout(function(){
 }
 
 function clockReset(){
-    clockSet(720);
+    clockSet(480);
     send("clockVal="+clockRemain);
 }
 
@@ -131,33 +131,25 @@ send("period=End 1st");
     case 2:
         e("period").innerHTML="2nd";
 send("period=2nd");
-
+possSwitch();
     break;
     case 2.5:
         e("period").innerHTML="Half";
 send("period=Halftime");
         clockReset();
-        homeTO=3;
-        awayTO=3;
-        send("homeTO=3");
-        homeTO=3;
-    e("home-to").innerHTML="Timeouts: 3";
-        send("awayTO=3");
-        awayTO=3;
-    e("away-to").innerHTML="Timeouts: 3";
-        down(1);
-        poss="n";
-        send("poss=n");
-        inactive("away-poss");
-        inactive("home-poss");
-        ddVisibilityEnabled=false;
-        inactive("dd-visibility");
-        send("ddInvisible"); 
     break;
 
     case 3:
         e("period").innerHTML="3rd";
 send("period=3rd");
+possSwitch();
+homeFouls=0;
+awayFouls=0;
+send("awayFouls=0");
+send("homeFouls=0");
+e("away-fouls").innerHTML="Fouls: 0";
+e("home-fouls").innerHTML="Fouls: 0";
+
 
     break;
     case 3.5:
@@ -169,6 +161,7 @@ send("period=End 3rd");
     case 4:
         e("period").innerHTML="4th";
         send("period=4th");
+possSwitch();
     break;
     case 4.5:
         e("period").innerHTML="End Reg";
@@ -239,127 +232,6 @@ function final(){
     
 }
 
-// ------------------------------------------------------DOWN AND DISTANCE----------------------------
-var downQue=1, downLive=1, downText, ddVisibilityEnabled=false; 
-
-function down(param){
-    downQue=param;
-    inactive("d1");
-    inactive("d2");
-    inactive("d3");
-    inactive("d4");
-
-
-
-    active("d"+param);
-if(param==1){
-    e("dist-input").value=10;
-}
-    
-        
-      e("dd-update").classList.add("update");
-    
-}
-
-function distChanged(){
-    e("dd-update").classList.add("update");
-
-}
-
-function ddEnterIn(){
-    e("dd-update").innerHTML="Update (Enter)"
-}
-
-function ddEnterOut(){
-    e("dd-update").innerHTML="Update (X)"
-
-}
-
-
-function ddUpdate(){
-    e("dd-update").classList.remove("update");
-    downLive=downQue;
-
-    switch(downLive){
-        case 1:
-        downText="1st";
-        break;
-        case 2:
-        downText="2nd";
-        break;
-        case 3:
-        downText="3rd";
-        break;
-        case 4:
-        downText="4th";
-        break;
-    }
-    if(e("dist-input").value=="" || !Number.isInteger(parseInt(e("dist-input").value))){
-            e("dist-input").value=="Error";
-            e("dist-input").focus();
-            e("dist-input").select();
-    }
-    else if(parseInt(e("dist-input").value)==0){
-        downText=downText+" & Goal";
-        send("dd="+downText);
-        e("dd").innerHTML=downText;
-    }
-    else{
-      
-        downText=downText+" & "+parseInt(e("dist-input").value);
-        send("dd="+downText);
-        e("dd").innerHTML=downText;
-
-    }
-    
-
-
-}
-
-function ddNext(){
-    if(downLive==4){
-        down(1);
-        ddUpdate();
-    }
-    else{
-        downLive++;
-       down(downLive);
-       switch(downLive){
-        case 2:
-        send("dd=2nd Down");
-        e("dd").innerHTML="2nd Down";
-        break;
-        case 3:
-        send("dd=3rd Down");
-        e("dd").innerHTML="3rd Down";
-        break;
-        case 4:
-        send("dd=4th Down");
-        e("dd").innerHTML="4th Down";
-        break;
-       }
-    }
-}
-
-function ddVisibility(){
-    if(!ddVisibilityEnabled){
-       if(poss!="n"){
-    ddVisibilityEnabled=!ddVisibilityEnabled;
-        active("dd-visibility");
-        send("ddVisible");
-    undoTree.push("ddVisibility");
-
-       }
-    }
-    else{
-    ddVisibilityEnabled=!ddVisibilityEnabled;
-        inactive("dd-visibility");
-        send("ddInvisible"); 
-    undoTree.push("ddVisibility");
-
-    }
-}
-
 //-------------------------------------------------------------SCORE---------------------------------------
 var homeScore=0, awayScore=0;
 
@@ -370,29 +242,6 @@ function addAwayScore(param){
     e("away-score").innerHTML=awayScore;
     send("awayScore="+awayScore);
     }
-    if(param>0){
-        clockStop();
-        }
-}
-
-function awayTD(){
-    if(poss=="a"){
-    undoTree.push("awayScore=-6");
-    clockStop();
-    awayScore+=6;
-    e("away-score").innerHTML=awayScore;
-    send("awayTouchdown");
-    poss="n";
-    inactive("away-poss");
-    ddVisibilityEnabled=false;
-    inactive("dd-visibility");
-    setTimeout(function(){
-        down(1);
-        ddUpdate();
-        send("ddInvisible");
-        send("poss=n");
-    },1000);
-}
 }
 
 function addHomeScore(param){
@@ -402,33 +251,28 @@ function addHomeScore(param){
     e("home-score").innerHTML=homeScore;
     send("homeScore="+homeScore);
     }
-    if(param>0){
-    clockStop();
+}
+
+//--------------------------------------------------------------------FOULS--------------------------------------------
+var homeFouls=0; awayFouls=0;
+
+function addAwayFoul(param){
+    if(awayFouls+parseInt(param)>-1){
+        undoTree.push("awayFouls="+param*-1);
+        awayFouls+=parseInt(param);
+        e("away-fouls").innerHTML="Fouls: "+awayFouls;
+        send("awayFouls="+awayFouls);
     }
 }
 
-function homeTD(){
-    if(poss=="h"){
-    undoTree.push("homeScore=-6");
-    clockStop();
-    homeScore+=6;
-    e("home-score").innerHTML=homeScore;
-    send("homeTouchdown");
-    poss="n";
-    inactive("home-poss");
-    ddVisibilityEnabled=false;
-    inactive("dd-visibility");
-    setTimeout(function(){
-        down(1);
-        ddUpdate();
-        send("ddInvisible");
-        send("poss=n");
-
-    },1000);
+function addHomeFoul(param){
+    if(homeFouls+parseInt(param)>-1){
+        undoTree.push("homeFouls="+param*-1);
+        homeFouls+=parseInt(param);
+        e("home-fouls").innerHTML="Fouls: "+homeFouls;
+        send("homeFouls="+homeFouls);
+    }
 }
-     
-}
-
 //-----------------------------------------------TIMEOUTS-------------------------------------
 var awayTO=3, homeTO=3;
 
@@ -985,14 +829,17 @@ function undo(){
         case "prevPeriodFinal":
             final();
         break;
-        case "ddVisibility":
-            ddVisibility();
-        break;
         case "awayScore":
             addAwayScore(undoData[1]);
         break;
         case "homeScore":
             addHomeScore(undoData[1]);
+        break;
+        case "awayFouls":
+            addAwayFoul(undoData[1]);
+        break;
+        case "homeFouls":
+            addHomeFoul(undoData[1]);
         break;
         case "addAwayTO":
             addAwayTO(undoData[1]);
