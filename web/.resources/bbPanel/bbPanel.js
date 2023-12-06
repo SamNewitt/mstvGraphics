@@ -595,14 +595,24 @@ function homePopupOut(){
 function awaySidebar(elem,name,msg){
     if(bug){
         if(elem.classList.contains("active")){
-            inactive(elem);
+            elem.classList.remove("active")
             send("awaySidebarOut");
         }
         else{
             inactiveC("away-sidebar");
-            active(elem);
+            elem.classList.add("active")
             undoTree.push("awaySidebar");
+            if(msg==null){
+                msg=e("away-sidebar-input").value;
+            }
             send("sidebarMSG="+msg);
+            if(name==5){
+                name=awayBench[name]
+            }
+            else{
+                name=awayStarters[name];
+            }
+            send("awaySidebar="+name);
         }
     }
 }

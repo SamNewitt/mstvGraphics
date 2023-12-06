@@ -114,6 +114,7 @@ serverConnect();
 
 function send(param){
     socket.send(param);
+    console.log(param);
 }
 
 

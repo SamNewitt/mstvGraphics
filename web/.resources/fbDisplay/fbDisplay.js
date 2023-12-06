@@ -56,7 +56,6 @@ if(startersAreIn){
 
   var waitTime=0;
 function message(type, data){
-    console.log(type);
     if(graphicIsLive){
         waitTime=610;
     }
