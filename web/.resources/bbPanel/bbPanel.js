@@ -594,9 +594,13 @@ function homePopupOut(){
 
 // --------------------------------- SIDEBAR CODE--------------------------------------------------
 
-function awaySidebar(name,type){
+function awaySidebar(elem,name){
     if(bug){
-
+        if(elem.classList.contains("active")){
+            inactive(elem);
+            send("awaySidebarOut");
+            
+        }
     }
 }
 
