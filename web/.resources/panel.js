@@ -63,12 +63,6 @@ c("home-starters-title").forEach(function(elem){
     elem.innerHTML=jsonData.home.name+" Starters";
 });
 
-// c("away-logo").forEach(function(elem){
-//     elem.setAttribute("src",jsonData.away.logo);
-// });
-// c("home-logo").forEach(function(elem){
-//     elem.setAttribute("src",jsonData.home.logo);
-// });
 
 }
 
@@ -103,6 +97,7 @@ msgData=event.data.split("=");
     case "broadcastFile":
     jsonData=JSON.parse(msgData[1]);
     init();
+    playersInit();
     break;
 }
 });

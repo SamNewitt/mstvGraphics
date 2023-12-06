@@ -4,7 +4,7 @@
 		"abbriviation": "JHS",
 		"mascot": "Rough Riders",
 		"seed": "4",
-		"record": "",
+		"record": "0-0",
 		"logo": "logos/jhs.png",
 		"primaryColor": "#ccc",
 		"accentColor": "#1a4f27",
@@ -15,129 +15,85 @@
 		"ptwDesc":"(#84, Senior, 6'4\")",
 		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
 		"coach":"Vince Bennedetto",
-		"d1Players": [{
-				"number": "54",
-				"name": "Landon Duran",
-				"position": "NG"
+		"players":[
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
 			{
-				"number": "1",
-				"name": "Austin Miller",
-				"position": "DE"
-			},
-      {
-				"number": "44",
-				"name": "Kaiden Johnson",
-				"position": "DE"
-			},
-      {
-				"number": "9",
-				"name": "Thomas Heiberger",
-				"position": "LB"
-			},
-      {
-				"number": "8",
-				"name": "Rylan Aman",
-				"position": "LB"
-			},
-      {
-				"number": "23",
-				"name": "Austin Brummels",
-				"position": "LB"
-			}
-		],
-    "d2Players": [{
-				"number": "32",
-				"name": "Dawson Sechser",
-				"position": "DB"
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
 			{
-				"number": "15",
-				"name": "Evan Haug",
-				"position": "CB"
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
-      {
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
 				"number": "13",
-				"name": "Damaris Fields",
-				"position": "CB"
-			},
-      {
-				"number": "16",
-				"name": "Cael Nofziger",
-				"position": "S"
-			},
-      {
-				"number": "5",
-				"name": "Owen Ward",
-				"position": "S"
-			},
-      {
-				"number": "",
-				"name": "",
-				"position": ""
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
 			}
-		],
-  "o1Players": [{
-				"number": "6",
-				"name": "Ethan Swenson",
-				"position": "QB"
-			},
-			{
-				"number": "20",
-				"name": "Maddox Zens",
-				"position": "RB"
-			},
-      {
-				"number": "84",
-				"name": "Eddie Whiting",
-				"position": "TE"
-			},
-      {
-				"number": "7",
-				"name": "Eddie Mulbah",
-				"position": "WR"
-			},
-      {
-				"number": "10",
-				"name": "Jordan Dettler",
-				"position": "WR"
-			},
-      {
-				"number": "15",
-				"name": "Evan Haug",
-				"position": "WR"
-			}
-		],
-    "o2Players": [{
-				"number": "72",
-				"name": "Brady Altenburg",
-				"position": "C"
-			},
-			{
-				"number": "65",
-				"name": "Carson Hughes",
-				"position": "G"
-			},
-      {
-				"number": "50",
-				"name": "Noah Duran",
-				"position": "G"
-			},
-      {
-				"number": "55",
-				"name": "Mason Payne",
-				"position": "T"
-			},
-      {
-				"number": "71",
-				"name": "Victor Hernandez",
-				"position": "T"
-			},
-      {
-				"number": "",
-				"name": "",
-				"position": ""
-			}
+			
 		]
 	},
 	"home": {
@@ -156,130 +112,85 @@
 		"ptwDesc":"(#84, Senior, 6'4\")",
 		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
 		"coach":"Kim Nelson",
-		"d1Players": [{
-				"number": "74",
-				"name": "Max Elrod",
-				"position": "DL"
-			},
+		"players":[
 			{
-				"number": "71",
-				"name": "Rizg Osman",
-				"position": "DL"
-			},
-      {
-				"number": "88",
-				"name": "Payton Blackwelder",
-				"position": "DL"
-			},
-      {
-				"number": "9",
-				"name": "Sam Just",
-				"position": "LB"
-			},
-      {
-				"number": "25",
-				"name": "Levi Danielson",
-				"position": "LB"
-			},
-      {
-				"number": "",
-				"name": "",
-				"position": ""
-			}
-		],
-    "d2Players": [{
-				"number": "12",
-				"name": "Carter Baier",
-				"position": "DB"
-			},
-			{
-				"number": "2",
-				"name": "Coen Cook",
-				"position": "CB"
-			},
-      {
-				"number": "3",
-				"name": "Thomas Holt",
-				"position": "S"
-			},
-      {
-				"number": "16",
-				"name": "Isaac Ostrem",
-				"position": "DB"
-			},
-      {
-				"number": "6",
-				"name": "Logan O'Conner",
-				"position": "CB"
-			},
-      {
-				"number": "8",
-				"name": "Jaxson Wolbrink",
-				"position": "S"
-			}
-		],
-  "o1Players": [{
-				"number": "7",
-				"name": "Sam Knuth",
-				"position": "QB"
-			},
-			{
-				"number": "25",
-				"name": "Levi Danielson",
-				"position": "RB"
-			},
-      {
-				"number": "4",
-				"name": "Trevor Wehde",
-				"position": "WR"
-			},
-      {
-				"number": "84",
-				"name": "Tytan Tryon",
-				"position": "WR"
-			},
-      {
 				"number": "11",
-				"name": "Cale Morton",
-				"position": "WR"
-			},
-      {
-				"number": "10",
-				"name": "Max Carlson",
-				"position": "WR"
-			}
-		],
-    "o2Players": [
-        {
-				"number": "89",
-				"name": "Aidan Costain",
-				"position": "TE"
-			},
-            {
-				"number": "74",
-				"name": "Max Elrod",
-				"position": "LT"
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
 			{
-				"number": "52",
-				"name": "Connor Fitzgerald",
-				"position": "LG"
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
-      {
-				"number": "62",
-				"name": "Kale Vesely",
-				"position": "C"
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
-      {
-				"number": "71",
-				"name": "Rizg Osman",
-				"position": "RG"
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
 			},
-      {
-				"number": "50",
-				"name": "Carson Stiff",
-				"position": "RT"
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "true"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "11",
+				"firstName": "Landon",
+				"lastName": "Duran",
+				"desc": "Sr, 6'1\"",
+				"starter": "false"
 			}
+			
 		]
 	},
 	"announcer1": "John Gaskins",

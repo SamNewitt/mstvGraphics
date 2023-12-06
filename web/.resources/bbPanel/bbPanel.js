@@ -1,4 +1,4 @@
-var undoTree=[];
+var undoTree=[], awayStarters=[], homeStarters=[], awayBench=[], homeBench=[];
 // ------------------------ TIMER CODE ----------------------------------------------
 var clockRemain=480, clock="8:00", input, clockInterval=null, clockRunning=false;
 
@@ -552,7 +552,6 @@ function awayPopup(){
         else{
             inactive("away-popup");
             inactive("away-run-popup");
-        inactiveC("graphic");
         e("away-popup").classList.add("active");
             send("awayPopup="+e("away-popup-input").value.toUpperCase());
             undoTree.push("awayPopup");
@@ -573,7 +572,6 @@ function homePopup(){
         }
         else{
             inactive("home-run-popup");
-        inactiveC("graphic");
         e("home-popup").classList.add("active");
             send("homePopup="+e("home-popup-input").value.toUpperCase());
             undoTree.push("homePopup");
@@ -594,12 +592,17 @@ function homePopupOut(){
 
 // --------------------------------- SIDEBAR CODE--------------------------------------------------
 
-function awaySidebar(elem,name){
+function awaySidebar(elem,name,msg){
     if(bug){
         if(elem.classList.contains("active")){
             inactive(elem);
             send("awaySidebarOut");
-            
+        }
+        else{
+            inactiveC("away-sidebar");
+            active(elem);
+            undoTree.push("awaySidebar");
+            send("sidebarMSG="+msg);
         }
     }
 }
@@ -823,4 +826,27 @@ function undo(){
 }
     
     undoTree.splice(undoLength-1,20);
+}
+
+
+
+//---------------------------------------PLAYERS SETUP FUNC--------------------------------------------
+
+function playersInit(){
+var starterNum=0, benchNum=0;
+for(var i=0; i<jsonData.away.players.length; i++){
+    if(jsonData.away.players[i].starter=="true" &&starterNum<5){
+        c("away-player")[starterNum].innerHTML="#"+jsonData.away.players[i].number+" "+jsonData.away.players[i].firstName.charAt(0)+". "+jsonData.away.players[i].lastName;
+        awayStarters[starterNum]="#"+jsonData.away.players[i].number+" - "+jsonData.away.players[i].firstName+" "+jsonData.away.players[i].lastName+" ("+jsonData.away.players[i].desc+")";
+        starterNum++;
+    }
+    else{
+        c("away-bench-player")[benchNum].innerHTML="#"+jsonData.away.players[i].number+" "+jsonData.away.players[i].firstName.charAt(0)+". "+jsonData.away.players[i].lastName;
+        awayBench[starterNum]="#"+jsonData.away.players[i].number+" - "+jsonData.away.players[i].firstName+" "+jsonData.away.players[i].lastName+" ("+jsonData.away.players[i].desc+")";
+        benchNum++;   
+    }
+}
+for(var i=15; i>=benchNum; i--){
+c("away-bench-player")[i].remove();
+}
 }

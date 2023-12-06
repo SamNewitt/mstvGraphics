@@ -1,0 +1,292 @@
+{
+	"away": {
+		"name": "Jefferson",
+		"abbriviation": "JHS",
+		"mascot": "Rough Riders",
+		"seed": "4",
+		"record": "",
+		"logo": "logos/jhs.png",
+		"primaryColor": "#ccc",
+		"accentColor": "#1a4f27",
+		"bgColor": "#1a4f27",
+		"profile": "●",
+		"key":"",
+		"ptwName":"Austin Miller",
+		"ptwDesc":"(#84, Senior, 6'4\")",
+		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
+		"coach":"Vince Bennedetto",
+		"d1Players": [{
+				"number": "54",
+				"name": "Landon Duran",
+				"position": "NG"
+			},
+			{
+				"number": "1",
+				"name": "Austin Miller",
+				"position": "DE"
+			},
+      {
+				"number": "44",
+				"name": "Kaiden Johnson",
+				"position": "DE"
+			},
+      {
+				"number": "9",
+				"name": "Thomas Heiberger",
+				"position": "LB"
+			},
+      {
+				"number": "8",
+				"name": "Rylan Aman",
+				"position": "LB"
+			},
+      {
+				"number": "23",
+				"name": "Austin Brummels",
+				"position": "LB"
+			}
+		],
+    "d2Players": [{
+				"number": "32",
+				"name": "Dawson Sechser",
+				"position": "DB"
+			},
+			{
+				"number": "15",
+				"name": "Evan Haug",
+				"position": "CB"
+			},
+      {
+				"number": "13",
+				"name": "Damaris Fields",
+				"position": "CB"
+			},
+      {
+				"number": "16",
+				"name": "Cael Nofziger",
+				"position": "S"
+			},
+      {
+				"number": "5",
+				"name": "Owen Ward",
+				"position": "S"
+			},
+      {
+				"number": "",
+				"name": "",
+				"position": ""
+			}
+		],
+  "o1Players": [{
+				"number": "6",
+				"name": "Ethan Swenson",
+				"position": "QB"
+			},
+			{
+				"number": "20",
+				"name": "Maddox Zens",
+				"position": "RB"
+			},
+      {
+				"number": "84",
+				"name": "Eddie Whiting",
+				"position": "TE"
+			},
+      {
+				"number": "7",
+				"name": "Eddie Mulbah",
+				"position": "WR"
+			},
+      {
+				"number": "10",
+				"name": "Jordan Dettler",
+				"position": "WR"
+			},
+      {
+				"number": "15",
+				"name": "Evan Haug",
+				"position": "WR"
+			}
+		],
+    "o2Players": [{
+				"number": "72",
+				"name": "Brady Altenburg",
+				"position": "C"
+			},
+			{
+				"number": "65",
+				"name": "Carson Hughes",
+				"position": "G"
+			},
+      {
+				"number": "50",
+				"name": "Noah Duran",
+				"position": "G"
+			},
+      {
+				"number": "55",
+				"name": "Mason Payne",
+				"position": "T"
+			},
+      {
+				"number": "71",
+				"name": "Victor Hernandez",
+				"position": "T"
+			},
+      {
+				"number": "",
+				"name": "",
+				"position": ""
+			}
+		]
+	},
+	"home": {
+		"name": "Harrisburg",
+		"abbriviation": "HHS",
+		"mascot": "Tigers",
+		"seed": "2",
+		"record": "",
+		"logo": "logos/hhs.png",
+		"primaryColor": "#6c1726",
+		"accentColor": "#fff",
+		"bgColor": "#6c1726",
+		"profile": "●",
+		"key":"",
+		"ptwName":"Austin Miller",
+		"ptwDesc":"(#84, Senior, 6'4\")",
+		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
+		"coach":"Kim Nelson",
+		"d1Players": [{
+				"number": "74",
+				"name": "Max Elrod",
+				"position": "DL"
+			},
+			{
+				"number": "71",
+				"name": "Rizg Osman",
+				"position": "DL"
+			},
+      {
+				"number": "88",
+				"name": "Payton Blackwelder",
+				"position": "DL"
+			},
+      {
+				"number": "9",
+				"name": "Sam Just",
+				"position": "LB"
+			},
+      {
+				"number": "25",
+				"name": "Levi Danielson",
+				"position": "LB"
+			},
+      {
+				"number": "",
+				"name": "",
+				"position": ""
+			}
+		],
+    "d2Players": [{
+				"number": "12",
+				"name": "Carter Baier",
+				"position": "DB"
+			},
+			{
+				"number": "2",
+				"name": "Coen Cook",
+				"position": "CB"
+			},
+      {
+				"number": "3",
+				"name": "Thomas Holt",
+				"position": "S"
+			},
+      {
+				"number": "16",
+				"name": "Isaac Ostrem",
+				"position": "DB"
+			},
+      {
+				"number": "6",
+				"name": "Logan O'Conner",
+				"position": "CB"
+			},
+      {
+				"number": "8",
+				"name": "Jaxson Wolbrink",
+				"position": "S"
+			}
+		],
+  "o1Players": [{
+				"number": "7",
+				"name": "Sam Knuth",
+				"position": "QB"
+			},
+			{
+				"number": "25",
+				"name": "Levi Danielson",
+				"position": "RB"
+			},
+      {
+				"number": "4",
+				"name": "Trevor Wehde",
+				"position": "WR"
+			},
+      {
+				"number": "84",
+				"name": "Tytan Tryon",
+				"position": "WR"
+			},
+      {
+				"number": "11",
+				"name": "Cale Morton",
+				"position": "WR"
+			},
+      {
+				"number": "10",
+				"name": "Max Carlson",
+				"position": "WR"
+			}
+		],
+    "o2Players": [
+        {
+				"number": "89",
+				"name": "Aidan Costain",
+				"position": "TE"
+			},
+            {
+				"number": "74",
+				"name": "Max Elrod",
+				"position": "LT"
+			},
+			{
+				"number": "52",
+				"name": "Connor Fitzgerald",
+				"position": "LG"
+			},
+      {
+				"number": "62",
+				"name": "Kale Vesely",
+				"position": "C"
+			},
+      {
+				"number": "71",
+				"name": "Rizg Osman",
+				"position": "RG"
+			},
+      {
+				"number": "50",
+				"name": "Carson Stiff",
+				"position": "RT"
+			}
+		]
+	},
+	"announcer1": "John Gaskins",
+	"announcerHandle1": "@johnkgaskins",
+	"announcer2": "Kurtiss Riggs",
+	"announcerHandle2": "@riggsfootball",
+	"nextBroadcast": "O'Gorman vs Roosevelt <br> September 1 - 3:45 PM Pregame",
+	"crew": "Sam Newitt, Miles Wigg, Kailey Campbell, Ryker Lee, Lawson Weissenburger"
+
+}
