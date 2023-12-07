@@ -72,6 +72,7 @@ function bugAnimate() {
   
   function awayPopupIn(param) {
     clearTimeout(awayPopupTimeout);
+    e("away-popup-text").innerHTML=param;
     adjustText(e("away-popup-text"),e("away-popup-container"),32,20);
     document.getElementById("away-popup").style.animation =
       "popupIn 0.2s linear 0s";
