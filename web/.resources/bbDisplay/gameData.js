@@ -85,6 +85,34 @@ else{
 prevHomeScore=param;
 }
 
+//-----------------------------------------------------FOULS CODE---------------------------------------------
+
+function awayFouls(param){
+    setHTML("away-fouls",param);
+    if(param<7){
+        setHTML("home-bonus","");
+    }
+    else if(param<10){
+        setHTML("home-bonus","Bonus");
+    }
+    else{
+        setHTML("home-bonus","Bonus+");
+    }
+}
+
+
+function homeFouls(param){
+    setHTML("home-fouls",param);
+    if(param<7){
+        setHTML("away-bonus","");
+    }
+    else if(param<10){
+        setHTML("away-bonus","Bonus");
+    }
+    else{
+        setHTML("away-bonus","Bonus+");
+    }
+}
 //-----------------------------------------------------TIMEOUT CODE---------------------------------------------
 
 var awayPopupTimeout, homePopupTimeout, awayTORemaining=5, homeTORemaining=5, awayTOBubbles=c("away-to"), homeTOBubbles=c("home-to");

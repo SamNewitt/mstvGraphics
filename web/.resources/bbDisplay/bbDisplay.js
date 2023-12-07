@@ -79,14 +79,17 @@ function message(type, data){
         case "poss":
             poss(data);
         break;
-        case "dd":
-            ddUpdate(data);
-        break;
         case "awayScore":
             awayScore(data);
         break;
         case "homeScore":
             homeScore(data);
+        break;
+        case "awayFouls":
+            awayFouls(data)
+        break;
+        case "homeFouls":
+            homeFouls(data)
         break;
         case "takeAwayTO":
             awayTakeTO();
@@ -109,22 +112,7 @@ function message(type, data){
             clear();
             setTimeout(bugAnimate,waitTime);
         break;
-        case "ddInvisible":
-            downOut();
-        break;
-        case"ddVisible":
-            downIn();
-        break;
-        case "flagIn":
-            flagIn();
-        break;
-        case "flagOut":
-            flagOut();
-        break;
         case "awayPopup":
-            awayPopupIn(data);
-        break;
-        case "awayFlag":
             awayPopupIn(data);
         break;
         case "awayPopupOut":
@@ -133,19 +121,8 @@ function message(type, data){
         case "homePopup":
             homePopupIn(data);
         break;
-        case "homeFlag":
-            homePopupIn(data);
-        break;
         case "homePopupOut":
             homePopupOut();
-        break;
-        case "awayTouchdown":
-            bugTDAnimate("a");
-            awayScore(parseInt(prevAwayScore)+6);
-        break;
-        case "homeTouchdown":
-            bugTDAnimate("h");
-            homeScore(parseInt(prevHomeScore)+6);
         break;
         //---------------------------------------SCORE GFX------------------------------
         case "breakboxIn":
