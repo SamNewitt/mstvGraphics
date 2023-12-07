@@ -103,3 +103,16 @@ function bugAnimate() {
     },15000)
   }
  
+
+var sidebarIn=false;
+
+function sidebarMSG(){
+  if(sidebarIn){
+    
+  }
+}
+
+
+  function awaySidebar(param){
+
+  }

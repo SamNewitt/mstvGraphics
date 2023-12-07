@@ -205,3 +205,22 @@ function homeTO(param){
         homeTOBubbles[4].classList.add("remain");
     }
 }
+
+//-------------------------------------------------------POSS CODE---------------------------------
+
+function poss(param){
+    switch(param){
+        case "a":
+        setHTML("home-poss","");
+        setHTML("away-poss","Poss");
+        break;
+        case "h":
+            setHTML("away-poss","");
+            setHTML("home-poss","Poss");
+            break;
+        case "n":
+            setHTML("home-poss","");
+             setHTML("away-poss","");
+             break;
+    }
+}
