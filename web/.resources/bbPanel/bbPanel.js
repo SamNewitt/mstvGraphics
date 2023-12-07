@@ -617,6 +617,31 @@ function awaySidebar(elem,name,msg){
     }
 }
 
+
+function homeSidebar(elem,name,msg){
+    if(bug){
+        if(elem.classList.contains("active")){
+            elem.classList.remove("active")
+            send("homeSidebarOut");
+        }
+        else{
+            inactiveC("home-sidebar");
+            elem.classList.add("active")
+            undoTree.push("homeSidebar");
+            if(msg==null){
+                msg=e("home-sidebar-input").value;
+            }
+            send("sidebarMSG="+msg);
+            if(name==5){
+                name=homeBench[name]
+            }
+            else{
+                name=homeStarters[name];
+            }
+            send("homeSidebar="+name);
+        }
+    }
+}
 // --------------------------------- OTHER GRAPHICS GODE----------------------------------------
 
 function addGraphic(param, elem){
@@ -858,5 +883,24 @@ for(var i=0; i<jsonData.away.players.length; i++){
 }
 for(var i=15; i>=benchNum; i--){
 c("away-bench-player")[i].remove();
+}
+
+
+starterNum=0;
+benchNum=0;
+for(var i=0; i<jsonData.home.players.length; i++){
+    if(jsonData.home.players[i].starter=="true" &&starterNum<5){
+        c("home-player")[starterNum].innerHTML="#"+jsonData.home.players[i].number+" "+jsonData.home.players[i].firstName.charAt(0)+". "+jsonData.home.players[i].lastName;
+        homeStarters[starterNum]="#"+jsonData.home.players[i].number+" - "+jsonData.home.players[i].firstName+" "+jsonData.home.players[i].lastName+" ("+jsonData.home.players[i].desc+")";
+        starterNum++;
+    }
+    else{
+        c("home-bench-player")[benchNum].innerHTML="#"+jsonData.home.players[i].number+" "+jsonData.home.players[i].firstName.charAt(0)+". "+jsonData.home.players[i].lastName;
+        homeBench[starterNum]="#"+jsonData.home.players[i].number+" - "+jsonData.home.players[i].firstName+" "+jsonData.home.players[i].lastName+" ("+jsonData.home.players[i].desc+")";
+        benchNum++;   
+    }
+}
+for(var i=15; i>=benchNum; i--){
+c("home-bench-player")[i].remove();
 }
 }

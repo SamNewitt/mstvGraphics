@@ -236,78 +236,82 @@
     </div>
     <h5>Home Sidebars</h5>
     <div style="width:480px;">
-
-
-    <div class="flex light player" style="justify-content: flex-start;">
-        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
-    <div class="flex  player" style="justify-content: flex-start;">
-        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
-    <div class="flex light player" style="justify-content: flex-start;">
-        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
-    <div class="flex player " style="justify-content: flex-start;">
-        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
-    <div class="flex player light" style="justify-content: flex-start;">
-        <h5 style="width:150px; overflow: hidden;">#30 J. Brouwer</h5>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
-    <div class="flex player " style="justify-content: flex-start;">
-        <select style="width:150px; overflow: hidden" name="home-name" id="home-name">
-            <option value="1">#30 J. Brouwer</option>
-            <option value="2">#30 J. Brouwer</option>
-            <option value="3">#30 J. Brouwer</option>
-            <option value="4">#30 J. Brouwer</option>
-            <option value="5">#30 J. Brouwer</option>
-            <option value="7">#30 J. Brouwer</option>
-            <option value="8">#30 J. Brouwer</option>
-            <option value="9">#30 J. Brouwer</option>
-            <option value="10">#30 J. Brouwer</option>
-            <option value="11">#30 J. Brouwer</option>
-            <option value="12">#30 J. Brouwer</option>
-        </select>
-        <button style="font-size:15px">Name</button>
-        <button style="font-size:15px">2</button>
-        <button style="font-size:15px">1/1</button>
-        <button style="font-size:15px">1</button>
-        <button style="font-size:15px">Out</button>
-        <button style="font-size:15px">Custom</button>
-    </div>
+        <div class="flex light player" style="justify-content: flex-start;">
+            <h5 style="width:150px; overflow: hidden;" class="home-player"></h5>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,0,null)">Custom</button>
+        </div>
+        <div class="flex  player" style="justify-content: flex-start;">
+            <h5 style="width:150px; overflow: hidden;" class="home-player"></h5>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,1,null)">Custom</button>
+        </div>
+        <div class="flex light player" style="justify-content: flex-start;">
+            <h5 style="width:150px; overflow: hidden;" class="home-player"></h5>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,2,null)">Custom</button>
+        </div>
+        <div class="flex player " style="justify-content: flex-start;">
+            <h5 style="width:150px; overflow: hidden;" class="home-player"></h5>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,3,null)">Custom</button>
+        </div>
+        <div class="flex player light" style="justify-content: flex-start;">
+            <h5 style="width:150px; overflow: hidden;" class="home-player"></h5>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,4,null)">Custom</button>
+        </div>
+        <div class="flex player " style="justify-content: flex-start;">
+            <select style="width:150px; overflow: hidden" name="home-name" id="home-name">
+                <option class="home-bench-player" value="0"></option>
+                <option class="home-bench-player" value="1"></option>
+                <option class="home-bench-player" value="2"></option>
+                <option class="home-bench-player" value="3"></option>
+                <option class="home-bench-player" value="4"></option>
+                <option class="home-bench-player" value="5"></option>
+                <option class="home-bench-player" value="6"></option>
+                <option class="home-bench-player" value="7"></option>
+                <option class="home-bench-player" value="8"></option>
+                <option class="home-bench-player" value="9"></option>
+                <option class="home-bench-player" value="10"></option>
+                <option class="home-bench-player" value="11"></option>
+                <option class="home-bench-player" value="12"></option>
+                <option class="home-bench-player" value="13"></option>
+                <option class="home-bench-player" value="14"></option>
+                <option class="home-bench-player" value="15"></option>
+    
+            </select>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,'')">Name</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,'2 Shots')">2</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,'1-And-1')">1/1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,'1 Shot')">1</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,'Fouled Out')">Out</button>
+            <button class="home-sidebar" style="font-size:15px" onclick="homeSidebar(this,5,null)">Custom</button>
+        </div>
 
 <div class=flex>
     <h5 style="width:185px">Custom name text:</h5>
-    <input type="text" id="home-player-input" style="width:250px; text-align: center; font-size:22px; height: 25px;" placeholder="Text Under Name">
+    <input type="text" id="home-sidebar-input" style="width:250px; text-align: center; font-size:22px; height: 25px;" placeholder="Text Under Name">
 
 </div>
 </div>
