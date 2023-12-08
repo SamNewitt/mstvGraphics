@@ -105,7 +105,7 @@ function clockReset(){
 
 function clockType(){
     e("clock-update").classList.add("update");
-    e("clock-update").innerHTML="Update (Ent)";
+    e("clock-update").innerHTML="Update (Ents)";
 }
 
 //----------------------------------------------------QUARTER CODE------------------------------------
@@ -597,7 +597,7 @@ function awaySidebar(elem,name,msg){
             }
             send("sidebarMSG="+msg);
             if(name==5){
-                name=awayBench[name]
+                name=awayBench[parseInt(e("away-name").value)];
             }
             else{
                 name=awayStarters[name];
@@ -626,7 +626,7 @@ function homeSidebar(elem,name,msg){
             }
             send("sidebarMSG="+msg);
             if(name==5){
-                name=homeBench[name]
+                name=homeBench[parseInt(e("home-name").value)]
             }
             else{
                 name=homeStarters[name];
@@ -870,7 +870,7 @@ for(var i=0; i<jsonData.away.players.length; i++){
     }
     else{
         c("away-bench-player")[benchNum].innerHTML="#"+jsonData.away.players[i].number+" "+jsonData.away.players[i].firstName.charAt(0)+". "+jsonData.away.players[i].lastName;
-        awayBench[starterNum]="#"+jsonData.away.players[i].number+" - "+jsonData.away.players[i].firstName+" "+jsonData.away.players[i].lastName+" ("+jsonData.away.players[i].desc+")";
+        awayBench[benchNum]="#"+jsonData.away.players[i].number+" - "+jsonData.away.players[i].firstName+" "+jsonData.away.players[i].lastName+" ("+jsonData.away.players[i].desc+")";
         benchNum++;   
     }
 }
@@ -889,7 +889,7 @@ for(var i=0; i<jsonData.home.players.length; i++){
     }
     else{
         c("home-bench-player")[benchNum].innerHTML="#"+jsonData.home.players[i].number+" "+jsonData.home.players[i].firstName.charAt(0)+". "+jsonData.home.players[i].lastName;
-        homeBench[starterNum]="#"+jsonData.home.players[i].number+" - "+jsonData.home.players[i].firstName+" "+jsonData.home.players[i].lastName+" ("+jsonData.home.players[i].desc+")";
+        homeBench[benchNum]="#"+jsonData.home.players[i].number+" - "+jsonData.home.players[i].firstName+" "+jsonData.home.players[i].lastName+" ("+jsonData.home.players[i].desc+")";
         benchNum++;   
     }
 }
