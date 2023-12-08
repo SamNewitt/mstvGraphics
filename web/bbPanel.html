@@ -40,48 +40,48 @@
 <h5 class="away-name">Away Team</h5>
     <h3 id="away-score" style="margin:0">0</h3>
 <div class="flex" style=" border-bottom-style: solid; padding:3px;">
-    <button  onclick="addAwayScore(-1)">-1</button>
-    <button  onclick="addAwayScore(1)">+1 </button>
-    <button  onclick="addAwayScore(2)">+2</button>
-    <button  onclick="addAwayScore(3)">+3 </button>
+    <button style="font-size: 15px; margin:2.5px" onclick="addAwayScore(-1)">-1</button>
+    <button style="font-size: 15px; margin:2.5px" onclick="addAwayScore(1)">+1 (Q)</button>
+    <button style="font-size: 15px; margin:2.5px" onclick="addAwayScore(2)">+2 (W)</button>
+    <button style="font-size: 15px; margin:2.5px" onclick="addAwayScore(3)">+3 (E)</button>
 </div> 
 
 <div class="flex" style="border-bottom-style: solid; padding: 3px;">
     <h4 id="away-fouls" s>Fouls: 0</h4>
-    <button  style="padding: 0 10px 0 10px;" onclick="addAwayFoul(1)"> + </button>
+    <button  style="padding: 0 10px 0 10px;" onclick="addAwayFoul(1)"> + (R)</button>
     <button  style="padding: 0 10px 0 10px;" onclick="addAwayFoul(-1)" > - </button>
 </div>
 <h4 id="away-to" style="margin-top:10px; margin-bottom:0">Timeouts: 5</h4>
 <div class="flex" style="border-bottom-style: solid; padding: 3px;">
     <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(1)"> + </button>
     <button  style="padding: 0 10px 0 10px;" onclick="addAwayTO(-1)" > - </button>
-    <button  onclick="takeAwayTO()">Take TO </button>
+    <button  onclick="takeAwayTO()">Take TO (T)</button>
 </div>
-<button id="away-poss"  onclick="awayPoss()">Possesion </button>
+<button id="away-poss"  onclick="awayPoss()">Possesion (P)</button>
 </div>
 <!-- ---------------------------------------HOME------------------------------------- -->
 <div class="section vflex home" style="width: 240px;">
     <h5 class="home-name">Home Team</h5>
     <h3 id="home-score" style="margin:0">0</h3>
     <div class="flex" style=" border-bottom-style: solid; padding:3px;">
-        <button  onclick="addHomeScore(-1)">-1</button>
-        <button  onclick="addHomeScore(1)">+1 </button>
-        <button  onclick="addHomeScore(2)">+2</button>
-        <button  onclick="addHomeScore(3)">+3 </button>
+        <button  style="font-size: 15px; margin:2.5px" onclick="addHomeScore(-1)">-1</button>
+        <button  style="font-size: 15px; margin:2.5px" onclick="addHomeScore(1)">+1 (A)</button>
+        <button  style="font-size: 15px; margin:2.5px" onclick="addHomeScore(2)">+2 (S)</button>
+        <button  style="font-size: 15px; margin:2.5px" onclick="addHomeScore(3)">+3 (D)</button>
     </div> 
     
     <div class="flex" style="border-bottom-style: solid; padding: 3px;">
         <h4 id="home-fouls" s>Fouls: 0</h4>
-        <button  style="padding: 0 10px 0 10px;" onclick="addHomeFoul(1)"> + </button>
+        <button  style="padding: 0 10px 0 10px;" onclick="addHomeFoul(1)"> + (F)</button>
         <button  style="padding: 0 10px 0 10px;" onclick="addHomeFoul(-1)" > - </button>
     </div>
 <h4 id="home-to" style="margin-top:10px; margin-bottom:0">Timeouts: 5</h4>
 <div class="flex" style="border-bottom-style: solid; padding: 3px;">
     <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(1)">+</button>
     <button style="padding: 0 10px 0 10px;"  onclick="addHomeTO(-1)">-</button>
-    <button  onclick="takeHomeTO()">Take TO</button>
+    <button  onclick="takeHomeTO()">Take TO (G)</button>
 </div>
-<button id="home-poss" onclick="homePoss()">Possesion</button>
+<button id="home-poss" onclick="homePoss()">Possesion (P)</button>
 </div>
 
 
