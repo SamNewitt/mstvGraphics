@@ -105,7 +105,7 @@ function clockReset(){
 
 function clockType(){
     e("clock-update").classList.add("update");
-    e("clock-update").innerHTML="Update (Enter)";
+    e("clock-update").innerHTML="Update (Ent)";
 }
 
 //----------------------------------------------------QUARTER CODE------------------------------------
@@ -513,20 +513,6 @@ function transition(){
 //-------------------------------------------------POPUP CODE-------------------------
 var awayPopupIn=false, homePopupIn=false;
 
-
-// function clearPopups(){
-//     if(isActiveC("away-popup")){
-//         inactiveC("away-popup");
-//         send("awayPopupOut");
-//     }
-//     if(isActiveC("home-popup")){
-//     inactiveC("home-popup");
-//     send("homePopupOut");
-//     }
-    
-
-// }
-
 function clearBugGFX(){
     if(isActive("away-popup")){
         inactive("away-popup");
@@ -535,6 +521,10 @@ function clearBugGFX(){
     if(isActive("home-popup")){
         inactive("home-popup");
         send("homepopupOut");
+    }
+    if(isActive("sidebar")){
+        inactive("sidebar");
+        send("sidebarOut");
     }
 }
 

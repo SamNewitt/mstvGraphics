@@ -1,5 +1,5 @@
 document.addEventListener("keyup",function(event){
-    if(document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text") ){
+    if(document.activeElement!=e("clock-input")  && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-sidebar-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-sidebar-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text") ){
         switch(event.key){
             case "`":
             undo();
@@ -39,97 +39,45 @@ document.addEventListener("keyup",function(event){
                 clearPressed();
             break;
             case "-":
-                clearPopups();
-
+                clearBugGFX();
             break;
             case "q":
-            e("awayFS").click();
+            addAwayScore(1);
             break;
             case "w":
-                e("awayOS").click();
-
+            addAwayScore(2);
             break;
             case "e":
-                e("awayHold").click();
-
+            addAwayScore(3);
             break;
             case "r":
-                e("awayPI").click();
-
+            addAwayFoul(1);
             break;
             case "t":
-                takeAwayTO();
-            break;
-            case "y":
-                addAwayScore(1);
-            
-            break;
-            case "u":
-                addAwayScore(3);
-            
-            break;
-            case "i":
-            awayTD();
-            break;
-            case "o":
-            awayPoss();
+            takeAwayTO();
             break;
             case "p":
-            neutralPoss();
+            switchPoss();
             break;
             case "a":
-            e("homeFS").click();
+            addHomeScore(1);
             break;
             case "s":
-                e("homeOS").click();
-            
+                addHomeScore(2);
             break;
             case "d":
-                e("homeHold").click();
-            
+                addHomeScore(3);
             break;
             case "f":
-                e("homePI").click();
-            
+            addHomeFoul(1);
             break;
             case "g":
             takeHomeTO();
-            break;
-            case "h":
-            addHomeScore(1);
-            break;
-            case "j":
-                addHomeScore(3);
-        
-            break;
-            case "k":
-            homeTD();
-            break;
-            case "l":
-            homePoss();
             break;
             case "z":
             if(event.ctrlKey){
                 undo();
             }
-            else{
-              ddNext();  
-            }
-            break;
-            case "x":
-                console.log("pressed");
-            e("dist-input").focus();
-            e("dist-input").select();
-            break;
-            case "c":
-            down(1);
-            ddUpdate();
-            break;
-            case "v":
-            ddVisibility();
-            break;
-            case "b":
-            flag();
             break;
             case "n":
             nextPeriod();
@@ -144,11 +92,6 @@ document.addEventListener("keyup",function(event){
 
         }
     }
-    else if(document.activeElement==e("dist-input") && event.key=="Enter"){
-        ddUpdate();
-        document.activeElement.blur();
-
-    }
     else if(document.activeElement==e("clock-input") && event.key=="Enter"){
         clockUpdate();
         document.activeElement.blur();
@@ -160,7 +103,7 @@ document.addEventListener("keyup",function(event){
 });
 
 document.addEventListener("keypress",function(event){
-    if((document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input") && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-flag-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-flag-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text"))&&( event.key==" ")){
+    if((document.activeElement!=e("clock-input")  && document.activeElement!=e("away-popup-input") && document.activeElement!=e("away-sidebar-input") && document.activeElement!=e("home-popup-input") && document.activeElement!=e("home-sidebar-input") && document.activeElement!=e("image-input") && document.activeElement!=e("l3rd-title") && document.activeElement!=e("l3rd-text"))&&( event.key==" ")){
         document.activeElement.blur();
     }
     if((document.activeElement!=e("clock-input") && document.activeElement!=e("dist-input")  && document.activeElement!=e("l3rd-title") )&&( event.key=="Enter")){

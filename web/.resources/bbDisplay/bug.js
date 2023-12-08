@@ -30,6 +30,7 @@ function bugAnimate() {
     graphicIsLive=false;
     awayPopupOut();
     homePopupOut();
+    sidebarOut();
     document.getElementById("bug-animate-cover").style.animation =
       "bugOut 0.5s ease-in 0s";
     document.getElementById("bug-container").style.animation =
