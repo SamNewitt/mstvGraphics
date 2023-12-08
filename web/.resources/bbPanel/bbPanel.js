@@ -596,10 +596,10 @@ function awaySidebar(elem,name,msg){
     if(bug){
         if(elem.classList.contains("active")){
             elem.classList.remove("active")
-            send("awaySidebarOut");
+            send("sidebarOut");
         }
         else{
-            inactiveC("away-sidebar");
+            inactiveC("sidebar");
             elem.classList.add("active")
             undoTree.push("awaySidebar");
             if(msg==null){
@@ -612,6 +612,9 @@ function awaySidebar(elem,name,msg){
             else{
                 name=awayStarters[name];
             }
+            if(msg==""){
+                name=name.split("(")[0]
+            }
             send("awaySidebar="+name);
         }
     }
@@ -622,10 +625,10 @@ function homeSidebar(elem,name,msg){
     if(bug){
         if(elem.classList.contains("active")){
             elem.classList.remove("active")
-            send("homeSidebarOut");
+            send("sidebarOut");
         }
         else{
-            inactiveC("home-sidebar");
+            inactiveC("sidebar");
             elem.classList.add("active")
             undoTree.push("homeSidebar");
             if(msg==null){

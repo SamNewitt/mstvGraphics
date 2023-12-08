@@ -124,6 +124,18 @@ function message(type, data){
         case "homePopupOut":
             homePopupOut();
         break;
+        case "sidebarMSG":
+            sidebarMSG(data);
+        break;
+        case "awaySidebar":
+            awaySidebar(data);
+        break;
+        case "homeSidebar":
+            homeSidebar(data);
+        break;
+        case "sidebarOut":
+            sidebarOut();
+        break;
         //---------------------------------------SCORE GFX------------------------------
         case "breakboxIn":
         clear();   

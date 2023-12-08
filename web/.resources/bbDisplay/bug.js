@@ -105,14 +105,90 @@ function bugAnimate() {
  
 
 var sidebarIn=false;
+var opacityOut="opacityOut 0.2s linear 0s", opacityIn="opacityIn 0.2s linear 0s";
 
-function sidebarMSG(){
+
+function sidebarMSG(param){
+  
   if(sidebarIn){
-    
+    e("sidebar-2").style.animation=opacityOut;
+    setTimeout(function(){
+      e("sidebar-2").innerHTML=param;
+    e("sidebar-2").style.animation=opacityIn;
+    if(param==""){
+      e("sidebar-1").classList.add("sidebar-large-text");
+      e("sidebar-1").classList.remove("sidebar-small-text");
+    }
+    else{
+    e("sidebar-1").classList.remove("sidebar-large-text");
+    e("sidebar-1").classList.add("sidebar-small-text");
+    }
+    },500);
+  }
+  else{
+    e("sidebar-2").innerHTML=param;
+    if(param==""){
+      e("sidebar-1").classList.add("sidebar-large-text");
+      e("sidebar-1").classList.remove("sidebar-small-text");
+    }
+    else{
+    e("sidebar-1").classList.remove("sidebar-large-text");
+    e("sidebar-1").classList.add("sidebar-small-text");
+    }
   }
 }
 
 
   function awaySidebar(param){
+   e("sidebar").classList.remove("home");
+   e("sidebar").classList.add("away");
+   e("sidebar-text-container").classList.remove("home");
+   e("sidebar-text-container").classList.add("away");
 
+    if(sidebarIn && e("sidebar-1").innerHTML!=param){
+      e("sidebar-1").style.animation=opacityOut;
+      setTimeout(function(){
+        e("sidebar-1").innerHTML=param;
+      e("sidebar-1").style.animation=opacityIn;
+      },500);
+    }
+    else{
+    e("sidebar-1").innerHTML=param;
+    document.getElementById("sidebar").style.animation = "sidebarIn 0.7s ease 0s";
+    document.getElementById("sidebar-text-container").style.animation =
+      "sidebarTextIn 0.2s ease 0.7s";
+      sidebarIn=true;
+    }
+  }
+
+
+  function homeSidebar(param){
+    e("sidebar").classList.add("home");
+    e("sidebar").classList.remove("away");
+    e("sidebar-text-container").classList.add("home");
+    e("sidebar-text-container").classList.remove("away");
+ 
+     if(sidebarIn && e("sidebar-1").innerHTML!=param){
+       e("sidebar-1").style.animation=opacityOut;
+       setTimeout(function(){
+         e("sidebar-1").innerHTML=param;
+       e("sidebar-1").style.animation=opacityIn;
+       },500);
+     }
+     else{
+     e("sidebar-1").innerHTML=param;
+     document.getElementById("sidebar").style.animation = "sidebarIn 0.7s ease 0s";
+     document.getElementById("sidebar-text-container").style.animation =
+       "sidebarTextIn 0.2s ease 0.7s";
+       sidebarIn=true;
+     }
+   }
+
+
+  function sidebarOut(){
+    sidebarIn=false;
+    document.getElementById("sidebar").style.animation =
+    "sidebarOut 0.7s ease 0.3s";
+  document.getElementById("sidebar-text-container").style.animation =
+    "sidebarTextOut 0.2s ease 0s";
   }
