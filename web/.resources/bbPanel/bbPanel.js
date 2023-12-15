@@ -1045,7 +1045,7 @@ function calculateRuns(){
 
 
 function addAwayRun(){
-    if(bug){
+    if(bug && awayRunActive){
         if(e("away-run-popup").classList.contains("active")){
             e("away-run-popup").classList.remove("active");
             send("awayPopupOut");
@@ -1061,7 +1061,7 @@ function addAwayRun(){
 }
 
 function addHomeRun(){
-    if(bug){
+    if(bug && homeRunActive){
         if(e("home-run-popup").classList.contains("active")){
             e("home-run-popup").classList.remove("active");
             send("homePopupOut");

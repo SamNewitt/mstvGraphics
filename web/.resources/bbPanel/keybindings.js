@@ -56,6 +56,12 @@ document.addEventListener("keyup",function(event){
             case "t":
             takeAwayTO();
             break;
+            case "y":
+                awayPopup();
+            break;
+            case "u":
+                addAwayRun();
+            break;
             case "p":
             switchPoss();
             break;
@@ -73,6 +79,12 @@ document.addEventListener("keyup",function(event){
             break;
             case "g":
             takeHomeTO();
+            break;
+            case "h":
+                homePopup();
+            break;
+            case "j":
+                addHomeRun();
             break;
             case "z":
             if(event.ctrlKey){
