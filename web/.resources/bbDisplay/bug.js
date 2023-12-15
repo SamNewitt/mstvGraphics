@@ -193,3 +193,12 @@ function sidebarMSG(param){
   document.getElementById("sidebar-text-container").style.animation =
     "sidebarTextOut 0.2s ease 0s";
   }
+
+  function tickerInit(){
+    if(jsonData.gender=="b"){
+      e("ticker-embed").setAttribute("src","https://ticker.scorefeed.net/ticker/4022651903/SD/BBB/gamebygame-oneline");
+    }
+    else if(jsonData.gender="g"){
+      e("ticker-embed").setAttribute("src","https://ticker.scorefeed.net/ticker/4022651903/SD/GBB/gamebygame-oneline");
+    }
+  }
