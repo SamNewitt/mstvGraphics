@@ -240,6 +240,7 @@ function addAwayScore(param){
     awayScore+=parseInt(param);
     e("away-score").innerHTML=awayScore;
     send("awayScore="+awayScore);
+    calculateRuns();
     }
 }
 
@@ -249,6 +250,7 @@ function addHomeScore(param){
     homeScore+=parseInt(param);
     e("home-score").innerHTML=homeScore;
     send("homeScore="+homeScore);
+    calculateRuns();
     }
 }
 
@@ -896,4 +898,86 @@ for(var i=0; i<jsonData.home.players.length; i++){
 for(var i=15; i>=benchNum; i--){
 c("home-bench-player")[i].remove();
 }
+}
+
+
+//--------------------------------------------------RUN CALCULATOR------------------------------
+var runFound=false, runNum=0, runTeam="", index, undoData;
+function calculateRuns(){
+    runTeam="";
+    index=undoTree.length-1;
+    while(index>=0 && runTeam==""){
+    undoData=undoTree[index].split("=");
+        if(parseInt(undoData[1])>0)
+        {
+        runTeam="NA"
+        }
+        else if(undoData[0]=="awayScore"){
+            runTeam="a";
+        }
+        else if(undoData[0]=="homeScore"){
+            runTeam="h";
+        }
+        index--;
+    }
+    index=undoTree.length-1;
+    runNum=0;
+    runFound=false;
+    if(runTeam=="a"){
+        if(e("home-popup-input").value.includes("-0 RUN")){
+            e("home-popup-input").value="";
+             }
+        while(index>=0 && !runFound){
+    undoData=undoTree[index].split("=");
+        if(parseInt(undoData[1])>0)
+        {
+            runFound=true;
+        }
+        else if(undoData[0]=="homeScore"){
+            runFound=true;
+        }
+        else if(parseInt(undoData[1])<0){
+            runNum+=parseInt(undoData[1])*-1
+        }
+        index--;
+        }
+        if(runNum!=awayScore && runNum>6){
+           e("away-popup-input").value=runNum+"-0 RUN";
+        }
+        else{
+            if(e("away-popup-input").value.includes("-0 RUN")){
+           e("away-popup-input").value="";
+            }
+        }
+    }
+
+
+    if(runTeam=="h"){
+        if(e("away-popup-input").value.includes("-0 RUN")){
+            e("away-popup-input").value="";
+             }
+        while(index>=0 && !runFound){
+    undoData=undoTree[index].split("=");
+        if(parseInt(undoData[1])>0)
+        {
+            runFound=true;
+        }
+        else if(undoData[0]=="awayScore"){
+            runFound=true;
+        }
+        else if(parseInt(undoData[1])<0){
+            runNum+=parseInt(undoData[1])*-1
+        }
+        index--;
+        }
+        if(runNum!=awayScore && runNum>6){
+            e("home-popup-input").value=runNum+"-0 RUN";
+
+        }
+        else{
+            if(e("home-popup-input").value.includes("-0 RUN")){
+           e("home-popup-input").value="";
+            }
+        }
+    }
 }
