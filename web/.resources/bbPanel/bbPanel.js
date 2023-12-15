@@ -105,7 +105,7 @@ function clockReset(){
 
 function clockType(){
     e("clock-update").classList.add("update");
-    e("clock-update").innerHTML="Update (Ents)";
+    e("clock-update").innerHTML="Update (Ent)";
 }
 
 //----------------------------------------------------QUARTER CODE------------------------------------
