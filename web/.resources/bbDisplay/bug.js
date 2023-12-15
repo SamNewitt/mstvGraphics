@@ -198,7 +198,7 @@ function sidebarMSG(param){
     if(jsonData.gender=="b"){
       e("ticker-embed").setAttribute("src","https://ticker.scorefeed.net/ticker/4022651903/SD/BBB/gamebygame-oneline");
     }
-    else if(jsonData.gender="g"){
+    else if(jsonData.gender=="g"){
       e("ticker-embed").setAttribute("src","https://ticker.scorefeed.net/ticker/4022651903/SD/GBB/gamebygame-oneline");
     }
   }

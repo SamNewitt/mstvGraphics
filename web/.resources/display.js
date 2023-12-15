@@ -158,6 +158,7 @@ c("away-logo").forEach(function(elem){
 c("home-logo").forEach(function(elem){
     elem.setAttribute("src",jsonData.home.logo);
 });
+tickerInit();
 l3rdInit();
 keysInit();
 giInit();

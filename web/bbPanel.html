@@ -129,8 +129,8 @@
 <div class="section vflex away" style="width:481px; height:407px;">
     <div class="flex" >
         <h5>Scoring run:</h5>
-        <h5 style="width:100px; text-align: center;" id=away-run>7-0 Run</h5>
-    <button  id="away-run-popup" onclick="awayPopup()">Show</button>
+        <h5 style="width:100px; text-align: center;" id=away-run></h5>
+    <button  id="away-run-popup" onclick="addAwayRun()" style="display: none;">Show</button>
     </div>
     <div class="flex" style="border-bottom-style: solid; margin:0; ">
         <h5>Custom popup:</h5>
@@ -226,8 +226,8 @@
 <div class="section home vflex" style="width:481px; height:407px;">
     <div class="flex" >
         <h5>Scoring run:</h5>
-        <h5 style="width:100px; text-align: center;">7-0 Run</h5>
-    <button  id="home-run-popup" onclick="homePopup()">Show</button>
+        <h5 id=home-run style="width:100px; text-align: center;"></h5>
+    <button  id="home-run-popup" onclick="addHomeRun()" style="display: none;">Show</button>
     </div>
     <div class="flex" style="border-bottom-style: solid; margin:0; ">
         <h5>Custom popup:</h5>

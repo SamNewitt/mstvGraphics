@@ -530,14 +530,22 @@ var awayPopupIn=false, homePopupIn=false;
 function clearBugGFX(){
     if(isActive("away-popup")){
         inactive("away-popup");
-        send("awaypopupOut");
+        send("awayPopupOut");
     }
     if(isActive("home-popup")){
         inactive("home-popup");
-        send("homepopupOut");
+        send("homePopupOut");
     }
-    if(isActive("sidebar")){
-        inactive("sidebar");
+    if(isActive("away-run-popup")){
+        inactive("away-run-popup");
+        send("awayPopupOut");
+    }
+    if(isActive("home-run-popup")){
+        inactive("home-run-popup");
+        send("homePopupOut");
+    }
+    if(isActiveC("sidebar")){
+        inactiveC("sidebar");
         send("sidebarOut");
     }
 }
@@ -914,7 +922,7 @@ c("home-bench-player")[i].remove();
 
 
 //--------------------------------------------------RUN CALCULATOR------------------------------
-var runFound=false, runNum=0, runTeam="", index, undoData;
+var runFound=false, runNum=0, runTeam="", index, undoData, awayRunActive=false, homeRunActive=false;
 function calculateRuns(){
     runTeam="";
     index=undoTree.length-1;
@@ -936,8 +944,15 @@ function calculateRuns(){
     runNum=0;
     runFound=false;
     if(runTeam=="a"){
-        if(e("home-popup-input").value.includes("-0 RUN")){
-            e("home-popup-input").value="";
+        if(homeRunActive){
+            e("home-run").innerHTML="";
+            e("home-run-popup").style.display="none";
+            if(e("home-run-popup").classList.contains("active")){
+                clearBugGFX();
+            }
+            inactive("home-run-popup");
+            e("home-run-popup").classList.remove("update");
+            homeRunActive=false;
              }
         while(index>=0 && !runFound){
     undoData=undoTree[index].split("=");
@@ -954,19 +969,38 @@ function calculateRuns(){
         index--;
         }
         if(runNum!=awayScore && runNum>6){
-           e("away-popup-input").value=runNum+"-0 RUN";
+           if(isActive("away-run-popup")){
+            clearBugGFX();
+            inactive("away-run-popup");
+           }
+           awayRunActive=true;
+           e("away-run-popup").classList.add("update");
+           e("away-run-popup").style.display="block";
+           e("away-run").innerHTML=runNum+"-0 RUN";
         }
         else{
-            if(e("away-popup-input").value.includes("-0 RUN")){
-           e("away-popup-input").value="";
+            e("away-run").innerHTML="";
+            e("away-run-popup").style.display="none";
+            if(e("away-run-popup").classList.contains("active")){
+                clearBugGFX();
             }
+            inactive("away-run-popup");
+            e("away-run-popup").classList.remove("update");
+            awayRunActive=false;
         }
     }
 
 
     if(runTeam=="h"){
-        if(e("away-popup-input").value.includes("-0 RUN")){
-            e("away-popup-input").value="";
+        if(awayRunActive){
+            e("away-run").innerHTML="";
+            e("away-run-popup").style.display="none";
+            if(e("away-run-popup").classList.contains("active")){
+                clearBugGFX();
+            }
+            inactive("away-run-popup");
+            e("away-run-popup").classList.remove("update");
+            awayRunActive=false;
              }
         while(index>=0 && !runFound){
     undoData=undoTree[index].split("=");
@@ -982,14 +1016,59 @@ function calculateRuns(){
         }
         index--;
         }
-        if(runNum!=awayScore && runNum>6){
-            e("home-popup-input").value=runNum+"-0 RUN";
+        if(runNum!=homeScore && runNum>6){
+            if(isActive("home-run-popup")){
+             clearBugGFX();
+             inactive("home-run-popup");
 
+            }
+            homeRunActive=true;
+            e("home-run-popup").classList.add("update");
+            e("home-run-popup").style.display="block";
+            e("home-run").innerHTML=runNum+"-0 RUN";
+         }
+         else{
+             e("home-run").innerHTML="";
+             e("home-run-popup").style.display="none";
+             if(e("home-run-popup").classList.contains("active")){
+                 clearBugGFX();
+             }
+             inactive("home-run-popup");
+             e("home-run-popup").classList.remove("update");
+             homeRunActive=false;
+         }
+    }
+}
+
+
+function addAwayRun(){
+    if(bug){
+        if(e("away-run-popup").classList.contains("active")){
+            e("away-run-popup").classList.remove("active");
+            send("awayPopupOut");
         }
         else{
-            if(e("home-popup-input").value.includes("-0 RUN")){
-           e("home-popup-input").value="";
-            }
+            inactive("away-run-popup");
+        e("away-run-popup").classList.add("active");
+        e("away-run-popup").classList.remove("update");
+            send("awayPopup="+e("away-run").innerHTML);
+            undoTree.push("awayPopup");
+        }
+    }
+}
+
+function addHomeRun(){
+    if(bug){
+        if(e("home-run-popup").classList.contains("active")){
+            e("home-run-popup").classList.remove("active");
+            send("homePopupOut");
+        }
+        else{
+            inactive("home-run-popup");
+        e("home-run-popup").classList.add("active");
+        e("home-run-popup").classList.remove("update");
+            send("homePopup="+e("home-run").innerHTML);
+            undoTree.push("homePopup");
         }
     }
 }
