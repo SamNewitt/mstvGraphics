@@ -170,4 +170,5 @@ height:25px;
 .player *{
     margin-top:2px;
     margin-bottom:2px;
+    text-wrap: nowrap;
 }
