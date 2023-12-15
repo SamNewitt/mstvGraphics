@@ -653,6 +653,9 @@ function homeSidebar(elem,name,msg){
             else{
                 name=homeStarters[name];
             }
+            if(msg==""){
+                name=name.split("(")[0]
+            }
             send("homeSidebar="+name);
         }
     }
