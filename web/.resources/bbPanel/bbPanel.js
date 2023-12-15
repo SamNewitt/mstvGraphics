@@ -131,6 +131,12 @@ send("period=End 1st");
         e("period").innerHTML="2nd";
 send("period=2nd");
 switchPoss();
+homeFouls=0;
+awayFouls=0;
+send("awayFouls=0");
+send("homeFouls=0");
+e("away-fouls").innerHTML="Fouls: 0";
+e("home-fouls").innerHTML="Fouls: 0";
     break;
     case 2.5:
         e("period").innerHTML="Half";
@@ -161,6 +167,12 @@ send("period=End 3rd");
         e("period").innerHTML="4th";
         send("period=4th");
 switchPoss();
+homeFouls=0;
+awayFouls=0;
+send("awayFouls=0");
+send("homeFouls=0");
+e("away-fouls").innerHTML="Fouls: 0";
+e("home-fouls").innerHTML="Fouls: 0";
     break;
     case 4.5:
         e("period").innerHTML="End Reg";
@@ -255,7 +267,7 @@ function addHomeScore(param){
 }
 
 //--------------------------------------------------------------------FOULS--------------------------------------------
-var homeFouls=0; awayFouls=0;
+var homeFouls=0, awayFouls=0;
 
 function addAwayFoul(param){
     if(awayFouls+parseInt(param)>-1){

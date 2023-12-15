@@ -89,28 +89,22 @@ prevHomeScore=param;
 
 function awayFouls(param){
     setHTML("away-fouls",param);
-    if(param<7){
+    if(param<5){
         setHTML("home-bonus","");
     }
-    else if(param<10){
-        setHTML("home-bonus","Bonus");
-    }
     else{
-        setHTML("home-bonus","Bonus+");
+        setHTML("home-bonus","Bonus");
     }
 }
 
 
 function homeFouls(param){
     setHTML("home-fouls",param);
-    if(param<7){
+    if(param<5){
         setHTML("away-bonus","");
     }
-    else if(param<10){
-        setHTML("away-bonus","Bonus");
-    }
     else{
-        setHTML("away-bonus","Bonus+");
+        setHTML("away-bonus","Bonus");
     }
 }
 //-----------------------------------------------------TIMEOUT CODE---------------------------------------------
