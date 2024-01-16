@@ -1,98 +1,136 @@
 {
 	"away": {
-		"name": "Jefferson",
-		"abbriviation": "JHS",
-		"mascot": "Rough Riders",
+		"name": "Harrisburg",
+		"abbriviation": "HHS",
+		"mascot": "Tigers",
 		"seed": "1",
-		"record": "0-0",
-		"logo": "logos/jhs.png",
-		"primaryColor": "#ccc",
-		"accentColor": "#1a4f27",
-		"bgColor": "#1a4f27",
-		"profile": "●",
-		"key":"",
-		"ptwName":"Austin Miller",
-		"ptwDesc":"(#84, Senior, 6'4\")",
-		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
-		"coach":"Vince Bennedetto",
+		"record": "6-1",
+		"winRecord": "7-1",
+		"loseRecord": "6-2",
+		"logo": "logos/hhs.png",
+		"primaryColor": "#6c1726",
+		"accentColor": "#fff",
+		"bgColor": "#6c1726",
+		"profile": "● 6-1 Record (5-0 in class)<br>Unanimous #1 in SDPM Media Poll<br><br>● Key wins: At #2 Mitchell (OT), At #5 Washington<br><br>● 62 Points per game (Leads class AA)<br><br>● Average 10 offensive rebounds per game",
+		"key":"Take Care of the Ball",
+		"ptwName":"Jacoby Mehrman",
+		"ptwDesc":"(#24, Senior, 6'4\")",
+		"ptwText":"● 16 Points per game (leads team)<br><br>● 45% 3-Point shooter<br><br>● Signed with USF for Basketball",
+		"coach":"Scott Langerock",
 		"players":[
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "1",
+				"firstName": "Braeden",
+				"lastName": "Feeldy",
+				"desc": "Jr, 5'11\"",
 				"starter": "true"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
+				"number": "2",
+				"firstName": "Kaden",
+				"lastName": "Anderson",
+				"desc": "Jr, 6'1\"",
+				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
+				"number": "3",
+				"firstName": "Alex",
+				"lastName": "Smith",
+				"desc": "Sr, 6'2\"",
+				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
+				"number": "4",
+				"firstName": "Owen",
+				"lastName": "Sylliaasen",
+				"desc": "So, 6'1\"",
+				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
+				"number": "5",
+				"firstName": "Riley",
+				"lastName": "Weippert",
+				"desc": "Jr, 5'10\"",
+				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "10",
+				"firstName": "Nash",
+				"lastName": "Petersen",
+				"desc": "Jr, 6'1\"",
 				"starter": "false"
 			},
 			{
 				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"firstName": "Braeden",
+				"lastName": "VanBockern",
+				"desc": "Sr, 6'3\"",
+				"starter": "true"
+			},
+			{
+				"number": "12",
+				"firstName": "Crayton",
+				"lastName": "Jibben",
+				"desc": "So, 6'3\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "20",
+				"firstName": "Maddox",
+				"lastName": "Plack",
+				"desc": "Sr, 6'3\"",
+				"starter": "true"
+			},
+			{
+				"number": "21",
+				"firstName": "Nolan",
+				"lastName": "Krull",
+				"desc": "Sr, 6'2\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "22",
+				"firstName": "Isaiah",
+				"lastName": "Tap",
+				"desc": "Jr, 6'6\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "23",
+				"firstName": "Aiden",
+				"lastName": "Costain",
+				"desc": "Jr, 6'7\"",
 				"starter": "false"
 			},
 			{
-				"number": "13",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "24",
+				"firstName": "Jacoby",
+				"lastName": "Mehrman",
+				"desc": "Sr, 6'4\"",
+				"starter": "true"
+			},
+			{
+				"number": "30",
+				"firstName": "Beckam",
+				"lastName": "DeCurtins",
+				"desc": "Jr, 6'1\"",
+				"starter": "false"
+			},
+			{
+				"number": "33",
+				"firstName": "Camden",
+				"lastName": "Phipps",
+				"desc": "Sr, 6'6\"",
+				"starter": "true"
+			},
+			{
+				"number": "52",
+				"firstName": "Stellen",
+				"lastName": "Larson",
+				"desc": "So, 6'3\"",
 				"starter": "false"
 			}
+			
 			
 		]
 	},
@@ -100,104 +138,121 @@
 		"name": "Roosevelt",
 		"abbriviation": "RHS",
 		"mascot": "Rough Riders",
-		"seed": "2",
-		"record": "",
+		"seed": "3",
+		"record": "5-2",
+		"winRecord": "6-2",
+		"loseRecord": "5-3",
 		"logo": "logos/rhs.png",
-		"primaryColor": "#a7001b",
-		"accentColor": "#fff",
-		"bgColor": "#a7001b",
-		"profile": "●",
-		"key":"",
-		"ptwName":"Austin Miller",
-		"ptwDesc":"(#84, Senior, 6'4\")",
-		"ptwText":"●effewfwefwffw<br><br>wfoifejowfeij",
-		"coach":"Kim Nelson",
+		"primaryColor": "#ccc",
+		"accentColor": "#a7001b",
+		"bgColor": "#000",
+		"profile": "● 5-2 Record, ranked #3 in SDPM poll<br><br>● Key wins: Vs #4 O'Gorman, Vs #5 Washington<br><br>● Hold opponents to 45 points per game (2nd in class AA to RCS)<br><br>● Projected starters: 4 Seniors, 1 Junior",
+		"key":"Maintain defensive pressure",
+		"ptwName":"Garang Kuol",
+		"ptwDesc":"(#11, Senior, 6'3\")",
+		"ptwText":"● 2nd-year starter for RHS<br><br>● Leads team with 14.1 points per game<br><br>● 43% 3-point shooting, 5 rebounds per game",
+		"coach":"Mitch Begeman",
 		"players":[
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "2",
+				"firstName": "Naser",
+				"lastName": "Ismail",
+				"desc": "Sr, 5'8\"",
 				"starter": "true"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "3",
+				"firstName": "Hayden",
+				"lastName": "Goff",
+				"desc": "Sr, 6'0\"",
 				"starter": "true"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "4",
+				"firstName": "Logan",
+				"lastName": "Nielsen",
+				"desc": "Sr, 6'2\"",
 				"starter": "true"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
+				"number": "5",
+				"firstName": "Elijah",
+				"lastName": "Johnson",
+				"desc": "Sr, 5'8\"",
+				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
-				"starter": "true"
-			},
-			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "10",
+				"firstName": "Kamari",
+				"lastName": "Thomas",
+				"desc": "Sr, 5'10\"",
 				"starter": "false"
 			},
 			{
 				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"firstName": "Garang",
+				"lastName": "Kuol",
+				"desc": "Sr, 6'3\"",
+				"starter": "true"
+			},
+			{
+				"number": "12",
+				"firstName": "Memphis",
+				"lastName": "Bylander",
+				"desc": "So, 6'3\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "13",
+				"firstName": "Isaiah",
+				"lastName": "Garang",
+				"desc": "Jr, 6'3\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "20",
+				"firstName": "Akeem",
+				"lastName": "Moko",
+				"desc": "Jr, 6'5\"",
+				"starter": "true"
+			},
+			{
+				"number": "21",
+				"firstName": "Carson",
+				"lastName": "Hoines",
+				"desc": "So, 6'3\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "22",
+				"firstName": "Tayden",
+				"lastName": "Nave",
+				"desc": "Sr, 6'3\"",
 				"starter": "false"
 			},
 			{
-				"number": "11",
-				"firstName": "Landon",
-				"lastName": "Duran",
-				"desc": "Sr, 6'1\"",
+				"number": "23",
+				"firstName": "Jackson",
+				"lastName": "Brouwer",
+				"desc": "Sr, 6'4\"",
+				"starter": "false"
+			},
+			{
+				"number": "24",
+				"firstName": "Jamre",
+				"lastName": "Tiger",
+				"desc": "Jr, 5'9\"",
 				"starter": "false"
 			}
+			
 			
 		]
 	},
 	"announcer1": "John Gaskins",
 	"announcerHandle1": "@johnkgaskins",
-	"announcer2": "Kurtiss Riggs",
-	"announcerHandle2": "@riggsfootball",
-	"nextBroadcast": "O'Gorman vs Roosevelt <br> September 1 - 3:45 PM Pregame",
-	"crew": "Sam Newitt, Miles Wigg, Kailey Campbell, Ryker Lee, Lawson Weissenburger",
-	"gender": "g"
+	"announcer2": "Brad Newitt",
+	"announcerHandle2": "@bnewitt",
+	"nextBroadcast": "#2 Dakota Valley at Tri-Valley <br> January 19, 7:45 PM Pregame",
+	"crew": "Sam Newitt, Thomas Butzer, Ryker Lee,<br>Noel Schaffer, Norah Ness",
+	"gender":"b"
 }

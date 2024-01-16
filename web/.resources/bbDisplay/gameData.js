@@ -40,6 +40,16 @@ setHTML("clock",clock);
 var clockObjects=c("clock");
 
 function period(param){
+if(param.includes("Final")){
+    if(parseInt(e("bug-away-score").innerHTML)>parseInt(e("bug-home-score").innerHTML)){
+        setHTML("away-record","("+jsonData.away.winRecord+")");
+        setHTML("home-record","("+jsonData.home.loseRecord+")");
+    }
+    else{
+        setHTML("home-record","("+jsonData.home.winRecord+")");
+        setHTML("away-record","("+jsonData.away.loseRecord+")");
+    }
+}
 if(param.includes("End")||param == "Halftime" || param.includes("Final")){
     for(var i=0; i<clockObjects.length; i++){
         clockObjects[i].style.display="none";
