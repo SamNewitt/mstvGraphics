@@ -228,3 +228,55 @@ function poss(param){
              break;
     }
 }
+
+function possAnim(param){
+    if(param=="h"){
+
+        if(graphicIsLive && graphicLive=="bug"){
+            awayPopupIn(jsonData.away.mascot.toUpperCase()+" BALL", false);
+            setHTML("away-poss","")
+            
+        setTimeout(function(){setHTML("away-poss","Poss");},500);
+        setTimeout(function(){setHTML("away-poss","");},1000);
+        setTimeout(function(){setHTML("away-poss","Poss");},1500);
+        setTimeout(function(){setHTML("away-poss","");},2000);
+        setTimeout(function(){setHTML("away-poss","Poss");},2500);
+        setTimeout(function(){setHTML("away-poss","");},3000);
+        setTimeout(function(){setHTML("away-poss","Poss");},3500);
+        
+    awayPopupTimeout=setTimeout(function(){
+    poss("h");
+    awayPopupOut();
+    },4000);
+    
+        }
+        else{
+            poss("h");
+        }
+
+    }
+
+    else if(param=="a"){
+        if(graphicIsLive && graphicLive=="bug"){
+            homePopupIn(jsonData.home.mascot.toUpperCase()+" BALL", false);
+            setHTML("home-poss","")
+            
+        setTimeout(function(){setHTML("home-poss","Poss");},500);
+        setTimeout(function(){setHTML("home-poss","");},1000);
+        setTimeout(function(){setHTML("home-poss","Poss");},1500);
+        setTimeout(function(){setHTML("home-poss","");},2000);
+        setTimeout(function(){setHTML("home-poss","Poss");},2500);
+        setTimeout(function(){setHTML("home-poss","");},3000);
+        setTimeout(function(){setHTML("home-poss","Poss");},3500);
+        
+    homePopupTimeout=setTimeout(function(){
+    poss("a");
+    homePopupOut();
+    },4000);
+    
+        }
+        else{
+            poss("h");
+        }
+    }
+}

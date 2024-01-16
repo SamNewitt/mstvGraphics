@@ -63,7 +63,7 @@ document.addEventListener("keyup",function(event){
                 addAwayRun();
             break;
             case "p":
-            switchPoss();
+            possAnim();
             break;
             case "a":
             addHomeScore(1);

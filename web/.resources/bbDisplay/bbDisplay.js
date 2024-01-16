@@ -79,6 +79,9 @@ function message(type, data){
         case "poss":
             poss(data);
         break;
+        case "possAnim":
+            possAnim(data);
+        break;
         case "awayScore":
             awayScore(data);
         break;

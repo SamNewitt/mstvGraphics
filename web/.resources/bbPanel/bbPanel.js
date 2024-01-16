@@ -409,6 +409,25 @@ function switchPoss(){
     send("poss="+poss);
 }
 
+function possAnim(){
+    inactive("home-poss");
+    inactive("away-poss");
+
+    switch(poss){
+        case "a":
+            undoTree.push("awayPoss");
+            poss="h";
+        active("home-poss");
+        break;
+        case "h":
+            undoTree.push("homePoss");
+            poss="a";
+        active("away-poss");
+        break;
+    }
+    send("possAnim="+poss);
+}
+
 
 
 //----------------------------------------------------BUG CODE-------------------------------------------------
