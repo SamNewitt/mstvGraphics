@@ -182,6 +182,7 @@ e("home-fouls").innerHTML="Fouls: 0";
     case 5:
         e("period").innerHTML="OT";
         send("period=OT");
+        clockSet(240);
     break;
     case 5.5:
         e("period").innerHTML="End 1OT";
@@ -192,6 +193,7 @@ e("home-fouls").innerHTML="Fouls: 0";
     if(period%1==0){
         e("period").innerHTML=period-4+"OT";
         send("period="+(period-4)+"OT");
+        clockSet(240);
     }
     else{
         e("period").innerHTML="End "+(Math.trunc(period)-4)+"OT";

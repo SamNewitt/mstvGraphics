@@ -40,7 +40,7 @@ setHTML("clock",clock);
 var clockObjects=c("clock");
 
 function period(param){
-if(param.includes("End")||param == "Halftime" || param=="Final" || param.includes("OT")){
+if(param.includes("End")||param == "Halftime" || param.includes("Final")){
     for(var i=0; i<clockObjects.length; i++){
         clockObjects[i].style.display="none";
     }
