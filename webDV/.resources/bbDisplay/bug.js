@@ -90,7 +90,7 @@ function bugAnimate() {
   
   var sponsorsInterval, currSponsor=0;
 
-  var sponsors=["avera", "dnn", "fox", "gs", "amFam","cb", "ilcc","jtw","ls", "avera", "dnn", "fox", "gs", "mstvWide","sds","shenanigans","touchmark","vern"];
+  var sponsors=["avera", "dnn", "cb","mitchell", "mstvWide","sds","bboBlack","mitchell","bigFrig","bomgaars","dbs","kcau","mitchell"];
   e("sponsor-rotator").setAttribute("src","sponsors/"+sponsors[0]+".png")
 
 
