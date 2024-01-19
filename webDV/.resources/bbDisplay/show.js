@@ -18,8 +18,8 @@ function halftimeIn(){
 }
 
 function postgameIn(){
-  e("show-text").innerHTML="Shenanigans Postgame Show";
-  e("show-logo").setAttribute("src","sponsors/shenanigans.png");
+  e("show-text").innerHTML="Bomgaars Postgame Show";
+  e("show-logo").setAttribute("src","sponsors/bomgaarsSquare.png");
   showIn()
 }
 
