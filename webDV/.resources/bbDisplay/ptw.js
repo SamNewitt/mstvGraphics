@@ -13,8 +13,8 @@ function ptwIn(param) {
 
     }
     else{
-        e("ptw-bg").style.backgroundColor=jsonData.home.bgColor;
-  e("ptw-logo").setAttribute("src",jsonData.home.logo);
+      e("ptw-bg").style.backgroundColor=jsonData.away.bgColor;
+      e("ptw-logo").setAttribute("src",jsonData.away.logo);
   e("ptw-player").innerHTML=jsonData.home.ptwName+"<br>"+jsonData.home.ptwDesc;
   e("ptw-text").innerHTML=jsonData.home.ptwText
     }
