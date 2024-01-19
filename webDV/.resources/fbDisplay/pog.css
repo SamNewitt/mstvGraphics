@@ -1,0 +1,63 @@
+:root{
+    --ss-bg: var(--mstv-gray);
+}
+
+#ss, #ss-content{
+  margin-top: 591px;
+  margin-left: 200px;
+  color: #fff;
+}
+
+#ss-bg::after{
+  content: "";
+  position: absolute;
+  margin-top: 4px;
+  margin-left: -29px;
+  border-bottom: 125px solid var(--ss-bg);
+  border-left: 32px solid transparent;
+  border-right: 32px solid transparent;
+  height: 0;
+  width: 800px; 
+}
+#ss-bg{
+  border-bottom: 129px solid #fff;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 805px;
+}
+
+#ss-logo-bg{
+  height:0;
+  border-bottom:129px solid #fff;
+  width: 325px;
+  border-left: 35px solid transparent;
+
+}
+
+#ss-logo{
+  height: 80px;
+  margin-left: -345px;
+  margin-right:10px;
+}
+
+#ss-content h1{
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size:44px;
+  margin: 0;
+}
+
+#ss-text-container{
+  width: 475px;
+}
+
+#ss-content p{
+  font-family: "Roboto", sans-serif;
+font-size:27px;
+margin:0;
+text-align: center;
+}
+#ss-writing{
+  width:475px;
+}

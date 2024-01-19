@@ -1,0 +1,55 @@
+@keyframes showIn {
+  from{
+    margin-left:-275px;
+  }
+  to{
+    margin-left: 0;
+  }
+}
+@keyframes showOut {
+  from{
+    margin-left:0px;
+  }
+  t0{
+    margin-left: -275px;
+  }
+}
+
+#show{
+  margin-top: 425px;
+  margin-left: -275px;
+
+}
+
+#show-logo-container{
+  width: 275px;
+  height:175px;
+  background-color: #fff;
+}
+
+#show-logo{
+  height:95%;
+}
+
+#show-text-bg{
+  border-top: 75px solid var(--mstv-gray);
+border-right: 50px solid transparent;
+  width: 200px;
+}
+
+#show-text-container{
+  width:215px;
+  height:75px;
+  margin-top: 600px;
+  text-align: center;
+  margin-left: -275px;
+
+}
+
+#show-text{
+  font-family: 'Roboto',sans-serif;
+  font-size:26px;
+  line-height: 35px;
+  margin:0;
+  color: #fff;
+}

@@ -1,0 +1,110 @@
+:root{
+    --l3rd-bg: var(--mstv-gray);
+}
+
+#l3rd{
+    margin-top: 591px;
+    margin-left: 305.5px;
+} 
+ 
+ #l3rd-bg::after{
+    content: "";
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -29px;
+    border-bottom: 125px solid var(--l3rd-bg);
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    height: 0;
+    width: 600px; 
+}
+#l3rd-bg{
+    border-bottom: 129px solid #fff;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    height: 0;
+    width: 605px;
+}
+
+.l3rd-content{
+    color: #fff;
+    margin-top: 591px;
+    margin-left: 320.5px;
+    width:639px;
+
+}
+
+#l3rd-general{
+    max-height: 125px;
+    min-height: 110px; 
+}
+
+.l3rd-content h1{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size:44px;
+    margin: 0;
+}
+
+.l3rd-content p{
+    font-family: "Roboto", sans-serif;
+font-size:27px;
+margin:0;
+
+}
+
+
+#l3rd-general-text-container, #l3rd-general-title-container{
+    width: 610px;
+}
+
+#l3rd-general-text-container{
+    text-align:center;
+max-height: 67px;
+}
+
+
+@keyframes l3rdIn {
+    from{
+        margin-top:720px;
+    }
+    to{
+        margin-top: 591px;
+    }
+}
+
+@keyframes l3rdOut {
+    to{
+        margin-top: 720px;
+    }
+}
+
+
+
+/* ------------------ANNOUNCERS AND COPYRIGHT--------------- */
+
+#l3rd-annc{
+    height:129px;
+}
+
+.annc{
+    width:297px;
+    text-align: center;
+    height: 100%;
+}
+
+#l3rd-copyright{
+    height: 129px;
+}
+
+#l3rd-copyright img{
+    width: 350px
+}
+
+#l3rd-copyright p{
+    text-align:center;
+    width: 250px;
+}
+
+
+

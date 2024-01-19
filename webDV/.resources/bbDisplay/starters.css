@@ -1,0 +1,150 @@
+#starters{
+    width: 0px;
+    margin-top: 567px;
+}
+
+#starters-title-container{
+    width:1280px;
+    height: 50px;
+    border-top: 3px solid #fff;
+    /* border-bottom: 3px solid #fff; */
+
+}
+
+#starters-title{
+    font-family: 'Oswald', sans-serif;
+    width: 1080px;
+    font-size: 42px;
+    line-height: 42px;
+    text-align: center;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+#starters-content-container{
+
+    height: 100px;
+    width: 1280px;
+}
+
+#starters-content{
+    transition: 0.3s;
+    width:1280px;
+    font-family: 'Roboto',sans-serif;
+    font-size:32px;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.starter-number{
+    width: 75px;
+    text-align: center;
+}
+
+.starter-name-container{
+    width: 285px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: solid 1px #fff;
+margin:0;
+}
+
+.starter-player{
+    margin:0;
+    white-space: nowrap;
+    overflow:revert;
+}
+
+.starter-name{
+    padding-left:8px;
+    padding-right:5px;
+}
+
+.starter-border{
+    border-right:4px solid  #fff;
+}
+
+#starters-popup-bg{
+    width:250px;
+    margin-top:567px;
+    border-bottom: 75px solid #fff;
+    border-right: 60px solid transparent;
+    display:none;
+
+}
+
+#starters-popup{
+    width:275px;
+    height: 75px;
+    margin-top: 567px;
+    display:none;
+}
+
+#starters-popup img{
+    height: 100%;
+}
+
+#starters-logo-container{
+    width:190px;
+    height:200px;
+    margin-top:520px;
+    margin-left:1280px;
+}
+
+@keyframes startersIn {
+    from{
+        width:0;
+    }
+    to{
+        width:1280px;
+    }
+}
+@keyframes startersOut {
+    from{
+        width:1280px;
+    }
+    to{
+        width:0px;
+    }
+}
+
+@keyframes startersPopupIn {
+    from{
+        margin-top: 567px;
+    }
+    to{
+        margin-top: 495px;
+    }
+}
+
+@keyframes startersPopupOut {
+    from{
+        margin-top: 495px;
+    }
+    to{
+        margin-top: 567px;
+    }
+}
+
+@keyframes startersLogoIn {
+    from{
+        margin-left:1280px;
+    }
+    to{
+        margin-left:1087px;
+    }
+    
+}
+
+@keyframes startersLogoOut {
+    from{
+        margin-left:1087px;
+    }
+    to{
+        margin-left:1280px;
+    }
+    
+}

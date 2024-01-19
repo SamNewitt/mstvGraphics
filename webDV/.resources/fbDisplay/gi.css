@@ -1,0 +1,205 @@
+
+#gi-teams {
+    height: 124px;
+    width: 1280px;
+    margin-top: 596px;
+  }
+  
+  #gi-away-container {
+    width: 0px;
+    overflow-left: hidden;
+  }
+  
+  #gi-home-container {
+    width: 0px;
+  }
+  
+  #gi-away {
+    height: 120px;
+    border-top: 4px solid #fff;
+    width: 640px;
+    margin-left: -640px;
+    background-color: var(--away-bg);
+  }
+  
+  #gi-home {
+    height: 120px;
+    border-top: 4px solid #fff;
+    width: 640px;
+    background-color: var(--home-bg);
+    text-align: right;
+  }
+  
+  #gi-away-name-container {
+    width: 240px;
+    margin-left: 145px;
+    height: 60px;
+    justify-content: flex-start;
+  }
+  #gi-home-name-container {
+    width: 240px;
+    margin-left: 255px;
+    height: 60px;
+    justify-content: flex-end;
+  }
+  
+  #gi-teams h1 {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: 45px;
+    color: #fff;
+    text-wrap: nowrap;
+  }
+  
+  #away-desc {
+    font-family: "Roboto", sans-serif;
+    color: #cccccc;
+    font-size: 35px;
+    margin-top: 0;
+    margin-left: 145px;
+  }
+  
+  #home-desc {
+    font-family: "Roboto", sans-serif;
+    color: #cccccc;
+    font-size: 35px;
+    margin-top: 0;
+    margin-right: 145px;
+  }
+  
+  #gi-bg {
+    border-bottom: 225px solid #fff;
+    width: 350px;
+    border-right: 125px solid transparent;
+    border-left: 125px solid transparent;
+    margin-left: 340px;
+    margin-top: 720px;
+    overflow: visible;
+  }
+  
+  #gi-bg::after {
+    content: "";
+    position: absolute;
+    width: 344px;
+    height: 0;
+    margin-top: 4px;
+    margin-left: -74px;
+    border-bottom: 140px solid var(--mstv-gray);
+    border-left: 77px solid transparent;
+    border-right: 77px solid transparent;
+  }
+  
+  #gi-middle {
+    margin-left: 340px;
+    margin-top: 720px;
+    width: 600px;
+    height: 225px;
+    justify-content: flex-start;
+  }
+  
+  #gi-middle img {
+    margin-top: 10px;
+    height: 70px;
+    margin-bottom: -5px;
+  }
+  #gi-middle h1 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    font-size: 50px;
+  }
+  
+  #gi-logos {
+    height: 75px;
+  }
+  
+  #gi-logos img {
+    margin: -2px;
+    height: 65px;
+    margin-right: 10px;
+    maegin-left: 10px;
+  }
+  
+  @keyframes giMiddleIn {
+    from {
+      margin-top: 720px;
+    }
+    to {
+      margin-top: 495px;
+    }
+  }
+  
+  @keyframes giMiddleOut {
+    from {
+      margin-top: 495px;
+    }
+    to {
+      margin-top: 720px;
+    }
+  }
+  
+  @keyframes giTeamIn {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 640px;
+    }
+  }
+  
+  @keyframes giTeamOut {
+    from {
+      width: 640px;
+    }
+    to {
+      width: 0px;
+    }
+  }
+  
+  @keyframes giAway {
+    from {
+      margin-left: -640px;
+    }
+    to {
+      margin-left: 0px;
+    }
+  }
+  
+  @keyframes giOut {
+    to {
+      margin-top: 821px;
+    }
+  }
+  
+  #gi-away-logo-container {
+    width: 115px;
+    height: 115px;
+    margin-top: 602.5px;
+    margin-left: 10px;
+  }
+  
+  #gi-home-logo-container {
+    width: 115px;
+    height: 115px;
+    margin-top: 602.5px;
+    margin-left: 1155px;
+  }
+  
+  @keyframes giAwayLogo {
+    from {
+      margin-left: -115px;
+    }
+    to {
+      margin-left: 10px;
+    }
+  }
+  
+  @keyframes giHomeLogo {
+    from {
+      margin-left: 1280px;
+    }
+    to {
+      margin-left: 1155px;
+    }
+  }
+  

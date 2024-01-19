@@ -1,0 +1,124 @@
+
+#keys-cover {
+    margin-left: 220px;
+    margin-top:110px;
+    height: 0px;
+    width: 840px;
+    background-color: #fff;
+  }
+  
+  #keys-cover img {
+    width: 600px;
+    margin-top: 65px;
+    margin-left: 120px;
+  }
+  
+  #keys-container {
+    margin-left: 220px;
+    margin-top: 110px;
+    height: 0px;
+    width: 840px;
+  }
+  
+  #keys {
+    height: 500px;
+    width: 830px;
+    border: 5px solid #fff;
+    position: absolute;
+  }
+  
+  #keys-header {
+    background-color: var(--mstv-gray);
+    width: 100%;
+    height: 90px;
+    border-bottom: 3px solid #fff;
+  
+    justify-content: flex-start;
+  }
+  
+  #keys-header img {
+    height: 75px;
+    margin-left: -375px;
+  }
+  #keys-header h1 {
+    font-size: 55px;
+    color: #fff;
+    font-family: "oswald", sans-serif;
+    margin-left: 55px;
+  }
+  
+  #keys-sponsor-bg {
+    border-bottom: 90px solid #fff;
+    width: 310px;
+    border-right: 60px solid transparent;
+  }
+  
+  #keys-away-bg,
+  #keys-home-bg {
+    height: 204px;
+    width: 830px;
+    background-color: var(--home-bg);
+  }
+  
+  #keys-away-bg {
+    border-bottom: 2px solid #fff;
+    background-color: var(--away-bg);
+  }
+  
+  .keys-logo-container {
+    height: 400px;
+    width: 400px;
+    margin-top: -98px;
+    margin-left: 215px;
+    opacity: 0.2;
+  }
+  
+  #keys-away-text-container {
+    left: 0;
+    top: 92px;
+    height: 204px;
+    position: absolute;
+    width: 830px;
+  }
+  
+  #keys-home-text-container {
+    left: 0;
+    top: 296px;
+    height: 204px;
+    position: absolute;
+    width: 830px;
+  }
+  
+  .keys-text {
+    color: #fff;
+    font-family: "roboto", sans-serif;
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .keys-title {
+    margin: 0;
+    color: #fff;
+    font-family: "roboto", sans-serif;
+    font-size: 55px;
+  }
+  
+  @keyframes keysIn {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 510px;
+    }
+  }
+  
+  @keyframes keysOut {
+    from {
+      height: 510px;
+    }
+    to {
+      height: 0px;
+    }
+  }
+  
