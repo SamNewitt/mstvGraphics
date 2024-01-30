@@ -1,0 +1,97 @@
+#trans-away{
+    height: 340px;
+    border-bottom: solid var(--mstv-gray) 20px;
+    width: 0px;
+    overflow: hidden;
+}
+
+#trans-home{
+    margin-top: 360px;
+    margin-left: 1280px;
+    height: 340px;
+    border-top: solid var(--mstv-gray) 20px;
+    width: 0px;
+    overflow: hidden;
+}
+
+.trans-content-container{
+    width: 1280px;
+    height: 340px;
+}
+
+#trans-home-content-container{
+    float:right;
+}
+
+#trans-away-content{
+    margin-left:100px;
+    display: flex;
+}
+
+#trans-home-content{
+    margin-right:100px;
+    display: flex;
+    float:right;
+}
+
+
+.trans-logo-container{
+    height: 250px;
+    width: 250px;
+    margin-top: 45px;
+}
+
+#trans-away-text-container{
+margin-left: 50px;
+}
+
+#trans-home-text-container{
+    margin-right: 50px;
+    }
+
+.trans-text{
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: 100px;
+    max-width: 540px;
+    text-align: center;
+    line-height: 110px;
+}
+
+@keyframes transAwayIn {
+    from{
+        width:0px;
+    }
+    to{
+        width:1280px;
+    }
+}
+
+@keyframes transHomeIn {
+    from{
+        width:0px;
+        margin-left: 1280px;
+    }
+    to{
+        width:1280px;
+        margin-left: 0px;
+    }
+}
+
+@keyframes transAwayContent{
+    from{
+        margin-left:100px;
+    }
+    to{
+        margin-left:380px;
+    }
+}
+
+@keyframes transHomeContent{
+    from{
+        margin-right:100px;
+    }
+    to{
+        margin-right:380px;
+    }
+}

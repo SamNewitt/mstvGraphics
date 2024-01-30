@@ -1,0 +1,150 @@
+
+@keyframes leftCornerIn {
+    from {
+      margin-left: -200px;
+    }
+    to {
+      margin-left: 0;
+    }
+  }
+  @keyframes rightCornerIn {
+    from {
+      margin-left: 1280px;
+    }
+    to {
+      margin-left: 1080px;
+    }
+  }
+  @keyframes cornerOut {
+    to {
+      margin-top: 750px;
+    }
+  }
+  
+  @keyframes cornerLogoOut {
+    to {
+      margin-top: 720px;
+    }
+  }
+  @keyframes leftCornerScale {
+    from {
+      margin-top: 350px;
+      width: 350px;
+      height: 350px;
+    }
+    to {
+      width: 210px;
+      height: 210px;
+      margin-top: 490px;
+    }
+  }
+  @keyframes rightCornerScale {
+    from {
+      margin-top: 350px;
+      width: 350px;
+      height: 350px;
+      margin-left: 910px;
+    }
+    to {
+      width: 210px;
+      height: 210px;
+      margin-top: 490px;
+      margin-left: 1050px;
+    }
+  }
+  
+  @keyframes leftCornerLogoIn {
+    from {
+      width: 350px;
+      height: 350px;
+      margin-top: 350px;
+      margin-left: -350px;
+    }
+    to {
+      width: 350px;
+      height: 350px;
+      margin-top: 350px;
+      margin-left: 20px;
+    }
+  }
+  @keyframes rightCornerLogoIn {
+    from {
+      width: 350px;
+      height: 350px;
+      margin-top: 350px;
+      margin-left: 1480px;
+    }
+    to {
+      margin-left: 910px;
+      width: 350px;
+      height: 350px;
+      margin-top: 350px;
+    }
+  }
+  
+  #away-corner {
+    margin-top: 520px;
+    width: 200px;
+    height: 200px;
+    animation: cornerOut 0s linear 0s;
+  }
+  
+  #away-corner-1 {
+    position: absolute;
+    margin-top: 15px;
+    width: 0;
+    height: 0;
+    border-bottom: 185px solid var(--away-primary);
+    border-right: 185px solid transparent;
+  }
+  #away-corner-2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid var(--away-accent);
+    border-right: 200px solid transparent;
+  }
+  
+  #away-corner-logo {
+    /*   background-color: #00f; */
+    animation: cornerLogoOut 0s linear 0s;
+    width: 210px;
+    height: 210px;
+    margin-left: 20px;
+    margin-top: 490px;
+  }
+  
+  #home-corner {
+    animation: cornerOut 0s linear 0s;
+  
+    margin-top: 520px;
+    width: 200px;
+    height: 200px;
+    margin-left: 1080px;
+  }
+  
+  #home-corner-1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-bottom: 185px solid var(--home-primary);
+    border-left: 185px solid transparent;
+  }
+  #home-corner-2 {
+    width: 0;
+    position: absolute;
+    height: 0;
+    border-bottom: 200px solid var(--home-accent);
+    border-left: 200px solid transparent;
+  }
+  
+  #home-corner-logo {
+    animation: cornerLogoOut 0s linear 0s;
+  
+    width: 210px;
+    height: 210px;
+    margin-left: 1050px;
+    margin-top: 490px;
+  }
